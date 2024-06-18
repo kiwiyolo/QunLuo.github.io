@@ -1,13 +1,13 @@
 ---
 # Display name
-title: 吳健雄
+title: 罗群
 
 # Name pronunciation (optional)
-name_pronunciation: Chien Shiung Wu
+name_pronunciation: Luo Qun
 
 # Full name (for SEO)
-first_name: Shiung Wu
-last_name: Chien
+first_name: Qun
+last_name: Luo
 
 # Status emoji
 status:
@@ -20,10 +20,10 @@ superuser: true
 highlight_name: true
 
 # Role/position/tagline
-role: Chief Scientist
+role: Master
 
 # Organizations/Affiliations to display in Biography blox
-organizations:
+organizations: College of Water Sciences, Beijing Normal University, Beijing, China
   - name: OpenAI
     url: https://openai.com/
 
