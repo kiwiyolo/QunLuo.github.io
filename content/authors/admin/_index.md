@@ -23,9 +23,9 @@ highlight_name: true
 role: Master
 
 # Organizations/Affiliations to display in Biography blox
-organizations: College of Water Sciences, Beijing Normal University, Beijing, China
-  - name: OpenAI
-    url: https://openai.com/
+organizations: 
+  - name: College of Water Sciences, Beijing Normal University, Beijing, China
+    url: https://www.bnu.edu.cn/
 
 # Social network links
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
