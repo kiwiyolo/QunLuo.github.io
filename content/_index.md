@@ -52,7 +52,7 @@ sections:
         featured_only: true
     design:
       view: article-grid
-      columns: 2
+      columns: 3
   - block: cta-card
     demo: true # Only display this section in the Hugo Blox Builder demo site
     content:
