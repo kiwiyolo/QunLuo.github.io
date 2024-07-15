@@ -53,7 +53,7 @@ sections:
     design:
       view: article-grid
       columns: 2
-  <!-- 
+  {/*
   - block: collection
     content:
       title: Recent Publications
@@ -103,7 +103,7 @@ sections:
       # Reduce spacing
       spacing:
         padding: [0, 0, 0, 0]
-  -->
+  */}
   - block: cta-card
     demo: true # Only display this section in the Hugo Blox Builder demo site
     content:
