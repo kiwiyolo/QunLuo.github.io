@@ -8,6 +8,6 @@ tags:
   - City
 ---
 
-scikit-learn is a Python module for machine learning built on top of SciPy and is distributed under the 3-Clause BSD license.
+This project aims to optimize SWMM (Storm Water Management Model) parameters by Genetic Algorithm (GA) to simulate and predict urban runoff under rainfall events.
 
 <!--more-->

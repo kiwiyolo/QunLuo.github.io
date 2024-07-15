@@ -8,6 +8,6 @@ tags:
   - River
 ---
 
-Flexible and powerful data analysis / manipulation library for Python, providing labeled data structures.
+By connecting geospatial information with AI neural network structure, that is, integrating geospatial information on the basis of traditional neural network, the model can better understand and process spatial data information
 
 <!--more-->

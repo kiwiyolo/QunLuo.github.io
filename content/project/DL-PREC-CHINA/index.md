@@ -8,6 +8,6 @@ tags:
   - China
 ---
 
-PyTorch is a Python package that provides tensor computation (like NumPy) with strong GPU acceleration.
+  Two classical model structures are employed to explore how different coupling strategies using optical flow method affect prediction results along with corresponding attribution analysis.
 
 <!--more-->
