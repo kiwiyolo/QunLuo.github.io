@@ -35,9 +35,9 @@ sections:
       title: '📚 My Research'
       subtitle: ''
       text: |-
-        Use this area to speak to your mission. I'm a research scientist in the Moonshot team at DeepMind. I blog about machine learning, deep learning, and moonshots.
+        My research combines hydrology with artificial intelligence (AI) to analyze runoff variability on the Qinghai-Tibet Plateau. I use advanced AI techniques, including convolutional and recurrent neural networks, for predicting satellite precipitation. Currently, I focus on developing large-scale hydrological models and enhancing environmental modeling efficiency through automated data processing and algorithm design.
 
-        I apply a range of qualitative and quantitative methods to comprehensively investigate the role of science and technology in the economy.
+        I apply a range of AI methods to analyze and explain hydrological phenomena.
         
         Please reach out to collaborate 😃
     design:
@@ -53,6 +53,7 @@ sections:
     design:
       view: article-grid
       columns: 2
+<!-- 
   - block: collection
     content:
       title: Recent Publications
@@ -102,6 +103,7 @@ sections:
       # Reduce spacing
       spacing:
         padding: [0, 0, 0, 0]
+-->
   - block: cta-card
     demo: true # Only display this section in the Hugo Blox Builder demo site
     content:

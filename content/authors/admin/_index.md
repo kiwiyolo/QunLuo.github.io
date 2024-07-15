@@ -122,7 +122,7 @@ skills:
     color_border: '#f0bf23'
     items:
       - name: Run
-        description: 'I won many excellent places in the school sports meeting, including the first place in 4*100m, 4*400m, the fifth place in 100m, 200m and many other groups. He was the leader of the long running team of Beijing Normal University. On behalf of Beijing Normal University, he participated in inter-school competitions for many times, won the seventh place in the relay race of Peking University, participated in several marathons, and won the title of first-class athlete.'
+        description: 'I won many excellent places in the school sports meeting, including the first place in 4x100m, 4x400m, the fifth place in 100m, 200m and many other groups. He was the leader of the long running team of Beijing Normal University. On behalf of Beijing Normal University, he participated in inter-school competitions for many times, won the seventh place in the relay race of Peking University, participated in several marathons, and won Public Class I athlete title.'
         percent: 60
         icon: person-simple-walk
       - name: Frisbee
