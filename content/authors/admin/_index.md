@@ -113,6 +113,10 @@ skills:
         description: 'I am proficient in ArcGIS, with extensive experience in spatial data analysis, mapping, and geoprocessing. My skills include creating, managing, and analyzing geographic information, using tools like ArcMap and ArcGIS Online. I excel in applying GIS technology to solve complex spatial problems and visualize data effectively.'
         percent: 100
         icon: chart-bar
+      - name: SPHY
+        description: 'Spatial Process of Hydrology(SPHY) is a open app coded by python, which can be used to construct the conventional model with interpretability. The theory and knowledge included show the potential as a informed embedding on AI'
+        percent: 40
+        icon: circle-stack
       - name: SWMM & MODFLOW
         description: 'I am skilled in using hydrologic models such as SWMM and MODFLOW for water resource management and analysis. My expertise includes simulating stormwater, groundwater flow, and water quality. I can develop, calibrate, and validate models to assess hydrological processes and support decision-making in environmental and water resource projects.'
         percent: 40
