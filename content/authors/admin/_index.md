@@ -70,7 +70,7 @@ education:
     date_start: 2018-09-01
     date_end: 2022-07-31
     summary: |
-      GPA: 3.61/4.0
+      GPA: 3.71/4.0
       
       Courses included:
       - Equation of groundwater movement (97/100)
