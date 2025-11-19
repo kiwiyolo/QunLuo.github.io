@@ -2,14 +2,19 @@
 {{- $limit := .Get "limit" | default 4 -}}
 {{- $idParam := .Get "id" -}}
 {{- $pageID := "global" -}}
+{{- $counter := 1 -}}
 {{- with .Page -}}
   {{- with .File -}}
     {{- $pageID = printf "%x" (md5 .Path) -}}
   {{- else -}}
     {{- $pageID = printf "%x" (md5 .RelPermalink) -}}
   {{- end -}}
+  {{- $scratchKey := "ql-science-news-counter" -}}
+  {{- $current := .Scratch.Get $scratchKey | default 0 -}}
+  {{- $counter = add $current 1 -}}
+  {{- .Scratch.Set $scratchKey $counter -}}
 {{- end -}}
-{{- $elementID := cond (ne $idParam "") $idParam (printf "science-news-%s" $pageID) -}}
+{{- $elementID := cond (ne $idParam "") $idParam (printf "science-news-%s-%d" $pageID $counter) -}}
 <div class="ql-news-grid" id="{{ $elementID }}">
   <div class="loading">Loading latest science news…</div>
 </div>
@@ -54,5 +59,4 @@
       });
   })();
 </script>
-
 

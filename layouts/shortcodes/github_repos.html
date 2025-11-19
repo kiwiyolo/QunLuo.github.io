@@ -3,14 +3,19 @@
 {{- $limit := .Get "limit" | default 12 -}}
 {{- $idParam := .Get "id" -}}
 {{- $pageID := "global" -}}
+{{- $counter := 1 -}}
 {{- with .Page -}}
   {{- with .File -}}
     {{- $pageID = printf "%x" (md5 .Path) -}}
   {{- else -}}
     {{- $pageID = printf "%x" (md5 .RelPermalink) -}}
   {{- end -}}
+  {{- $scratchKey := "ql-github-repos-counter" -}}
+  {{- $current := .Scratch.Get $scratchKey | default 0 -}}
+  {{- $counter = add $current 1 -}}
+  {{- .Scratch.Set $scratchKey $counter -}}
 {{- end -}}
-{{- $elementID := cond (ne $idParam "") $idParam (printf "github-repos-%s" $pageID) -}}
+{{- $elementID := cond (ne $idParam "") $idParam (printf "github-repos-%s-%d" $pageID $counter) -}}
 <div class="github-repos ql-section" id="{{ $elementID }}" data-topic="{{ $topic }}">
   <div class="loading">Loading repositories…</div>
 </div>
@@ -66,5 +71,4 @@
       });
   })();
 </script>
-
 
