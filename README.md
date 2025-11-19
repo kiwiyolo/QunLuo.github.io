@@ -1,40 +1,80 @@
-# [Hugo Academic CV Theme](https://github.com/HugoBlox/theme-academic-cv)
-- 📚 [View the **Reference documentation**](https://docs.hugoblox.com/)
-[![Screenshot](.github/preview.webp)](https://hugoblox.com/templates/)
+# Qun Luo | Hydro-AI Notebook
 
-The Hugo **Academic CV Template** empowers you to easily create your job-winning online resumé, showcase your academic publications, and create online courses or knowledge bases to grow your audience.
+This repository hosts a customized Hugo (HugoBlox) site that tracks research, daily bilingual notes, open-source activity, and curated science news.
 
-[![Get Started](https://img.shields.io/badge/-Get%20started-ff4655?style=for-the-badge)](https://hugoblox.com/templates/)
-[![Discord](https://img.shields.io/discord/722225264733716590?style=for-the-badge)](https://discord.com/channels/722225264733716590/742892432458252370/742895548159492138)  
-[![Twitter Follow](https://img.shields.io/twitter/follow/GetResearchDev?label=Follow%20on%20Twitter)](https://twitter.com/GetResearchDev)
+## Highlights
 
-Easily write technical content with plain text Markdown, LaTeX math, diagrams, RMarkdown, or Jupyter, and import publications from BibTeX.
+- 🎨 **New layout + color system** — custom SCSS gradients, stat cards, and panel grids keep sections well defined.
+- 🌐 **Bilingual (EN/中文) routing** — `/` serves English, `/zh/` serves simplified Chinese with translated landing, blog, and log pages.
+- 🗒️ **Daily Lab Notes** — dedicated section (`content/post/daily-notes/`) for quick experiment updates, mirrored in Chinese when needed.
+- 📰 **Live science feed** — `latest_science_news` shortcode pulls from a configurable public API endpoint (default: Spaceflight News).
+- 💻 **GitHub repo wall** — `github_repos` shortcode lists every public repository dynamically via the GitHub API.
+- 💬 **Utterances comments** — automatically enabled on posts/projects; set `comments: false` per page to opt out.
+- ⚙️ **CI/CD ready** — GitHub Actions workflow builds and deploys to the `gh-pages` branch and can be triggered manually or on schedule.
 
-[Check out the latest demo](https://academic-demo.netlify.app/) of what you'll get in less than 10 minutes, or [get inspired by our academics and research groups](https://hugoblox.com/creators/).
+## Content Model
 
-The integrated [**Hugo Blox Builder**](https://hugoblox.com) and CMS makes it easy to create a beautiful website for free. Edit your site in the CMS (or your favorite editor), generate it with [Hugo](https://github.com/gohugoio/hugo), and deploy with GitHub or Netlify. Customize anything on your site with widgets, light/dark themes, and language packs.
+| Section | Location | Notes |
+| --- | --- | --- |
+| Homepage | `content/_index.md` & `content/zh/_index.md` | Controls hero, highlights, news, repo wall, contact block. |
+| Daily Lab Notes | `content/post/daily-notes/` | One folder per day (`hugo new post/daily-notes/<slug>/index.md`). |
+| Blogs | `content/Blog/` | Long-form essays; mirror under `content/zh/Blog/` if you need translations. |
+| Projects | `content/project/` | Displayed on `/projects` and `/zh/projects`. |
+| Publications | `content/publication/` and `content/zh/publication/` | Uses citation view. |
 
-- 👉 [**Get Started**](https://hugoblox.com/templates/)
-- 📚 [View the **documentation**](https://docs.hugoblox.com/)
-- 💬 [Chat with the **Hugo Blox Builder community**](https://discord.gg/z8wNYzb) or [**Hugo community**](https://discourse.gohugo.io)
-- 🐦 Twitter: [@GetResearchDev](https://twitter.com/GetResearchDev) [@GeorgeCushen](https://twitter.com/GeorgeCushen) [#MadeWithHugoBlox](https://twitter.com/search?q=%23MadeWithHugoBlox&src=typed_query)
-- ⬇️ **Automatically import your publications from BibTeX** with the [Hugo Academic CLI](https://github.com/GetRD/academic-file-converter)
-- 💡 [Suggest an improvement](https://github.com/HugoBlox/hugo-blox-builder/issues)
-- ⬆️ **Updating?** View the [Update Guide](https://docs.hugoblox.com/reference/update/) and [Release Notes](https://github.com/HugoBlox/hugo-blox-builder/releases)
+## Updating Content
 
-## We ask you, humbly, to support this open source movement
+1. **Daily note**
+   ```bash
+   hugo new post/daily-notes/2024-11-20-fieldtrip/index.md
+   ```
+   Fill the Markdown file; add `translationKey` if you plan to add a Chinese counterpart at `content/zh/post/daily-notes/...`.
 
-Today we ask you to defend the open source independence of the Hugo Blox Builder and themes 🐧
+2. **Blog post**
+   ```bash
+   hugo new Blog/my-new-post/index.md
+   ```
+   Include images/audio under the same folder. Optional `comments: false` disables Utterances for that page.
 
-We're an open source movement that depends on your support to stay online and thriving, but 99.9% of our creators don't give; they simply look the other way.
+3. **Science feed endpoint**
+   - Change `integrations.news_endpoint` in `config/_default/params.yaml`.
 
-### [❤️ Click here to become a Sponsor, unlocking awesome perks such as _exclusive academic templates and blocks_](https://hugoblox.com/sponsor/)
+4. **GitHub username/topic filter**
+   - Update `profile.github_username` and `integrations.repo_topic_filter` in the same params file.
 
-<!--
-<p align="center"><a href="https://hugoblox.com/templates/" target="_blank" rel="noopener"><img src="https://hugoblox.com/uploads/readmes/academic_logo_200px.png" alt="Hugo Academic Theme for Hugo Blox Builder"></a></p>
--->
+## Local Development
 
-## Demo image credits
+```bash
+hugo server -D
+```
 
-- [Unsplash](https://unsplash.com)
+Visit `http://localhost:1313/` (English) or `http://localhost:1313/zh/` (Chinese). Live reload picks up SCSS/shortcode changes automatically.
 
+## Deploying to GitHub Pages
+
+1. **Repository settings**
+   - Set default branch to `main`.
+   - Enable Pages → “Deploy from branch” → `gh-pages` and `/` directory (GitHub will create it on first deployment).
+
+2. **Secrets (optional)**
+   - The bundled workflow only needs the default `GITHUB_TOKEN`. Add other secrets if you integrate extra APIs.
+
+3. **Workflow**
+   - File: `.github/workflows/deploy.yml`
+   - Triggered on every push to `main`, manual dispatch, and a nightly cron (`02:00 UTC`) to refresh the science/news widgets.
+   - Steps: checkout → install Hugo → `hugo mod tidy` → `hugo --minify` → publish to `gh-pages` via `peaceiris/actions-gh-pages`.
+
+4. **Manual deployment**
+   ```bash
+   hugo --minify
+   npx gh-pages -d public
+   ```
+   (Only needed if you want to bypass Actions.)
+
+## Troubleshooting
+
+- **Rate-limited GitHub API** — unauthenticated requests allow ~60 calls/hour. Add a lightweight proxy or cache if needed.
+- **News source offline** — replace the endpoint with another JSON/RSS API under `params.integrations.news_endpoint`.
+- **Comments repo mismatch** — Utterances posts issues in `QunLuo/QunLuo.github.io`. Update `layouts/partials/hooks/body-end/comments.html` if you fork this project.
+
+Enjoy the automation! Open an issue if you hit a bug or want to extend the workflow.***

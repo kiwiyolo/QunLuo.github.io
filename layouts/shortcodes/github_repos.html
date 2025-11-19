@@ -1,0 +1,61 @@
+{{- $username := .Get "username" | default site.Params.profile.github_username -}}
+{{- $topic := .Get "topic" | default site.Params.integrations.repo_topic_filter -}}
+{{- $limit := .Get "limit" | default 12 -}}
+{{- $elementID := printf "github-repos-%s" (replace (lower $username) "." "-") -}}
+<div class="github-repos ql-section" id="{{ $elementID }}" data-topic="{{ $topic }}">
+  <div class="loading">Loading repositories…</div>
+</div>
+<script>
+  (function() {
+    const username = "{{ $username }}";
+    const limit = Number("{{ $limit }}");
+    const topicFilter = "{{ $topic }}".trim().toLowerCase();
+    const container = document.getElementById("{{ $elementID }}");
+    if (!container) return;
+
+    fetch(`https://api.github.com/users/${username}/repos?per_page=100&sort=updated`)
+      .then(resp => resp.json())
+      .then(repos => {
+        if (!Array.isArray(repos)) {
+          throw new Error('Unexpected GitHub response');
+        }
+
+        const filtered = repos
+          .filter(repo => !topicFilter || (repo.topics && repo.topics.map(t => t.toLowerCase()).includes(topicFilter)))
+          .slice(0, limit);
+
+        if (!filtered.length) {
+          container.innerHTML = '<div class="ql-panel">No public repositories were found for this filter.</div>';
+          return;
+        }
+
+        container.innerHTML = '';
+        const grid = document.createElement('div');
+        grid.className = 'ql-repo-grid';
+
+        filtered.forEach(repo => {
+          const card = document.createElement('article');
+          card.className = 'ql-repo-card';
+          card.innerHTML = `
+            <div class="ql-badge">${repo.private ? 'Private' : 'Public'}</div>
+            <h3><a href="${repo.html_url}" target="_blank" rel="noopener">${repo.name}</a></h3>
+            <p>${repo.description || 'No description provided.'}</p>
+            <div class="ql-repo-card__meta">
+              <span>★ ${repo.stargazers_count}</span>
+              ${repo.language ? `<span>${repo.language}</span>` : ''}
+              <span>Updated ${new Date(repo.updated_at).toLocaleDateString()}</span>
+            </div>
+          `;
+          grid.appendChild(card);
+        });
+
+        container.appendChild(grid);
+      })
+      .catch(error => {
+        console.error('GitHub API error', error);
+        container.innerHTML = '<div class="ql-panel">Unable to load repositories from GitHub right now.</div>';
+      });
+  })();
+</script>
+
+

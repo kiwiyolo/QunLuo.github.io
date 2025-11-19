@@ -1,0 +1,49 @@
+{{- $endpoint := .Get "endpoint" | default site.Params.integrations.news_endpoint -}}
+{{- $limit := .Get "limit" | default 4 -}}
+{{- $elementID := printf "science-news-%d" (now.UnixNano) -}}
+<div class="ql-news-grid" id="{{ $elementID }}">
+  <div class="loading">Loading latest science news…</div>
+</div>
+<script>
+  (function() {
+    const endpoint = "{{ $endpoint }}";
+    const limit = Number("{{ $limit }}");
+    const container = document.getElementById("{{ $elementID }}");
+    if (!container) return;
+
+    fetch(endpoint)
+      .then(resp => resp.json())
+      .then(payload => {
+        const items = Array.isArray(payload)
+          ? payload
+          : (payload.results || payload.articles || []);
+
+        if (!items.length) {
+          container.innerHTML = '<div class="ql-panel">Science feeds are quiet right now. Check back later!</div>';
+          return;
+        }
+
+        container.innerHTML = '';
+        items.slice(0, limit).forEach(article => {
+          const card = document.createElement('article');
+          card.className = 'ql-news-card';
+          const title = article.title || article.news_site || 'Science update';
+          const summary = article.summary || article.description || 'No summary available.';
+          const published = article.published_at || article.publishedAt || article.date || article.updated_at;
+          const url = article.url || article.link || '#';
+          card.innerHTML = `
+            <time datetime="${published || ''}">${published ? new Date(published).toLocaleString() : 'New'}</time>
+            <h3><a href="${url}" target="_blank" rel="noopener">${title}</a></h3>
+            <p>${summary}</p>
+          `;
+          container.appendChild(card);
+        });
+      })
+      .catch(err => {
+        console.error('News feed error', err);
+        container.innerHTML = '<div class="ql-panel">Could not contact the science news API. Please refresh later.</div>';
+      });
+  })();
+</script>
+
+

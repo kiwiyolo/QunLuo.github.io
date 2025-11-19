@@ -1,0 +1,21 @@
+{{- $page := . -}}
+{{- $globalEnabled := ne (site.Params.comments | default true) false -}}
+{{- $pageEnabled := ne ($page.Params.disable_comments | default false) true -}}
+{{- $sections := slice "post" "blog" "publication" "project" "daily-notes" -}}
+{{- if and $globalEnabled $pageEnabled (eq $page.Kind "page") (in $sections $page.Section) -}}
+<section class="section" id="comments">
+  <div class="container">
+    <h2>Join the discussion</h2>
+    <script src="https://utteranc.es/client.js"
+            repo="QunLuo/QunLuo.github.io"
+            issue-term="pathname"
+            label="💬 comment"
+            theme="preferred-color-scheme"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to load the comment section.</noscript>
+  </div>
+</section>
+{{- end -}}
+

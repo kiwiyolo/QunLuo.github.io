@@ -4,16 +4,16 @@
 # This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
 
 # Website name
-title: QunLuo. CV
+title: 'Qun Luo | Hydro-AI Notebook'
 # Website URL
-baseURL: 'https://example.com/'
+baseURL: 'https://qunluo.github.io/'
 
 ############################
 ## LANGUAGE
 ############################
 
 defaultContentLanguage: en
-hasCJKLanguage: false
+hasCJKLanguage: true
 defaultContentLanguageInSubdir: false
 removePathAccents: true
 

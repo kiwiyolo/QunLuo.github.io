@@ -5,8 +5,8 @@
 
 # Appearance
 appearance:
-  mode: system
-  color: emerald
+  mode: light
+  color: ocean
 
 # SEO
 marketing:
@@ -14,8 +14,8 @@ marketing:
     site_type: Person
     local_business_type: ''
     org_name: ''
-    description: 'The highly-customizable Hugo Academic theme powered by Hugo Blox Builder. Easily create your personal academic website.'
-    twitter: 'GetResearchDev'
+    description: 'Hydrology x AI research journal by Qun Luo featuring daily lab notes, open projects, and bilingual science updates.'
+    twitter: 'QunLuo'
   analytics:
     google_analytics: ''
     baidu_tongji: ''
@@ -58,3 +58,12 @@ features:
     enable: true
   privacy_pack:
     enable: true
+comments: true
+
+# Custom site parameters
+profile:
+  github_username: QunLuo
+  zenodo_id: ''
+integrations:
+  news_endpoint: 'https://api.spaceflightnewsapi.net/v4/articles/?limit=5'
+  repo_topic_filter: ''

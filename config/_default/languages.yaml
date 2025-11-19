@@ -5,18 +5,56 @@
 # Default language
 en:
   languageCode: en-us
-  # Uncomment for multi-lingual sites, and move English content into `en` sub-folder.
-  #contentDir: content/en
+  weight: 1
+  title: 'Qun Luo | Hydro-AI Notebook'
+  params:
+    description: 'Hydrology + AI research notebook capturing runoff modeling, field work, daily experiments, and community updates.'
+  menu:
+    main:
+      - name: Overview
+        url: /
+        weight: 10
+      - name: Projects
+        url: /projects/
+        weight: 20
+      - name: Daily Log
+        url: /post/daily-notes/
+        weight: 30
+      - name: Blog
+        url: /blogs/
+        weight: 40
+      - name: Publications
+        url: /publication/
+        weight: 50
+      - name: Contact
+        url: /#contact
+        weight: 60
 
-# Uncomment the lines below to configure your website in a second language.
+# Chinese localization
 zh:
- languageCode: zh-Hans
- contentDir: content/zh
- title: Chinese website title...
- params:
-   description: Site description in Chinese...
- menu:
-   main:
-     - name: 罗群
-       url: '#about'
-       weight: 1
+  languageCode: zh-Hans
+  weight: 2
+  contentDir: content/zh
+  title: '罗群 | 水文智能研究手记'
+  params:
+    description: '记录水文与人工智能交叉研究、项目协作、每日实验与开放资源的双语站点。'
+  menu:
+    main:
+      - name: 首页
+        url: /zh/
+        weight: 10
+      - name: 项目
+        url: /zh/projects/
+        weight: 20
+      - name: 日志
+        url: /zh/post/daily-notes/
+        weight: 30
+      - name: 博客
+        url: /zh/blogs/
+        weight: 40
+      - name: 论文
+        url: /zh/publication/
+        weight: 50
+      - name: 联系
+        url: /zh/#contact
+        weight: 60
