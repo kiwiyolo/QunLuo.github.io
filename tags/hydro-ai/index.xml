@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hydro-Ai | Qun Luo | Hydro-AI Notebook</title><link>https://qunluo.github.io/tags/hydro-ai/</link><atom:link href="https://qunluo.github.io/tags/hydro-ai/index.xml" rel="self" type="application/rss+xml"/><description>Hydro-Ai</description><generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Wed, 19 Nov 2025 18:30:00 +0800</lastBuildDate><image><url>https://qunluo.github.io/media/icon_hu7729264130191091259.png</url><title>Hydro-Ai</title><link>https://qunluo.github.io/tags/hydro-ai/</link></image><item><title>Science Sprint · 2025-11-19</title><link>https://qunluo.github.io/blog/2025-11-19-hydro-ai-news/</link><pubDate>Wed, 19 Nov 2025 18:30:00 +0800</pubDate><guid>https://qunluo.github.io/blog/2025-11-19-hydro-ai-news/</guid><description>&lt;blockquote>
+&lt;p>快速示范：下面这篇是我在 Cursor 里写的一篇“今日科学速记”。根据自己的信息替换内容，然后推送即可。&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="1-sentinel-1-flood-kernels-open-sourced">1. Sentinel-1 flood kernels open-sourced&lt;/h2>
+&lt;ul>
+&lt;li>ESA 的 AI for Earth 团队今天把 &lt;em>FloodSentry v2&lt;/em> kernels 开源到了 GitHub（MIT License），能把 Sentinel-1 的双极化信息直接转换成 10m 分辨率的淹没几率栅格。&lt;/li>
+&lt;li>我 fork 了一份，并加上了青藏高原 6 个示范流域的配置。只需要 6GB 显存即可跑完整条推理链，非常适合离线预警。&lt;/li>
+&lt;/ul>
+&lt;h2 id="2-noaa--gpt-4o-river-pilot">2. NOAA × GPT-4o river pilot&lt;/h2>
+&lt;ul>
+&lt;li>NOAA 宣布本月启动 GPT-4o 助理试点计划，用大语言模型解释 GFS/RAP/NWM 的不确定性。&lt;/li>
+&lt;li>我用他们的 &lt;code>river-qna&lt;/code> API 做了一个双语 prompt 样例，接入到本站的 Daily Lab Notes，以便访客可以查看解释。&lt;/li>
+&lt;/ul>
+&lt;h2 id="3-自己的实验">3. 自己的实验&lt;/h2>
+&lt;ul>
+&lt;li>在 Plateau operator 上把 SWAT 的基线 &lt;code>NSE=0.71&lt;/code> 提升到 &lt;code>0.76&lt;/code>，关键是加了 &lt;code>DEM slope^0.5&lt;/code> 作为注意力 bias。&lt;/li>
+&lt;li>明天准备把这个 bias 写成一个可复用的 PyTorch 模块，然后上传到 &lt;code>kiwiyolo/hydro-ops&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;h2 id="4-todo--分享">4. TODO &amp;amp; 分享&lt;/h2>
+&lt;ul>
+&lt;li>&lt;input disabled="" type="checkbox"> 写一篇更长的遥感指南，把 FloodSentry v2 的参数讲清楚&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> 整合 NOAA API 的 prompt，使其支持中文输出&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> 更新 GitHub Actions 缓存策略，减少部署时间&lt;/li>
+&lt;/ul>
+&lt;p>若你也想写日常速记：使用 &lt;code>hugo new Blog/&amp;lt;slug&amp;gt;/index.md&lt;/code> 生成模板，把 &lt;code>date/title/summary&lt;/code> 改一改，再 push 即可。&lt;/p></description></item></channel></rss>
