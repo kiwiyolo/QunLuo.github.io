@@ -1,26 +1,9 @@
 {{- $endpoint := .Get "endpoint" | default site.Params.integrations.news_endpoint -}}
 {{- $limit := .Get "limit" | default 4 -}}
-{{- $idParam := .Get "id" -}}
-{{- $pageID := "global" -}}
-{{- $counter := 1 -}}
-{{- $scratchKey := "ql-science-news-counter" -}}
-{{- $globalScratchKey := "ql-science-news-counter-global" -}}
-{{- if .Page -}}
-  {{- with .Page.File -}}
-    {{- $pageID = printf "%x" (md5 .Path) -}}
-  {{- else -}}
-    {{- $pageID = printf "%x" (md5 .RelPermalink) -}}
-  {{- end -}}
-  {{- $pageKey := printf "%s-%s" $scratchKey $pageID -}}
-  {{- $current := .Page.Scratch.Get $pageKey | default 0 -}}
-  {{- $counter = add $current 1 -}}
-  {{- .Page.Scratch.Set $pageKey $counter -}}
-{{- else -}}
-  {{- $current := site.Scratch.Get $globalScratchKey | default 0 -}}
-  {{- $counter = add $current 1 -}}
-  {{- site.Scratch.Set $globalScratchKey $counter -}}
+{{- $elementID := .Get "id" -}}
+{{- if not $elementID -}}
+  {{- errorf "latest_science_news shortcode requires an `id` parameter so DOM IDs remain stable. Usage: {{< latest_science_news id=\"news\" >}}." -}}
 {{- end -}}
-{{- $elementID := cond (ne $idParam "") $idParam (printf "science-news-%s-%d" $pageID $counter) -}}
 <div class="ql-news-grid" id="{{ $elementID }}">
   <div class="loading">Loading latest science news…</div>
 </div>

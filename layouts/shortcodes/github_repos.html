@@ -1,27 +1,10 @@
 {{- $username := .Get "username" | default site.Params.profile.github_username -}}
 {{- $topic := .Get "topic" | default site.Params.integrations.repo_topic_filter -}}
 {{- $limit := .Get "limit" | default 12 -}}
-{{- $idParam := .Get "id" -}}
-{{- $pageID := "global" -}}
-{{- $counter := 1 -}}
-{{- $scratchKey := "ql-github-repos-counter" -}}
-{{- $globalScratchKey := "ql-github-repos-counter-global" -}}
-{{- if .Page -}}
-  {{- with .Page.File -}}
-    {{- $pageID = printf "%x" (md5 .Path) -}}
-  {{- else -}}
-    {{- $pageID = printf "%x" (md5 .RelPermalink) -}}
-  {{- end -}}
-  {{- $pageKey := printf "%s-%s" $scratchKey $pageID -}}
-  {{- $current := .Page.Scratch.Get $pageKey | default 0 -}}
-  {{- $counter = add $current 1 -}}
-  {{- .Page.Scratch.Set $pageKey $counter -}}
-{{- else -}}
-  {{- $current := site.Scratch.Get $globalScratchKey | default 0 -}}
-  {{- $counter = add $current 1 -}}
-  {{- site.Scratch.Set $globalScratchKey $counter -}}
+{{- $elementID := .Get "id" -}}
+{{- if not $elementID -}}
+  {{- errorf "github_repos shortcode requires an `id` parameter so DOM IDs remain stable. Usage: {{< github_repos id=\"my-repos\" >}}." -}}
 {{- end -}}
-{{- $elementID := cond (ne $idParam "") $idParam (printf "github-repos-%s-%d" $pageID $counter) -}}
 <div class="github-repos ql-section" id="{{ $elementID }}" data-topic="{{ $topic }}">
   <div class="loading">Loading repositories…</div>
 </div>

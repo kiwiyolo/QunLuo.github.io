@@ -86,7 +86,7 @@ sections:
       title: Latest Science Watch
       text: |-
         <p class="ql-section-lead">A live feed of climate, hydrology, and earth-observation headlines pulled from public APIs. Refresh to fetch the newest stories.</p>
-        {{< latest_science_news limit="4" >}}
+        {{< latest_science_news id="science-feed-en" limit="4" >}}
     design:
       columns: '1'
 
@@ -96,7 +96,7 @@ sections:
       title: Open Source Stack
       text: |-
         <p class="ql-section-lead">Every public GitHub repository updates automatically. Use this as a living changelog of models, datasets, and visualization utilities.</p>
-        {{< github_repos limit="12" >}}
+        {{< github_repos id="github-wall-en" limit="12" >}}
     design:
       columns: '1'
 

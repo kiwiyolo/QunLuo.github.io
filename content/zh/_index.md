@@ -85,7 +85,7 @@ sections:
       title: 科研快讯
       text: |-
         <p class="ql-section-lead">从公开 API 实时抓取气候、水文与遥感新闻，刷新即可获取最新动态。</p>
-        {{< latest_science_news limit="4" >}}
+        {{< latest_science_news id="science-feed-zh" limit="4" >}}
     design:
       columns: '1'
 
@@ -95,7 +95,7 @@ sections:
       title: 开源仓库
       text: |-
         <p class="ql-section-lead">GitHub 公开仓库自动更新，用作模型、数据集与可视化工具的实时列表。</p>
-        {{< github_repos limit="12" >}}
+        {{< github_repos id="github-wall-zh" limit="12" >}}
     design:
       columns: '1'
 
