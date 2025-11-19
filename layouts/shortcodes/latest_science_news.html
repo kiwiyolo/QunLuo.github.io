@@ -3,16 +3,22 @@
 {{- $idParam := .Get "id" -}}
 {{- $pageID := "global" -}}
 {{- $counter := 1 -}}
-{{- with .Page -}}
-  {{- with .File -}}
+{{- $scratchKey := "ql-science-news-counter" -}}
+{{- $globalScratchKey := "ql-science-news-counter-global" -}}
+{{- if .Page -}}
+  {{- with .Page.File -}}
     {{- $pageID = printf "%x" (md5 .Path) -}}
   {{- else -}}
     {{- $pageID = printf "%x" (md5 .RelPermalink) -}}
   {{- end -}}
-  {{- $scratchKey := "ql-science-news-counter" -}}
-  {{- $current := .Scratch.Get $scratchKey | default 0 -}}
+  {{- $pageKey := printf "%s-%s" $scratchKey $pageID -}}
+  {{- $current := .Page.Scratch.Get $pageKey | default 0 -}}
   {{- $counter = add $current 1 -}}
-  {{- .Scratch.Set $scratchKey $counter -}}
+  {{- .Page.Scratch.Set $pageKey $counter -}}
+{{- else -}}
+  {{- $current := site.Scratch.Get $globalScratchKey | default 0 -}}
+  {{- $counter = add $current 1 -}}
+  {{- site.Scratch.Set $globalScratchKey $counter -}}
 {{- end -}}
 {{- $elementID := cond (ne $idParam "") $idParam (printf "science-news-%s-%d" $pageID $counter) -}}
 <div class="ql-news-grid" id="{{ $elementID }}">
