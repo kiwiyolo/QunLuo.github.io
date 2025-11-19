@@ -1,6 +1,15 @@
 {{- $endpoint := .Get "endpoint" | default site.Params.integrations.news_endpoint -}}
 {{- $limit := .Get "limit" | default 4 -}}
-{{- $elementID := printf "science-news-%d" (now.UnixNano) -}}
+{{- $idParam := .Get "id" -}}
+{{- $pageID := "global" -}}
+{{- with .Page -}}
+  {{- with .File -}}
+    {{- $pageID = printf "%x" (md5 .Path) -}}
+  {{- else -}}
+    {{- $pageID = printf "%x" (md5 .RelPermalink) -}}
+  {{- end -}}
+{{- end -}}
+{{- $elementID := cond (ne $idParam "") $idParam (printf "science-news-%s" $pageID) -}}
 <div class="ql-news-grid" id="{{ $elementID }}">
   <div class="loading">Loading latest science news…</div>
 </div>

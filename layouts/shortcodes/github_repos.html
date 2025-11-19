@@ -1,7 +1,16 @@
 {{- $username := .Get "username" | default site.Params.profile.github_username -}}
 {{- $topic := .Get "topic" | default site.Params.integrations.repo_topic_filter -}}
 {{- $limit := .Get "limit" | default 12 -}}
-{{- $elementID := printf "github-repos-%s" (replace (lower $username) "." "-") -}}
+{{- $idParam := .Get "id" -}}
+{{- $pageID := "global" -}}
+{{- with .Page -}}
+  {{- with .File -}}
+    {{- $pageID = printf "%x" (md5 .Path) -}}
+  {{- else -}}
+    {{- $pageID = printf "%x" (md5 .RelPermalink) -}}
+  {{- end -}}
+{{- end -}}
+{{- $elementID := cond (ne $idParam "") $idParam (printf "github-repos-%s" $pageID) -}}
 <div class="github-repos ql-section" id="{{ $elementID }}" data-topic="{{ $topic }}">
   <div class="loading">Loading repositories…</div>
 </div>
