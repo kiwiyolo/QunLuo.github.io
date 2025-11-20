@@ -5,10 +5,11 @@ This repository hosts a customized Hugo (HugoBlox) site that tracks research, da
 ## Highlights
 
 - 🎨 **New layout + color system** — custom SCSS gradients, stat cards, and panel grids keep sections well defined.
-- 🌐 **Bilingual (EN/中文) routing** — `/` serves English, `/zh/` serves simplified Chinese with translated landing, blog, and log pages.
+- 🌐 **Bilingual (EN/中文) routing** — `/` serves English, `/zh/` serves simplified Chinese with translated landing, blog, and log pages (shortcodes now require explicit `id=` parameters to guarantee stable DOM targets).
 - 🗒️ **Daily Lab Notes** — dedicated section (`content/post/daily-notes/`) for quick experiment updates, mirrored in Chinese when needed.
 - 📰 **Live science feed** — `latest_science_news` shortcode pulls from a configurable public API endpoint (default: Spaceflight News).
 - 💻 **GitHub repo wall** — `github_repos` shortcode lists every public repository dynamically via the GitHub API.
+- 🧭 **Knowledge directory panel** — `{{< info_matrix >}}` shows counts & last update timestamps for each major section, mirroring references like blog.kimbell.top.
 - 💬 **Utterances comments** — automatically enabled on posts/projects; set `comments: false` per page to opt out.
 - ⚙️ **CI/CD ready** — GitHub Actions workflow builds and deploys to the `gh-pages` branch and can be triggered manually or on schedule.
 
@@ -41,6 +42,9 @@ This repository hosts a customized Hugo (HugoBlox) site that tracks research, da
 
 4. **GitHub username/topic filter**
    - Update `profile.github_username` and `integrations.repo_topic_filter` in the same params file.
+
+5. **Directory/stats panel**
+   - The homepage drops in `{{< info_matrix >}}`. To customize sections or translations, edit `layouts/shortcodes/info_matrix.html`.
 
 ## Local Development
 

@@ -1,0 +1,45 @@
+{{/*
+  Info Matrix shortcode
+  Renders a grid summarizing key sections (counts, last update, links).
+  Usage: {{< info_matrix >}} or override defaults via named params if needed.
+*/}}
+{{- $sections := slice
+    (dict "title" "Daily Lab Notes" "path" "post/daily-notes" "url" "/post/daily-notes/" "emoji" "📝" "description" "Quick experiment snapshots")
+    (dict "title" "Blog Essays" "path" "Blog" "url" "/blogs/" "emoji" "📚" "description" "Long-form research & travel essays")
+    (dict "title" "Projects" "path" "project" "url" "/projects/" "emoji" "🛰️" "description" "Open-source + field deployments")
+    (dict "title" "Publications" "path" "publication" "url" "/publication/" "emoji" "📑" "description" "Peer-reviewed & preprints")
+    (dict "title" "Teaching" "path" "teaching" "url" "/teaching/" "emoji" "🎓" "description" "Courses & workshops")
+    (dict "title" "Events" "path" "event" "url" "/event/" "emoji" "📅" "description" "Talks & community updates")
+-}}
+<div class="ql-info-grid">
+  {{- range $sections }}
+    {{- $section := site.GetPage (printf "section/%s" .path) -}}
+    {{- $count := 0 -}}
+    {{- $updated := "" -}}
+    {{- if $section -}}
+      {{- $count = len $section.RegularPages -}}
+      {{- with (index (sort $section.RegularPages "Lastmod" "desc") 0) -}}
+        {{- $updated = .Lastmod.Format "2006-01-02" -}}
+      {{- end -}}
+    {{- end -}}
+    <article class="ql-info-card">
+      <div class="ql-info-card__icon">{{ .emoji }}</div>
+      <div class="ql-info-card__body">
+        <div class="ql-info-card__head">
+          <h3><a href="{{ .url }}">{{ .title }}</a></h3>
+          <span class="ql-badge">{{ $count }} entries</span>
+        </div>
+        <p>{{ .description }}</p>
+        <div class="ql-info-card__meta">
+          {{- if $updated }}
+            <span>Last update {{ $updated }}</span>
+          {{- else }}
+            <span>No entries yet</span>
+          {{- end }}
+          <a class="ql-link" href="{{ .url }}">Open directory →</a>
+        </div>
+      </div>
+    </article>
+  {{- end }}
+</div>
+

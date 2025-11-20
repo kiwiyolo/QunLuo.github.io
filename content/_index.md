@@ -100,6 +100,16 @@ sections:
     design:
       columns: '1'
 
+  - block: markdown
+    id: knowledge-map
+    content:
+      title: Knowledge Directory & Stats
+      text: |-
+        <p class="ql-section-lead">Browse every major collection—counts update automatically so you always know where work is happening.</p>
+        {{< info_matrix >}}
+    design:
+      columns: '1'
+
   - block: collection
     id: blog
     content:

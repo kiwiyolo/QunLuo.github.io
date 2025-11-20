@@ -62,7 +62,7 @@ comments: true
 
 # Custom site parameters
 profile:
-  github_username: QunLuo
+  github_username: kiwiyolo
   zenodo_id: ''
 integrations:
   news_endpoint: 'https://api.spaceflightnewsapi.net/v4/articles/?limit=5'

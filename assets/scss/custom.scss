@@ -176,4 +176,64 @@ body {
   color: #9fb4ff;
 }
 
+.ql-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.ql-info-card {
+  display: flex;
+  gap: 1rem;
+  padding: 1.25rem;
+  border-radius: 1.2rem;
+  background: var(--ql-surface);
+  border: 1px solid var(--ql-border);
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+}
+
+.dark .ql-info-card {
+  background: #0f172a;
+  border-color: rgba(226, 232, 240, 0.1);
+}
+
+.ql-info-card__icon {
+  font-size: 2rem;
+}
+
+.ql-info-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.ql-info-card__head h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.ql-info-card__meta {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: #475569;
+}
+
+.dark .ql-info-card__meta {
+  color: #cbd5f5;
+}
+
+.ql-link {
+  font-weight: 600;
+  color: var(--ql-secondary);
+}
+
+.ql-link:hover {
+  text-decoration: underline;
+}
+
 
