@@ -1,0 +1,36 @@
+{{- $sections := slice
+    (dict "title" "Blog Essays" "path" "Blog" "url" "/blogs/")
+    (dict "title" "Daily Lab Notes" "path" "post/daily-notes" "url" "/post/daily-notes/")
+    (dict "title" "Projects" "path" "project" "url" "/projects/")
+    (dict "title" "Publications" "path" "publication" "url" "/publication/")
+    (dict "title" "Teaching" "path" "teaching" "url" "/teaching/")
+    (dict "title" "Events" "path" "event" "url" "/event/")
+  -}}
+<div class="ql-dir-panel">
+  {{- range $sections -}}
+    {{- $sec := site.GetPage (printf "section/%s" .path) -}}
+    {{- $count := 0 -}}
+    {{- if $sec -}}
+      {{- $count = len $sec.RegularPages -}}
+    {{- end -}}
+    <div class="ql-dir-item">
+      <div class="ql-dir-head">
+        <h4><a href="{{ .url }}">{{ .title }}</a></h4>
+        <span class="ql-badge">{{ $count }} entries</span>
+      </div>
+      {{- if $sec -}}
+        {{- $subs := $sec.Sections -}}
+        {{- if gt (len $subs) 0 -}}
+          <ul class="ql-dir-sublist">
+            {{- range $subs -}}
+              <li>
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                <span class="ql-count">{{ len .RegularPages }}</span>
+              </li>
+            {{- end -}}
+          </ul>
+        {{- end -}}
+      {{- end -}}
+    </div>
+  {{- end -}}
+</div>

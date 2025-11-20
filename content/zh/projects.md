@@ -18,6 +18,14 @@ sections:
       view: article-grid
       fill_image: false
       columns: 3
+
+  - block: markdown
+    content:
+      title: 目录与统计
+      text: |
+        {{< directory_stats >}}
+    design:
+      columns: '1'
 ---
 
 

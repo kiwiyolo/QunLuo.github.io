@@ -1,8 +1,8 @@
 {{- $page := . -}}
 {{- $globalEnabled := ne (site.Params.comments | default true) false -}}
 {{- $pageEnabled := ne ($page.Params.disable_comments | default false) true -}}
-{{- $sections := slice "post" "blog" "publication" "project" "daily-notes" -}}
-{{- if and $globalEnabled $pageEnabled (eq $page.Kind "page") (in $sections $page.Section) -}}
+{{- $sections := slice "post" "blog" "publication" "project" "teaching" "event" -}}
+{{- if and $globalEnabled $pageEnabled (eq $page.Kind "page") (in $sections (lower $page.Section)) -}}
 <section class="section" id="comments">
   <div class="container">
     <h2>Join the discussion</h2>

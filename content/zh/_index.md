@@ -106,6 +106,7 @@ sections:
       text: |-
         <p class="ql-section-lead">快速浏览所有栏目，实时查看数量与最新更新时间，掌握研究节奏。</p>
         {{< info_matrix >}}
+        {{< directory_stats >}}
     design:
       columns: '1'
 

@@ -236,4 +236,75 @@ body {
   text-decoration: underline;
 }
 
+.ql-dir-panel {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.ql-dir-item {
+  background: var(--ql-surface);
+  border-radius: 1.1rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--ql-border);
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.06);
+}
+
+.dark .ql-dir-item {
+  background: #0f172a;
+  border-color: rgba(226, 232, 240, 0.12);
+}
+
+.ql-dir-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.ql-dir-head h4 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.ql-dir-sublist {
+  list-style: none;
+  margin: 0.75rem 0 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem 1rem;
+}
+
+.ql-dir-sublist li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px dashed var(--ql-border);
+  padding-top: 0.4rem;
+}
+
+.dark .ql-dir-sublist li {
+  border-color: rgba(226, 232, 240, 0.12);
+}
+
+.ql-dir-sublist a {
+  color: var(--ql-primary-dark);
+  font-weight: 600;
+}
+
+.dark .ql-dir-sublist a {
+  color: #9fb4ff;
+}
+
+.ql-count {
+  font-size: 0.82rem;
+  color: #64748b;
+}
+
+.dark .ql-count {
+  color: #cbd5f5;
+}
+
 

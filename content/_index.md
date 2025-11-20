@@ -107,6 +107,7 @@ sections:
       text: |-
         <p class="ql-section-lead">Browse every major collection—counts update automatically so you always know where work is happening.</p>
         {{< info_matrix >}}
+        {{< directory_stats >}}
     design:
       columns: '1'
 
