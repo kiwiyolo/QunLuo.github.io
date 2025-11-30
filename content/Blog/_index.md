@@ -1,7 +1,7 @@
 ---
-title: Teaching
-summary: My courses
-type: landing
+title: Blog
+summary: Essays and research notes
+type: section
 
 cascade:
   - _target:
@@ -11,13 +11,16 @@ cascade:
 
 sections:
   - block: collection
-    id: teaching
+    id: blog-list
     content:
-      title: Teaching
+      title: Blog Entries
       filters:
         folders:
-          - teaching
+          - Blog
+      sort_by: date
+      order: desc
     design:
       view: article-grid
-      columns: 2
+      fill_image: false
+      columns: 3
 ---

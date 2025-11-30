@@ -1,5 +1,17 @@
 
 
+---
+title: 语言选择与研究工作流
+summary: AI、地球科学与生态水文中的语言选择与协作工作流建议
+date: 2024-11-20
+tags:
+  - Research
+  - Workflow
+categories:
+  - Research
+comments: true
+---
+
 根据您的研究领域（AI、地球科学、生态水文）和需求描述，结合三种语言的特性，整理推荐优先级及优缺点如下：
 
 | 任务类型          | Matlab | R         | Python    | 优先推荐 |

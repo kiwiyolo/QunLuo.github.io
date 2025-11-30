@@ -28,4 +28,12 @@ sections:
         {{< directory_stats >}}
     design:
       columns: '1'
+
+  - block: markdown
+    content:
+      title: Open Source Repositories
+      text: |
+        {{< github_repos id="github-projects-en" limit="12" >}}
+    design:
+      columns: '1'
 ---

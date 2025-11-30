@@ -26,6 +26,14 @@ sections:
         {{< directory_stats >}}
     design:
       columns: '1'
+
+  - block: markdown
+    content:
+      title: 开源仓库
+      text: |
+        {{< github_repos id="github-projects-zh" limit="12" >}}
+    design:
+      columns: '1'
 ---
 
 

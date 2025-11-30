@@ -46,6 +46,7 @@ taxonomies:
   author: authors
   tag: tags
   publication_type: publication_types
+  category: categories
 markup:
   _merge: deep
   highlight:
