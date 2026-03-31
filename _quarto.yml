@@ -8,9 +8,9 @@ execute:
   freeze: auto
 
 website:
-  title: "Cecilia Baldoni"
+  title: "Qun Luo"
   site-url: https://kiwiyolo.github.io/QunLuo.github.io/
-  favicon: img/shrew.png
+  favicon: img/kiwi.png
   navbar:
     left:
       - text: "About"
