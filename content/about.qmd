@@ -1,0 +1,51 @@
+---
+title: ""
+class: page-research
+format:
+  html:
+    toc: false
+---
+
+::: {.page-icon}
+<img src="../img/icons/home.svg" alt="" aria-hidden="true">
+:::
+
+## About me
+
+```{=html}
+<div class="about-me" style="display:flex; align-items:center; gap:2rem;">
+  <img src="../img/BaldoniCecilia-long.jpg" class="about-me-img" style="border-radius:50%; max-width:200px;">
+  <div class="about-me-text">
+    <ul>
+      <li><strong>Scientist</strong></li>
+      <li>Enjoy designing and leading <strong>workshops</strong></li>
+      <li>Love connecting research <strong>ideas</strong> with everyday challenges</li>
+      <li>Obsessed with <strong>note-taking apps</strong></li>
+      <li>Always curious, always <strong>learning something new</strong></li>
+</ul>
+  </div>
+</div>
+```
+<br>
+
+> Scientific discovery is a social process: it depends as much on data as it does on the infrastructure used to share it.
+
+My work exists at the intersection of research, technical infrastructure, and community leadership.
+
+[My current work](shrews.qmd) centers on the cognitive compromises of the common shrew, a model species for studying brain size plasticity and behavior.
+
+I lead community initiatives that transform Open Science from a policy requirement into a practical workflow. This involves building the technical systems and professional networks necessary for digital collaboration. I love **facilitating workshops** and I focus on making **complex ideas accessible** and **connecting people** across fields. You can see examples of this in my [Talks & Workshops](talks.qmd) and [Projects](project.qmd) pages.
+
+Practicing [Open Science](open-science.qmd) is both a technical choice and a cultural one. I am committed to advancing transparency and reproducibility, ensuring data is not just "available" but actually usable.
+
+Here are a few highlights of my community impact so far:
+
+- Elected **representative** during my PhD and postdoc, giving voice to peers across departments
+- Leading the **SORTEE code club** and helping run the **R-Ladies blog**, nurturing inclusive spaces for data science
+- Part of The Turing Way’s community management working group, shaping best practices for open collaboration
+- **Translator** for the Raspberry Pi Foundation and **code editor** for PCI Ecology; helping global audiences access science and coding content
+- Workshop leader for **R programming** and **personal knowledge management**, demystifying tools to help others level up
+
+I’m always curious about new ways to connect people and ideas.
+
+If you want to collaborate, share ideas, or just have a friendly chat, feel free to [reach out](contact.qmd) or book some time to talk.

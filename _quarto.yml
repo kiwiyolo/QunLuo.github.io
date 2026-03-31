@@ -1,0 +1,108 @@
+project:
+  type: website
+  #output-dir: docs
+  resources:
+    - sitemap.xml
+
+execute:
+  freeze: auto
+
+website:
+  title: "Cecilia Baldoni"
+  site-url: https://kiwiyolo.github.io/QunLuo.github.io/
+  favicon: img/shrew.png
+  navbar:
+    left:
+      - text: "About"
+        href: content/about.qmd
+      - text: "Projects"
+        href: content/project.qmd
+      - text: "Blog"
+        href: blog/index.qmd
+      - text: "Contact"
+        href: content/contact.qmd
+
+    right:
+      - text: "{{< iconify fa6-brands:google-scholar >}}"
+        href: https://scholar.google.com/citations?user=mxM_Py8AAAAJ&hl=en&oi=sra
+      - text: "{{< iconify garden:bookmark-fill-12 >}}"
+        href: https://substack.com/@cecibaldoni
+      - text: "{{< iconify meteor-icons:bluesky >}}"
+        href: https://bsky.app/profile/cecibaldoni.bsky.social
+      - icon: instagram
+        href: https://www.instagram.com/cecibaldoni/?hl=en
+      - icon: github
+        href: https://github.com/cecibaldoni/
+      - icon: LinkedIn
+        href: https://www.linkedin.com/in/cecilia-baldoni/
+
+  page-footer: 
+    right: "Built with [Quarto](https://quarto.org/)"
+    left: |
+      <div>&copy; Copyright 2026, Cecilia Baldoni</div>
+
+      <div id="cookie-banner-placeholder"></div>
+      <style>
+        #cookie-banner {
+          position: fixed; bottom: 0; left: 0; width: 100%;
+          background-color: #6F4E37; color: #F3EDE2; padding: 15px 25px;
+          z-index: 1000; text-align: center; font-size: 0.9em;
+          box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+        }
+        #cookie-banner p { margin: 0; }
+        #cookie-banner a { color: #aed6ff; text-decoration: underline; margin-left: 10px; }
+        #cookie-banner button {
+          margin: 0 15px; padding: 5px 15px; border: none;
+          background-color: #F3EDE2; color: #A25B43; cursor: pointer; border-radius: 4px;
+          transition: background-color 0.3s ease, color 0.3s ease;
+        }
+      </style>
+      <script>
+        function loadGoogleAnalytics() {
+          const gascript = document.createElement("script");
+          gascript.async = true;
+          gascript.src = "https://www.googletagmanager.com/gtag/js?id=G-DV6K7C0XDV";
+          document.head.appendChild(gascript);
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-DV6K7C0XDV');
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+          if (localStorage.getItem("cookieAccepted") === "true") {
+            loadGoogleAnalytics();
+            return;
+          }
+          const bannerHTML = `
+            <div id="cookie-banner">
+              <p>
+                This website uses cookies for analytics. By clicking "OK", you agree to its use.
+                <button id="accept-cookies">OK</button>
+                <a href="privacy.html" class="cookie-link">(learn more)</a>
+              </p>
+            </div>`;
+          document.getElementById("cookie-banner-placeholder").innerHTML = bannerHTML;
+          
+          document.getElementById("accept-cookies").addEventListener("click", function () {
+            localStorage.setItem("cookieAccepted", "true");
+            document.getElementById("cookie-banner").remove();
+            loadGoogleAnalytics();
+          });
+        });
+      </script>
+    
+
+format:
+  html:
+    theme: custom.scss
+    toc: true
+    toc-depth: 3
+    navigation:
+      sidebar: false
+    meta:
+      description: "Personal website of Cecilia Baldoni"
+      author: "Cecilia Baldoni"
+      keywords: ["Cecilia Baldoni", "behavioral ecology", "neuroscience", "cognition", "science illustration", "science communication"]
+
+editor: source

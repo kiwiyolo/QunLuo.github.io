@@ -1,0 +1,51 @@
+---
+title: ""
+format:
+  html:
+    toc: false
+class: page-contact
+filters:
+  - fontawesome
+  - iconify
+---
+
+::: {.page-icon}
+<img src="../img/icons/contact.svg" alt="" aria-hidden="true">
+:::
+
+## Get in Touch
+
+**I would love to connect!**
+
+If you have questions, ideas for collaboration, or want to chat, here’s how to find me. I typically respond within 2 business days.
+
+### Email
+
+- 📧 [Email me at work](mailto:cbaldoni@ab.mpg.de)  
+- 🙋 [Email me personally](mailto:cecilia.baldons@gmail.com)
+
+### Connect with me on Social Media!
+
+<div class="social-icons">
+  <a href="https://github.com/cecibaldoni" aria-label="GitHub">{{< fa brands github >}}</a>
+  <a href="https://www.linkedin.com/in/cecilia-baldoni/" aria-label="LinkedIn">{{< fa brands linkedin >}}</a>
+  <a href="https://bsky.app/profile/cecibaldoni.bsky.social" aria-label="Bluesky">{{< fa brands bluesky >}}</a>
+  <a href="https://substack.com/@cecibaldoni" aria-label="Substack">{{< fa bookmark >}}</a>
+  <a href="https://ko-fi.com/cecibaldoni" aria-label="Ko-fi">{{< iconify simple-icons:kofi >}}</a>
+  <a href="https://www.instagram.com/cecibaldoni/?hl=en" aria-label="Instagram">{{< fa brands instagram >}}</a>
+</div>
+
+
+### Book a time to chat!
+
+
+📅 [Schedule time with me](https://calendar.app.google/Hb3sWw6NhEQoTWt3A) at your convenience using my Google Calendar.
+
+Here’s what to know:
+
+- Choose a time that fits your schedule (no need to wait for back-and-forth emails)
+- Great for  brainstorming sessions, or just a friendly catch-up
+- If you have any specific topic in mind, or you feel I should prepare something in advance, let me know through the Booking Form!
+- If you don’t see an open slot, just reach out by email and we’ll find another time!
+
+Looking forward to connecting!
