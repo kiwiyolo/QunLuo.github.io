@@ -240,7 +240,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Manual (Source vs.&nbsp;Deployed Site)</h1>
 <p>Current –&gt;&nbsp; gh-pa</p>
 <blockquote class="blockquote">
-<p>GitHub Pages 最终“显示哪一份 img/ 、 content/ …” 不取决于 main 里有没有这些目录 ，而是取决于你在仓库 Settings → Pages 里配置的“发布源”（Source）。</p>
+<h3 id="github-pages-最终显示哪一份-img-content-不取决于-main-里有没有这些目录-而是取决于你在仓库-settings-pages-里配置的发布源source" class="anchored">GitHub Pages 最终“显示哪一份 img/ 、 content/ …” 不取决于 main 里有没有这些目录 ，而是取决于你在仓库 Settings → Pages 里配置的“发布源”（Source）。</h3>
 <p>决定显示哪个的规则</p>
 <ul>
 <li>如果 Pages Source 选的是 gh-pages 分支（root 或 /docs）
@@ -253,10 +253,42 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>线上展示的是 main 分支对应目录里的文件 （通常是 docs/ 目录内的静态站点）。</li>
 <li>此时 gh-pages 分支即使有文件，也不会影响页面展示。</li>
 </ul></li>
-<li>如果你用 GitHub Actions 的 “Deploy to GitHub Pages” 新流程
+<li>如果你用 GitHub Actions 的 “Deploy to GitHub Pages” 新流程</li>
+</ul>
+<p>Pages 展示的是 workflow 生成的 artifact（内部仍会落到 Pages 的发布源），核心依然是“Pages Source 指向哪里”</p>
+<h4 id="用-main-和-gh-pages-两个分支你说的两个库本质是-同一个-repo-的两个分支-的核心原因是-把源代码可编辑内容和构建产物可部署静态文件彻底分离-避免互相污染也方便自动化部署" class="anchored">用 main 和 gh-pages 两个分支（你说的“两个库”本质是 同一个 repo 的两个分支 ）的核心原因是： 把“源代码/可编辑内容”和“构建产物/可部署静态文件”彻底分离 ，避免互相污染、也方便自动化部署。</h4>
+<p>为什么要分 main / gh-pages</p>
 <ul>
-<li>Pages 展示的是 workflow 生成的 artifact（内部仍会落到 Pages 的发布源），核心依然是“Pages Source 指向哪里”</li>
+<li>main 放源文件 ： .qmd 、 _quarto.yml 、 content/ 、 blog/ 、 img/ （原始素材）、样式文件、workflow 等，适合协作、review、长期维护。</li>
+<li>gh-pages 放构建结果 ： index.html 、 content/*.html 、 site_libs/ 、 search.json 、 sitemap.xml 等，给 GitHub Pages 直接拿来“静态托管”。</li>
+<li>分离的好处
+<ul>
+<li>main 变更清晰：你只在源文件上改，不会被大量自动生成的 HTML/依赖文件淹没 diff。</li>
+<li>gh-pages 可随时重建：产物坏了就重新 render 再发布，不影响源历史。</li>
+<li>repo 不容易膨胀：产物体积通常很大，放在单独分支更可控。 怎么管理区分（推荐的规则）</li>
 </ul></li>
+<li>唯一编辑入口：只改 main
+<ul>
+<li>日常只在 G:_website_kiwi.github.io 里编辑并 git commit 到 main 。</li>
+<li>不要手工在 gh-pages 分支里改 HTML（除非紧急救火且你知道后果）。</li>
+</ul></li>
+<li>gh-pages 只由流水线生成
+<ul>
+<li>你已经有 .github/workflows/publish.yml ，它会在 main push 后自动把产物发布到 gh-pages 。</li>
+<li>这样 gh-pages 变成“只读产物分支”，你只管改源、push，部署交给 Actions。</li>
+</ul></li>
+<li>目录层面怎么理解
+<ul>
+<li>QunLuo.github.io/ ：源（对应 main ）</li>
+<li>QunLuo.github.io-gh-pages/ ：本地的一份“gh-pages 将要包含的内容”的输出目录（不建议把它合进 main 提交） 避免搞混的操作习惯</li>
+</ul></li>
+<li>永远在源目录执行 git 操作（commit/push）：
+<ul>
+<li>cd G:_website_kiwi.github.io</li>
+<li>git status 确认你在 main 分支</li>
+</ul></li>
+<li>想看线上最终效果，就去看 gh-pages 分支内容或 Pages 网址；不要把产物当源来改。</li>
+<li>如果你确实需要“手动发布”（例如 Actions 不可用），才临时把 QunLuo.github.io-gh-pages 强推到远端 gh-pages ，并把它当作一次性的发布动作。 一句话总结： main 是你写作/开发的工作区；gh-pages 是机器生成的发布区 。只要你坚持“只改 main、gh-pages 自动生成”，就不会乱。</li>
 </ul>
 </blockquote>
 <section id="project-overview" class="level2">
@@ -585,28 +617,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Edit source in <code>QunLuo.github.io/</code></li>
 <li>Commit and push to <code>main</code></li>
 <li>GitHub Actions runs and updates <code>gh-pages</code></li>
-<li>Ensure repo Pages settings:
-<ul>
-<li>Settings → Pages → Source: “Deploy from a branch”</li>
-<li>Branch: <code>gh-pages</code> / <code>(root)</code></li>
-</ul></li>
 </ul>
+<p>Ensure repo Pages settings:</p>
+<pre><code>cd G:\lq\personal_website_kiwi\QunLuo.github.io
+
+git status
+git add -A
+git commit -m "content: update icon\"
+
+git remote set-url origin https://github.com/kiwiyolo/QunLuo.github.io.git
+git push -u origin main</code></pre>
 </section>
 <section id="deployment-approach-b-manually-push-qunluo.github.io-gh-pages-to-gh-pages" class="level3">
 <h3 class="anchored" data-anchor-id="deployment-approach-b-manually-push-qunluo.github.io-gh-pages-to-gh-pages">5.3 Deployment approach B: Manually push <code>QunLuo.github.io-gh-pages/</code> to <code>gh-pages</code></h3>
 <p>Use this if you already have the rendered output and want to publish it directly.</p>
 <p>PowerShell example (will overwrite remote <code>gh-pages</code> contents):</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cd</span> G<span class="op">:</span>\lq\personal_website_kiwi\QunLuo<span class="op">.</span><span class="fu">github</span><span class="op">.</span><span class="fu">io</span><span class="op">-</span>gh-pages</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>git init</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>git checkout <span class="op">-</span>B gh-pages</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>git add <span class="op">-</span>A</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>git commit <span class="op">-</span>m <span class="st">"Deploy site"</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>git remote remove origin <span class="dv">2</span><span class="op">&gt;</span><span class="va">$null</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>git remote add origin https<span class="op">://</span>github<span class="op">.</span><span class="fu">com</span><span class="op">/</span>kiwiyolo<span class="op">/</span>QunLuo<span class="op">.</span><span class="fu">github</span><span class="op">.</span><span class="fu">io</span><span class="op">.</span><span class="fu">git</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>git push <span class="op">-</span>f origin HEAD<span class="op">:</span>gh-pages</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cd</span> G<span class="op">:</span>\lq\personal_website_kiwi\QunLuo<span class="op">.</span><span class="fu">github</span><span class="op">.</span><span class="fu">io</span><span class="op">-</span>gh-pages</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>git init</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>git checkout <span class="op">-</span>B gh-pages</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>git add <span class="op">-</span>A</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>git commit <span class="op">-</span>m <span class="st">"Deploy site"</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>git remote remove origin <span class="dv">2</span><span class="op">&gt;</span><span class="va">$null</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>git remote add origin https<span class="op">://</span>github<span class="op">.</span><span class="fu">com</span><span class="op">/</span>kiwiyolo<span class="op">/</span>QunLuo<span class="op">.</span><span class="fu">github</span><span class="op">.</span><span class="fu">io</span><span class="op">.</span><span class="fu">git</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>git push <span class="op">-</span>f origin HEAD<span class="op">:</span>gh-pages</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="local-rendering-optional" class="level3">
 <h3 class="anchored" data-anchor-id="local-rendering-optional">5.4 Local rendering (optional)</h3>
@@ -614,8 +650,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>If <code>quarto</code> is not available on your machine (e.g., PowerShell says it cannot find the command), install Quarto first.</li>
 <li>Typical local build commands:</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cd</span> G<span class="op">:</span>\lq\personal_website_kiwi\QunLuo<span class="op">.</span><span class="fu">github</span><span class="op">.</span><span class="fu">io</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>quarto render</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cd</span> G<span class="op">:</span>\lq\personal_website_kiwi\QunLuo<span class="op">.</span><span class="fu">github</span><span class="op">.</span><span class="fu">io</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>quarto render</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Quarto output may appear in a <code>_site/</code> directory depending on project settings (do not assume it exists unless you render locally).</p>
 </section>
 </section>
@@ -647,7 +683,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Verify with:</li>
 </ul></li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>ssh <span class="op">-</span>T git@github<span class="op">.</span><span class="fu">com</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>ssh <span class="op">-</span>T git@github<span class="op">.</span><span class="fu">com</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="repo-size-and-large-output-artifacts" class="level3">
 <h3 class="anchored" data-anchor-id="repo-size-and-large-output-artifacts">6.3 Repo size and large output artifacts</h3>
