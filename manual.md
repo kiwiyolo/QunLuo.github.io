@@ -2,7 +2,7 @@
 
 Current -->  gh-pa
 
-> GitHub Pages 最终“显示哪一份 img/ 、 content/ …” 不取决于 main 里有没有这些目录 ，而是取决于你在仓库 Settings → Pages 里配置的“发布源”（Source）。
+> ### GitHub Pages 最终“显示哪一份 img/ 、 content/ …” 不取决于 main 里有没有这些目录 ，而是取决于你在仓库 Settings → Pages 里配置的“发布源”（Source）。
 >
 > 决定显示哪个的规则
 >
@@ -13,7 +13,36 @@ Current -->  gh-pa
 >   - 线上展示的是 main 分支对应目录里的文件 （通常是 docs/ 目录内的静态站点）。
 >   - 此时 gh-pages 分支即使有文件，也不会影响页面展示。
 > - 如果你用 GitHub Actions 的 “Deploy to GitHub Pages” 新流程
->   - Pages 展示的是 workflow 生成的 artifact（内部仍会落到 Pages 的发布源），核心依然是“Pages Source 指向哪里”
+>
+> Pages 展示的是 workflow 生成的 artifact（内部仍会落到 Pages 的发布源），核心依然是“Pages Source 指向哪里”
+>
+> #### 用 main 和 gh-pages 两个分支（你说的“两个库”本质是 同一个 repo 的两个分支 ）的核心原因是： 把“源代码/可编辑内容”和“构建产物/可部署静态文件”彻底分离 ，避免互相污染、也方便自动化部署。
+>
+> 为什么要分 main / gh-pages
+>
+> - main 放源文件 ： .qmd 、 \_quarto.yml 、 content/ 、 blog/ 、 img/ （原始素材）、样式文件、workflow 等，适合协作、review、长期维护。
+> - gh-pages 放构建结果 ： index.html 、 content/\*.html 、 site\_libs/ 、 search.json 、 sitemap.xml 等，给 GitHub Pages 直接拿来“静态托管”。
+> - 分离的好处
+>   - main 变更清晰：你只在源文件上改，不会被大量自动生成的 HTML/依赖文件淹没 diff。
+>   - gh-pages 可随时重建：产物坏了就重新 render 再发布，不影响源历史。
+>   - repo 不容易膨胀：产物体积通常很大，放在单独分支更可控。
+>     怎么管理区分（推荐的规则）
+> - 唯一编辑入口：只改 main
+>   - 日常只在 G:\lq\personal\_website\_kiwi\QunLuo.github.io 里编辑并 git commit 到 main 。
+>   - 不要手工在 gh-pages 分支里改 HTML（除非紧急救火且你知道后果）。
+> - gh-pages 只由流水线生成
+>   - 你已经有 .github/workflows/publish.yml ，它会在 main push 后自动把产物发布到 gh-pages 。
+>   - 这样 gh-pages 变成“只读产物分支”，你只管改源、push，部署交给 Actions。
+> - 目录层面怎么理解
+>   - QunLuo.github.io/ ：源（对应 main ）
+>   - QunLuo.github.io-gh-pages/ ：本地的一份“gh-pages 将要包含的内容”的输出目录（不建议把它合进 main 提交）
+>     避免搞混的操作习惯
+> - 永远在源目录执行 git 操作（commit/push）：
+>   - cd G:\lq\personal\_website\_kiwi\QunLuo.github.io
+>   - git status 确认你在 main 分支
+> - 想看线上最终效果，就去看 gh-pages 分支内容或 Pages 网址；不要把产物当源来改。
+> - 如果你确实需要“手动发布”（例如 Actions 不可用），才临时把 QunLuo.github.io-gh-pages 强推到远端 gh-pages ，并把它当作一次性的发布动作。
+>   一句话总结： main 是你写作/开发的工作区；gh-pages 是机器生成的发布区 。只要你坚持“只改 main、gh-pages 自动生成”，就不会乱。
 
 ## 1. Project Overview
 
@@ -259,9 +288,19 @@ categories: [Category1, Category2]
 - Edit source in `QunLuo.github.io/`
 - Commit and push to `main`
 - GitHub Actions runs and updates `gh-pages`
-- Ensure repo Pages settings:
-  - Settings → Pages → Source: “Deploy from a branch”
-  - Branch: `gh-pages` / `(root)`
+
+Ensure repo Pages settings:
+
+```
+cd G:\lq\personal_website_kiwi\QunLuo.github.io
+
+git status
+git add -A
+git commit -m "content: update icon\"
+
+git remote set-url origin https://github.com/kiwiyolo/QunLuo.github.io.git
+git push -u origin main
+```
 
 ### 5.3 Deployment approach B: Manually push `QunLuo.github.io-gh-pages/` to `gh-pages`
 
