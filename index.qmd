@@ -10,11 +10,11 @@ include-after-body:
     </style>
 ---
 
-# Cecilia Baldoni
+# Qun Luo
 
 <br>
 
-<img src="img/back.JPG" alt="" style="width: 40%; float: left; margin-right: 40px;"/>
+<img src="img/running.jpg" alt="" style="width: 40%; float: left; margin-right: 40px;"/>
 
 I am a researcher at the [Max Planck Institute of Animal Behaviour](https://www.ab.mpg.de/) where I explore how brain and environment shape how animals think.<br><br>
 
