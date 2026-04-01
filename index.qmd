@@ -14,7 +14,7 @@ include-after-body:
 
 <br>
 
-<img src="img/running.jpg" alt="" style="width: 60%; float: left; margin-right: 40px;"/>
+<img src="img/running.jpg" alt="" style="width: 40%; float: left; margin-right: 40px;"/>
 
 ```{=html}
 <p><strong>Earth System × AI × Interpretability.</strong> I build data-informed runoff forecasts for the Qinghai–Tibet Plateau, automate remote-sensing pipelines, and prototype interpretable neural operators so we can move between models and field notes quickly.</p>
@@ -33,7 +33,7 @@ include-after-body:
 
 ```{=html}
 <div class="city-wrapper">
-  <div class="city-layer" style="transform: rotate(30deg); transform-origin: 50% 50%;">
+  <div class="city-layer">
     <img src="img/ceci-city.svg" alt="City background" class="city-background">
 
     <a href="content/contact.qmd" class="city-icon icon-contact">
