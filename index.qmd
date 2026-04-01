@@ -14,11 +14,17 @@ include-after-body:
 
 <br>
 
-<img src="img/running.jpg" alt="" style="width: 40%; float: left; margin-right: 40px;"/>
+<img src="img/running.jpg" alt="" style="width: 60%; float: left; margin-right: 40px;"/>
 
-I am a researcher at the [Max Planck Institute of Animal Behaviour](https://www.ab.mpg.de/) where I explore how brain and environment shape how animals think.<br><br>
-
-Beyond the lab, I lead community operations and open science initiatives. My work focuses on building the technical systems and professional networks that allow researchers to share knowledge and automate their workflows at scale.
+```{=html}
+<p><strong>Earth System × AI × Interpretability.</strong> I build data-informed runoff forecasts for the Qinghai–Tibet Plateau, automate remote-sensing pipelines, and prototype interpretable neural operators so we can move between models and field notes quickly.</p>
+<ul class="ql-highlight-metrics">
+  <li>6+ basin-scale AI models</li>
+  <li>40+ awards & fellowships</li>
+  <li>3 patents / software copyrights</li>
+  <li>Daily bilingual research logs</li>
+</ul>
+```
 
 **Dive into the interactive city below to explore my projects, workshops, open science efforts, and community activities**.<br><br>
 <br>
@@ -27,7 +33,7 @@ Beyond the lab, I lead community operations and open science initiatives. My wor
 
 ```{=html}
 <div class="city-wrapper">
-  <div class="city-layer">
+  <div class="city-layer" style="transform: rotate(30deg); transform-origin: 50% 50%;">
     <img src="img/ceci-city.svg" alt="City background" class="city-background">
 
     <a href="content/contact.qmd" class="city-icon icon-contact">

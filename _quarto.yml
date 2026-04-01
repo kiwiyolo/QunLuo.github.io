@@ -24,17 +24,17 @@ website:
 
     right:
       - text: "{{< iconify fa6-brands:google-scholar >}}"
-        href: https://scholar.google.com/citations?user=mxM_Py8AAAAJ&hl=en&oi=sra
-      - text: "{{< iconify garden:bookmark-fill-12 >}}"
-        href: https://substack.com/@cecibaldoni
-      - text: "{{< iconify meteor-icons:bluesky >}}"
-        href: https://bsky.app/profile/cecibaldoni.bsky.social
+        href: https://scholar.google.com/citations?hl=en&user=OVagKRoAAAAJ
+      # - text: "{{< iconify garden:bookmark-fill-12 >}}"
+      #   href: https://substack.com/@cecibaldoni
+      # - text: "{{< iconify meteor-icons:bluesky >}}"
+      #   href: https://bsky.app/profile/cecibaldoni.bsky.social
       - icon: instagram
-        href: https://www.instagram.com/cecibaldoni/?hl=en
+        href: https://www.instagram.com/qunluo.kiwi/?hl=en
       - icon: github
-        href: https://github.com/cecibaldoni/
+        href: https://github.com/kiwiyolo/
       - icon: LinkedIn
-        href: https://www.linkedin.com/in/cecilia-baldoni/
+        href: https://www.linkedin.com/in/qun-luo-87b52b328/
 
   page-footer: 
     right: "Built with [Quarto](https://quarto.org/)"
@@ -101,8 +101,8 @@ format:
     navigation:
       sidebar: false
     meta:
-      description: "Personal website of Cecilia Baldoni"
-      author: "Cecilia Baldoni"
-      keywords: ["Cecilia Baldoni", "behavioral ecology", "neuroscience", "cognition", "science illustration", "science communication"]
+      description: "Personal website of Qun Luo"
+      author: "Qun Luo"
+      keywords: ["Qun Luo", "AI", "Ocean-Atmosphere", "Earth System", "Forecast", "Interpretability"]
 
 editor: source
