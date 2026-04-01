@@ -1,0 +1,20 @@
+---
+title: "What To Do in the Era of Automated Research"
+description: "A short reflection on how automated research workflows may reshape scientific practice, and what we can do to stay grounded, useful, and honest."
+date: 2026-04-01
+image: img/AI-Scientist-v2.png
+categories: [AI, Workflow]
+---
+This is the first post on my rebuilt personal website. It is intentionally short and a bit raw: a snapshot of what I have been thinking about most recently.
+
+## Questions I keep returning to
+
+- Can automated research workflows change how we *choose* questions, not just how we *answer* them?
+- What should we do (practically, ethically, career-wise) during this transition period?
+- Where do we position ourselves in the AI era: tool builders, tool users, reviewers, field scientists, theorists, or translators between them?
+- What is still meaningful work in the 21st century when “output” becomes cheap?
+
+![An example of a fully automated research workflow: [AI-Scientist-v2](https://github.com/SakanaAI/AI-Scientist-v2/tree/main) by Sakana AI.](img/AI-Scientist-v2.png)
+
+> The meaning of research is not to make research meaningless.  
+> Our mission is to locate ourselves honestly within each stage of a field’s development.
