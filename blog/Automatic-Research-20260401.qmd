@@ -18,3 +18,39 @@ This is the first post on my rebuilt personal website. It is intentionally short
 
 > The meaning of research is not to make research meaningless.  
 > Our mission is to locate ourselves honestly within each stage of a field’s development.
+
+The essence of scientific research is turning the unknown into reliable knowledge. In practice, it is a human process of generating new, reasonable, and useful claims on top of what we already know.
+
+Most fields still share a similar loop:
+
+- Study the literature and context
+- Find a question worth asking
+- Form a hypothesis (or a model of what might be true)
+- Design experiments/observations and collect evidence
+- Analyze, interpret, and draw conclusions
+- Write (paper, code, lab notes) and publish/review
+- Communicate, reflect, and iterate
+
+Now ask yourself: which parts can you do better than AI today, and which parts could you do better after learning to work with AI well?
+
+My current answer is: *taste* and *judgment* still matter most. Not only “scientific taste”, but also the ability to sense what different audiences need and value, and to translate between them.
+
+One framing I like is:
+
+- **To P (peers):** rigorous contributions that hold up under scrutiny
+- **To B (business):** reliable systems that create measurable value
+- **To C (clients/users):** solutions that reduce friction and fit real workflows
+- **To H (humans):** meaning, trust, and a sense of direction
+
+Automation may replace many research *processes*, but “what counts as excellent research” is not fixed. It changes over time, and it also becomes a moving target for AI training. That is exactly where we should learn to stand: defining goals, updating standards, and staying honest about trade-offs.
+
+To make work meaningful, we still need to do the basics well at each stage and in each role. Here is a simple metaphor:
+
+> As an advisor: keep strategic control.  
+> AI can optimize processes toward a goal, but it cannot decide the *ultimate* goal over the long term.
+>
+> As a general: turn strategy into workable tactics.  
+> AI can help refine steps, but humans still need to translate high-level aims into operational plans.
+>
+> As a soldier: execute with discipline.  
+> As a PhD researcher, building a reliable workflow for your own field is urgent and personal: no one understands your constraints better than you.
