@@ -45,7 +45,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-38c54fc556623389c5605ee5a3e1d22c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-1521da6fadcd3c31bf6bde33a3baee60.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
@@ -103,6 +103,35 @@ ul.task-list li input[type="checkbox"] {
     }
   })
   </script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async="" defer=""></script>
+<script>
+  // ==========================================
+  // CONFIGURATION: Set your Supabase Edge Function URL here
+  // Note: Only the base URL is needed, the specific endpoints will be appended
+  // ==========================================
+  const SUPABASE_FUNCTIONS_URL = "https://fracycwtkurcimbwcvjz.supabase.co/functions/v1";
+  
+  window.__ql_turnstile_token = null;
+  function qlOnTurnstileSuccess(token) {
+    window.__ql_turnstile_token = token;
+    document.querySelectorAll(".ql-turnstile-token").forEach((el) => {
+      el.value = token;
+    });
+  }
+
+  function getDeviceId() {
+    let id = localStorage.getItem("ql_device_id");
+    if (!id) {
+      id = "device_" + Math.random().toString(36).substring(2) + Date.now().toString(36);
+      localStorage.setItem("ql_device_id", id);
+    }
+    return id;
+  }
+
+  function getPostSlug() {
+    return window.location.pathname.replace(/^\/QunLuo\.github\.io\//, '').replace(/^\//, '').replace(/\.html$/, '');
+  }
+</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -171,6 +200,10 @@ window.Quarto = {
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../subscribe.html"> 
+<span class="menu-text">Subscribe</span></a>
+  </li>  
   <li class="nav-item">
     <a class="nav-link" href="https://scholar.google.com/citations?hl=en&amp;user=OVagKRoAAAAJ"> 
 <span class="menu-text"><iconify-icon role="img" inline="" icon="fa6-brands:google-scholar" aria-label="Icon google-scholar from fa6-brands Iconify.design set." title="Icon google-scholar from fa6-brands Iconify.design set."></iconify-icon></span></a>
@@ -241,7 +274,7 @@ window.Quarto = {
     </div>
 </div>
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="QUklMkNXb3JrZmxvdw==" data-listing-date-sort="1775001600000" data-listing-file-modified-sort="1775103358668" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="458">
+<div class="quarto-post image-right" data-index="0" data-categories="QUklMkNXb3JrZmxvdw==" data-listing-date-sort="1775001600000" data-listing-file-modified-sort="1775202503000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="458">
 <div class="thumbnail"><a href="../blog/Automatic-Research-20260401.html" class="no-external">
 
 <img loading="lazy" src="../blog/img/AI-Scientist-v2.png" class="thumbnail-image">
@@ -270,7 +303,7 @@ window.Quarto = {
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="bm90ZS10YWtpbmclMkNQS00lMkNwcm9qZWN0JTIwbWFuYWdlbWVudA==" data-listing-date-sort="1774310400000" data-listing-file-modified-sort="1775103358782" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1569">
+<div class="quarto-post image-right" data-index="1" data-categories="bm90ZS10YWtpbmclMkNQS00lMkNwcm9qZWN0JTIwbWFuYWdlbWVudA==" data-listing-date-sort="1774310400000" data-listing-file-modified-sort="1775202503115" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1569">
 <div class="thumbnail"><a href="../blog/project-management.html" class="no-external">
 
 <img loading="lazy" src="../blog/img/moria.png" class="thumbnail-image">
@@ -301,7 +334,7 @@ window.Quarto = {
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="cmVhZGluZw==" data-listing-date-sort="1767139200000" data-listing-file-modified-sort="1775103358668" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2037">
+<div class="quarto-post image-right" data-index="2" data-categories="cmVhZGluZw==" data-listing-date-sort="1767139200000" data-listing-file-modified-sort="1775202503000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2037">
 <div class="thumbnail"><a href="../blog/half-a-year-of-reading.html" class="no-external">
 
 <p class="card-img-top"><img loading='lazy' src="img/book-covers/waxler1.jpeg"  class="thumbnail-image card-img"/></p>
@@ -328,7 +361,7 @@ window.Quarto = {
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="bWljcm9ibG9nZ2luZyUyQ25vdGUtdGFraW5n" data-listing-date-sort="1765756800000" data-listing-file-modified-sort="1775103358668" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="328">
+<div class="quarto-post image-right" data-index="3" data-categories="bWljcm9ibG9nZ2luZyUyQ25vdGUtdGFraW5n" data-listing-date-sort="1765756800000" data-listing-file-modified-sort="1775202503000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="328">
 <div class="thumbnail"><a href="../blog/consequences-notetaking.html" class="no-external">
 
 <img loading="lazy" src="../blog/img/sherlockholmes.gif" class="thumbnail-image">
@@ -357,7 +390,7 @@ window.Quarto = {
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-categories="bm90ZS10YWtpbmclMkNQaEQlMkNkaXNzZXJ0YXRpb24=" data-listing-date-sort="1762214400000" data-listing-file-modified-sort="1775103358668" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="25" data-listing-word-count-sort="4940">
+<div class="quarto-post image-right" data-index="4" data-categories="bm90ZS10YWtpbmclMkNQaEQlMkNkaXNzZXJ0YXRpb24=" data-listing-date-sort="1762214400000" data-listing-file-modified-sort="1775202503000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="25" data-listing-word-count-sort="4940">
 <div class="thumbnail"><a href="../blog/dissertation-journal.html" class="no-external">
 
 <img loading="lazy" src="../blog/img/generaldisc.png" class="thumbnail-image">
@@ -388,7 +421,7 @@ window.Quarto = {
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="5" data-categories="bWljcm9ibG9nZ2luZw==" data-listing-date-sort="1759449600000" data-listing-file-modified-sort="1775103358781" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="417">
+<div class="quarto-post image-right" data-index="5" data-categories="bWljcm9ibG9nZ2luZw==" data-listing-date-sort="1759449600000" data-listing-file-modified-sort="1775202503114" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="417">
 <div class="thumbnail"><a href="../blog/microblogging.html" class="no-external">
 
 <img loading="lazy" src="../blog/img/otto-blanket.jpeg" class="thumbnail-image">
@@ -415,7 +448,7 @@ window.Quarto = {
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="6" data-categories="bm90ZS10YWtpbmclMkNza2V0Y2hub3Rpbmc=" data-listing-date-sort="1758153600000" data-listing-file-modified-sort="1775103358782" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="13" data-listing-word-count-sort="2489">
+<div class="quarto-post image-right" data-index="6" data-categories="bm90ZS10YWtpbmclMkNza2V0Y2hub3Rpbmc=" data-listing-date-sort="1758153600000" data-listing-file-modified-sort="1775202503115" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="13" data-listing-word-count-sort="2489">
 <div class="thumbnail"><a href="../blog/sketchnoting-beginners.html" class="no-external">
 
 <img loading="lazy" src="../blog/img/sketchnotes.png" class="thumbnail-image">
@@ -444,7 +477,7 @@ window.Quarto = {
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="7" data-categories="UEtNJTJDbm90ZS10YWtpbmc=" data-listing-date-sort="1755561600000" data-listing-file-modified-sort="1775103358782" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="20" data-listing-word-count-sort="3980">
+<div class="quarto-post image-right" data-index="7" data-categories="UEtNJTJDbm90ZS10YWtpbmc=" data-listing-date-sort="1755561600000" data-listing-file-modified-sort="1775202503114" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="20" data-listing-word-count-sort="3980">
 <div class="thumbnail"><a href="../blog/notetaking-part2.html" class="no-external">
 
 <img loading="lazy" src="../blog/img/grampasimpson.gif" class="thumbnail-image">
@@ -473,7 +506,7 @@ window.Quarto = {
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="8" data-categories="UEtNJTJDbm90ZS10YWtpbmc=" data-listing-date-sort="1754179200000" data-listing-file-modified-sort="1775103358782" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="19" data-listing-word-count-sort="3695">
+<div class="quarto-post image-right" data-index="8" data-categories="UEtNJTJDbm90ZS10YWtpbmc=" data-listing-date-sort="1754179200000" data-listing-file-modified-sort="1775202503114" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="19" data-listing-word-count-sort="3695">
 <div class="thumbnail"><a href="../blog/notetaking-part1.html" class="no-external">
 
 <p class="card-img-top"><img loading='lazy' src="img/homer-simpson-brain.gif"  class="thumbnail-image card-img"/></p>
@@ -502,7 +535,7 @@ window.Quarto = {
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="9" data-categories="VGlkeVR1ZXNkYXklMkNxdWFydG8lMkNxdWFydG9zZQ==" data-listing-date-sort="1752105600000" data-listing-file-modified-sort="1775103358782" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1827">
+<div class="quarto-post image-right" data-index="9" data-categories="VGlkeVR1ZXNkYXklMkNxdWFydG8lMkNxdWFydG9zZQ==" data-listing-date-sort="1752105600000" data-listing-file-modified-sort="1775202503115" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1827">
 <div class="thumbnail"><a href="../blog/quartose.html" class="no-external">
 
 <img loading="lazy" src="https://i0.wp.com/imgs.xkcd.com/blag/doghouse_color_wheel_altered.png" class="thumbnail-image">
@@ -533,7 +566,7 @@ window.Quarto = {
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="10" data-categories="UEtNJTJDbm90ZS10YWtpbmclMkNvcGVuJTIwcmVzb3VyY2Vz" data-listing-date-sort="1750464000000" data-listing-file-modified-sort="1775103358668" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="809">
+<div class="quarto-post image-right" data-index="10" data-categories="UEtNJTJDbm90ZS10YWtpbmclMkNvcGVuJTIwcmVzb3VyY2Vz" data-listing-date-sort="1750464000000" data-listing-file-modified-sort="1775202503000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="809">
 <div class="thumbnail"><a href="../blog/awesome-pkm.html" class="no-external">
 
 <img loading="lazy" src="../blog/img/PKM-thumbnail.png" class="thumbnail-image">
@@ -564,7 +597,7 @@ window.Quarto = {
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="11" data-categories="cXVhcnRvJTJDY2xvc2VyZWFkJTJDaW5mb2dyYXBoaWMlMkNvcGVuJTIwcmVzb3VyY2Vz" data-listing-date-sort="1748649600000" data-listing-file-modified-sort="1775103358668" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="405">
+<div class="quarto-post image-right" data-index="11" data-categories="cXVhcnRvJTJDY2xvc2VyZWFkJTJDaW5mb2dyYXBoaWMlMkNvcGVuJTIwcmVzb3VyY2Vz" data-listing-date-sort="1748649600000" data-listing-file-modified-sort="1775202503000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="405">
 <div class="thumbnail"><a href="../blog/closeread-cheatsheet.html" class="no-external">
 
 <img loading="lazy" src="../blog/img/cheatsheet-closeread-thumbnail.png" class="thumbnail-image">
@@ -597,7 +630,7 @@ window.Quarto = {
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="12" data-categories="b3BlbiUyMHNjaWVuY2UlMkNpbmZvZ3JhcGhpYw==" data-listing-date-sort="1746662400000" data-listing-file-modified-sort="1775103358668" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1276">
+<div class="quarto-post image-right" data-index="12" data-categories="b3BlbiUyMHNjaWVuY2UlMkNpbmZvZ3JhcGhpYw==" data-listing-date-sort="1746662400000" data-listing-file-modified-sort="1775202502999" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1276">
 <div class="thumbnail"><a href="../blog/4rs.html" class="no-external">
 
 <img loading="lazy" src="../blog/img/4rs-thumbnail.png" class="thumbnail-image">
@@ -629,6 +662,195 @@ window.Quarto = {
 </div>
 <div class="listing-no-matching d-none">No matching items</div>
 </div></main> <!-- /main -->
+<section class="ql-interactions" aria-label="Post interactions">
+  <div class="ql-actions-bar">
+    <button id="ql-like-btn" class="ql-action-btn" title="Like this post">
+      <svg viewbox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="ql-icon-heart"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+      <span id="ql-like-count">0</span>
+    </button>
+    <button id="ql-share-btn" class="ql-action-btn" title="Copy link">
+      <svg viewbox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+      <span>Share</span>
+    </button>
+  </div>
+
+  <div class="ql-comments-section">
+    <h3>Comments</h3>
+    <div id="ql-comments-list" class="ql-comments-list">
+      <div class="ql-loading">Loading comments...</div>
+    </div>
+
+    <div class="ql-comment-form">
+      <h4>Leave a reply</h4>
+      <input type="text" id="ql-comment-name" placeholder="Name (optional, default: Anonymous)" maxlength="50">
+      <textarea id="ql-comment-content" placeholder="What are your thoughts?" rows="3" required=""></textarea>
+      
+      <div class="ql-turnstile-box">
+        <p class="ql-turnstile-desc">To protect anonymous submissions from spam, this site uses Cloudflare Turnstile.</p>
+        <div class="cf-turnstile" data-sitekey="0x4AAAAAACzZJprJ4npD9l7W" data-callback="qlOnTurnstileSuccess"></div>
+        <input class="ql-turnstile-token" type="hidden" name="captchaToken" value="">
+      </div>
+
+      <div class="ql-form-actions">
+        <button id="ql-comment-submit" class="ql-btn-primary">Post Comment</button>
+        <span id="ql-comment-status" class="ql-status-msg"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const postSlug = getPostSlug();
+  const deviceId = getDeviceId();
+  
+  const likeBtn = document.getElementById("ql-like-btn");
+  const likeCountEl = document.getElementById("ql-like-count");
+  const shareBtn = document.getElementById("ql-share-btn");
+  
+  const commentsListEl = document.getElementById("ql-comments-list");
+  const commentSubmitBtn = document.getElementById("ql-comment-submit");
+  const commentNameEl = document.getElementById("ql-comment-name");
+  const commentContentEl = document.getElementById("ql-comment-content");
+  const commentStatusEl = document.getElementById("ql-comment-status");
+
+  // 1. Share Button
+  shareBtn.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      const originalText = shareBtn.querySelector("span").textContent;
+      shareBtn.querySelector("span").textContent = "Copied!";
+      setTimeout(() => shareBtn.querySelector("span").textContent = originalText, 2000);
+    } catch (e) {
+      console.error("Failed to copy", e);
+    }
+  });
+
+  // 2. Load Likes (Optional: If you want to fetch initial like count without toggling, 
+  // you might need a separate GET endpoint. For now, we rely on user interaction to toggle).
+  // A proper implementation would fetch the initial count here.
+
+  // 3. Toggle Like
+  likeBtn.addEventListener("click", async () => {
+    const token = window.__ql_turnstile_token;
+    if (!token) {
+      alert("Please complete the captcha first to like this post.");
+      return;
+    }
+    likeBtn.disabled = true;
+    try {
+      const res = await fetch(`${SUPABASE_FUNCTIONS_URL}/like-toggle`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ postSlug, deviceId, captchaToken: token })
+      });
+      if (!res.ok) throw new Error("Failed to toggle like");
+      const data = await res.json();
+      if (data.ok) {
+        likeCountEl.textContent = data.count;
+        if (data.liked) {
+          likeBtn.classList.add("ql-liked");
+          likeBtn.querySelector("svg").setAttribute("fill", "currentColor");
+        } else {
+          likeBtn.classList.remove("ql-liked");
+          likeBtn.querySelector("svg").setAttribute("fill", "none");
+        }
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Failed to toggle like. Please try again later.");
+    } finally {
+      likeBtn.disabled = false;
+    }
+  });
+
+  // 4. Load Comments
+  async function loadComments() {
+    try {
+      const res = await fetch(`${SUPABASE_FUNCTIONS_URL}/comments-list?postSlug=${encodeURIComponent(postSlug)}`);
+      if (!res.ok) throw new Error("Failed to load comments");
+      const data = await res.json();
+      
+      if (data.ok && data.comments) {
+        if (data.comments.length === 0) {
+          commentsListEl.innerHTML = '<div class="ql-empty">No comments yet. Be the first to share your thoughts!</div>';
+        } else {
+          commentsListEl.innerHTML = data.comments.map(c => `
+            <div class="ql-comment-item">
+              <div class="ql-comment-meta">
+                <strong>${escapeHtml(c.nickname || "Anonymous")}</strong>
+                <span>${new Date(c.created_at).toLocaleDateString()}</span>
+              </div>
+              <div class="ql-comment-text">${escapeHtml(c.content).replace(/\n/g, '<br>')}</div>
+            </div>
+          `).join("");
+        }
+      }
+    } catch (err) {
+      console.error(err);
+      commentsListEl.innerHTML = '<div class="ql-error">Failed to load comments.</div>';
+    }
+  }
+
+  // 5. Submit Comment
+  commentSubmitBtn.addEventListener("click", async () => {
+    const content = commentContentEl.value.trim();
+    const nickname = commentNameEl.value.trim() || "Anonymous";
+    const token = window.__ql_turnstile_token;
+
+    if (!content) {
+      commentStatusEl.textContent = "Please write a comment.";
+      commentStatusEl.className = "ql-status-msg ql-error-text";
+      return;
+    }
+    if (!token) {
+      commentStatusEl.textContent = "Please complete the captcha.";
+      commentStatusEl.className = "ql-status-msg ql-error-text";
+      return;
+    }
+
+    commentSubmitBtn.disabled = true;
+    commentStatusEl.textContent = "Submitting...";
+    commentStatusEl.className = "ql-status-msg";
+
+    try {
+      const res = await fetch(`${SUPABASE_FUNCTIONS_URL}/comments-create`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ postSlug, nickname, content, captchaToken: token })
+      });
+      
+      const data = await res.json();
+      if (!res.ok || !data.ok) throw new Error(data.error || "Submission failed");
+      
+      commentStatusEl.textContent = "Comment submitted! It will appear after moderation.";
+      commentStatusEl.className = "ql-status-msg ql-success-text";
+      commentContentEl.value = "";
+      
+      // Optionally reload comments, though new one won't show until approved
+    } catch (err) {
+      console.error(err);
+      commentStatusEl.textContent = err.message || "Failed to submit comment. Please try again.";
+      commentStatusEl.className = "ql-status-msg ql-error-text";
+    } finally {
+      commentSubmitBtn.disabled = false;
+    }
+  });
+
+  // Utility to escape HTML
+  function escapeHtml(unsafe) {
+    return unsafe
+         .replace(/&/g, "&amp;")
+         .replace(/</g, "&lt;")
+         .replace(/>/g, "&gt;")
+         .replace(/"/g, "&quot;")
+         .replace(/'/g, "&#039;");
+  }
+
+  // Initial load
+  loadComments();
+});
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
