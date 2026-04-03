@@ -1,0 +1,74 @@
+---
+title: "Subscribe"
+description: "Subscribe to receive updates about my new blog posts, projects, and research."
+---
+
+## Stay Updated
+
+Get notified when I publish new articles, share research notes, or release new projects. I promise not to spam you, and you can unsubscribe at any time.
+
+```{=html}
+<div class="ql-subscribe-container" style="max-width: 500px; margin: 2rem 0; padding: 2rem; background: rgba(0,0,0,0.03); border-radius: 12px; border: 1px solid rgba(0,0,0,0.1);">
+  <p style="margin-bottom: 1.5rem;">Enter your email below to subscribe:</p>
+  
+  <input type="email" id="ql-subscribe-email" placeholder="your.email@example.com" style="width: 100%; padding: 0.75rem; margin-bottom: 1rem; border: 1px solid rgba(0,0,0,0.3); border-radius: 6px; box-sizing: border-box;" required>
+  
+  <div class="ql-turnstile-box" style="margin-bottom: 1rem;">
+    <div class="cf-turnstile" data-sitekey="0x4AAAAAACzZJprJ4npD9l7W" data-callback="qlOnTurnstileSuccess"></div>
+    <input class="ql-turnstile-token" type="hidden" name="captchaToken" value="">
+  </div>
+
+  <button id="ql-subscribe-submit" class="ql-btn-primary" style="width: 100%;">Subscribe</button>
+  <p id="ql-subscribe-status" class="ql-status-msg" style="margin-top: 1rem; text-align: center;"></p>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const submitBtn = document.getElementById("ql-subscribe-submit");
+  const emailInput = document.getElementById("ql-subscribe-email");
+  const statusEl = document.getElementById("ql-subscribe-status");
+
+  submitBtn.addEventListener("click", async () => {
+    const email = emailInput.value.trim();
+    const token = window.__ql_turnstile_token;
+
+    if (!email || !email.includes("@")) {
+      statusEl.textContent = "Please enter a valid email address.";
+      statusEl.className = "ql-status-msg ql-error-text";
+      return;
+    }
+    if (!token) {
+      statusEl.textContent = "Please complete the captcha.";
+      statusEl.className = "ql-status-msg ql-error-text";
+      return;
+    }
+
+    submitBtn.disabled = true;
+    statusEl.textContent = "Submitting...";
+    statusEl.className = "ql-status-msg";
+
+    try {
+      // Use the global URL defined in turnstile-head.html
+      const res = await fetch(`${SUPABASE_FUNCTIONS_URL}/subscribe`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, captchaToken: token })
+      });
+      
+      const data = await res.json();
+      if (!res.ok || !data.ok) throw new Error(data.error || "Subscription failed");
+      
+      statusEl.textContent = "Successfully subscribed! Thank you.";
+      statusEl.className = "ql-status-msg ql-success-text";
+      emailInput.value = "";
+    } catch (err) {
+      console.error(err);
+      statusEl.textContent = err.message || "Failed to subscribe. Please try again.";
+      statusEl.className = "ql-status-msg ql-error-text";
+    } finally {
+      submitBtn.disabled = false;
+    }
+  });
+});
+</script>
+```

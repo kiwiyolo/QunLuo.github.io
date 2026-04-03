@@ -452,6 +452,161 @@ pre.sourceCode > code {
   }
 }
 
+/* Turnstile */
+.ql-turnstile-box {
+  margin: 2.5rem 0 1rem;
+  padding: 1.25rem 1.5rem;
+  border: 2px solid $pop;
+  border-radius: 14px;
+  background-color: rgba($secondary, 0.05);
+}
+
+.ql-turnstile-title {
+  margin: 0 0 0.25rem;
+}
+
+.ql-turnstile-desc {
+  margin: 0 0 1rem;
+  font-size: 0.95em;
+}
+
+/* Interactions & Comments */
+.ql-interactions {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba($secondary, 0.2);
+}
+
+.ql-actions-bar {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.ql-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba($secondary, 0.05);
+  border: 1px solid rgba($secondary, 0.2);
+  border-radius: 8px;
+  color: $dark;
+  font-family: $font-family-sans-serif;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover:not(:disabled) {
+    background: rgba($secondary, 0.1);
+    transform: translateY(-1px);
+  }
+  
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  &.ql-liked {
+    color: #e0245e;
+    border-color: #e0245e;
+    background: rgba(#e0245e, 0.05);
+  }
+}
+
+.ql-comments-section {
+  margin-top: 2rem;
+  h3 { margin-bottom: 1.5rem; }
+}
+
+.ql-comments-list {
+  margin-bottom: 2.5rem;
+}
+
+.ql-comment-item {
+  padding: 1rem;
+  border-bottom: 1px solid rgba($secondary, 0.1);
+  &:last-child { border-bottom: none; }
+}
+
+.ql-comment-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+  color: rgba($dark, 0.7);
+  strong { color: $dark; }
+}
+
+.ql-comment-text {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: $dark;
+}
+
+.ql-comment-form {
+  background: rgba($secondary, 0.03);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba($secondary, 0.1);
+
+  h4 { margin-top: 0; margin-bottom: 1rem; }
+
+  input[type="text"], textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid rgba($secondary, 0.3);
+    border-radius: 6px;
+    background: #fff;
+    font-family: inherit;
+    &:focus { outline: none; border-color: $pop; }
+  }
+  
+  textarea { resize: vertical; }
+}
+
+.ql-form-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.ql-btn-primary {
+  background: $pop;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.25rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  &:hover:not(:disabled) { opacity: 0.9; }
+  &:disabled { opacity: 0.5; cursor: not-allowed; }
+}
+
+.ql-status-msg {
+  font-size: 0.85rem;
+  &.ql-success-text { color: #10b981; }
+  &.ql-error-text { color: #ef4444; }
+}
+
+.ql-empty, .ql-loading, .ql-error {
+  padding: 2rem 0;
+  text-align: center;
+  color: rgba($dark, 0.6);
+  font-style: italic;
+}
+
+/* Turnstile (overrides for form context) */
+.ql-comment-form .ql-turnstile-box {
+  margin: 0 0 1rem 0;
+  padding: 1rem;
+  border: 1px dashed rgba($secondary, 0.2);
+  background: none;
+}
+
 /* Responsive Queries */
 
 @media (min-width: 992px) {

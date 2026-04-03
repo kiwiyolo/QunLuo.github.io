@@ -21,8 +21,9 @@ website:
         href: blog/index.qmd
       - text: "Contact"
         href: content/contact.qmd
-
     right:
+      - text: "Subscribe"
+        href: subscribe.qmd
       - text: "{{< iconify fa6-brands:google-scholar >}}"
         href: https://scholar.google.com/citations?hl=en&user=OVagKRoAAAAJ
       # - text: "{{< iconify garden:bookmark-fill-12 >}}"
