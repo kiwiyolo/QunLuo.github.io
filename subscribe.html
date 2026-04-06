@@ -73,6 +73,35 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async="" defer=""></script>
+<script>
+  // ==========================================
+  // CONFIGURATION: Set your Supabase Edge Function URL here
+  // Note: Only the base URL is needed, the specific endpoints will be appended
+  // ==========================================
+  const SUPABASE_FUNCTIONS_URL = "https://fracycwtkurcimbwcvjz.supabase.co/functions/v1";
+  
+  window.__ql_turnstile_token = null;
+  function qlOnTurnstileSuccess(token) {
+    window.__ql_turnstile_token = token;
+    document.querySelectorAll(".ql-turnstile-token").forEach((el) => {
+      el.value = token;
+    });
+  }
+
+  function getDeviceId() {
+    let id = localStorage.getItem("ql_device_id");
+    if (!id) {
+      id = "device_" + Math.random().toString(36).substring(2) + Date.now().toString(36);
+      localStorage.setItem("ql_device_id", id);
+    }
+    return id;
+  }
+
+  function getPostSlug() {
+    return window.location.pathname.replace(/^\/QunLuo\.github\.io\//, '').replace(/^\//, '').replace(/\.html$/, '');
+  }
+</script>
 
 
 </head>
@@ -208,6 +237,12 @@ document.addEventListener("DOMContentLoaded", () => {
   submitBtn.addEventListener("click", async () => {
     const email = emailInput.value.trim();
     const token = window.__ql_turnstile_token;
+
+    if (typeof SUPABASE_FUNCTIONS_URL === "undefined") {
+      statusEl.textContent = "Subscription service is not configured yet.";
+      statusEl.className = "ql-status-msg ql-error-text";
+      return;
+    }
 
     if (!email || !email.includes("@")) {
       statusEl.textContent = "Please enter a valid email address.";
