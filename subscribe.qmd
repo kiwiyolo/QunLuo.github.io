@@ -1,6 +1,10 @@
 ---
 title: "Subscribe"
 description: "Subscribe to receive updates about my new blog posts, projects, and research."
+format:
+  html:
+    include-in-header:
+      - _includes/turnstile-head.html
 ---
 
 ## Stay Updated
@@ -31,6 +35,12 @@ document.addEventListener("DOMContentLoaded", () => {
   submitBtn.addEventListener("click", async () => {
     const email = emailInput.value.trim();
     const token = window.__ql_turnstile_token;
+
+    if (typeof SUPABASE_FUNCTIONS_URL === "undefined") {
+      statusEl.textContent = "Subscription service is not configured yet.";
+      statusEl.className = "ql-status-msg ql-error-text";
+      return;
+    }
 
     if (!email || !email.includes("@")) {
       statusEl.textContent = "Please enter a valid email address.";
