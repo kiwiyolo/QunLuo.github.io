@@ -297,15 +297,15 @@ document.addEventListener("DOMContentLoaded", () => {
     statusEl.className = "ql-status-msg";
 
     try {
-      // Use the global URL defined in turnstile-head.html
       const res = await fetch(`${SUPABASE_FUNCTIONS_URL}/subscribe`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, captchaToken: token })
       });
       
-      const data = await res.json();
-      if (!res.ok || !data.ok) throw new Error(data.error || "Subscription failed");
+      const text = await res.text().catch(() => "");
+      const data = text ? (() => { try { return JSON.parse(text); } catch { return {}; } })() : {};
+      if (!res.ok || !data.ok) throw new Error((data.error && data.error.message) || (data.message) || `HTTP ${res.status}`);
       
       statusEl.textContent = "Check your email to confirm your subscription.";
       statusEl.className = "ql-status-msg ql-success-text";

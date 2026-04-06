@@ -684,6 +684,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const commentContentEl = document.getElementById("ql-comment-content");
   const commentStatusEl = document.getElementById("ql-comment-status");
 
+  async function readErrorMessage(res) {
+    const text = await res.text().catch(() => "");
+    if (!text) return `HTTP ${res.status}`;
+    try {
+      const data = JSON.parse(text);
+      if (data && data.error && typeof data.error.message === "string") return data.error.message;
+      if (data && typeof data.message === "string") return data.message;
+      return text;
+    } catch {
+      return text;
+    }
+  }
+
   // 1. Share Button
   shareBtn.addEventListener("click", async () => {
     try {
@@ -714,8 +727,8 @@ document.addEventListener("DOMContentLoaded", () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ postSlug, deviceId, captchaToken: token })
       });
-      if (!res.ok) throw new Error("Failed to toggle like");
-      const data = await res.json();
+      if (!res.ok) throw new Error(await readErrorMessage(res));
+      const data = await res.json().catch(() => ({}));
       if (data.ok) {
         likeCountEl.textContent = data.count;
         if (data.liked) {
@@ -728,7 +741,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     } catch (err) {
       console.error(err);
-      alert("Failed to toggle like. Please try again later.");
+      alert((err && err.message) ? err.message : "Failed to toggle like. Please try again later.");
     } finally {
       likeBtn.disabled = false;
     }
@@ -738,8 +751,8 @@ document.addEventListener("DOMContentLoaded", () => {
   async function loadComments() {
     try {
       const res = await fetch(`${SUPABASE_FUNCTIONS_URL}/comments-list?postSlug=${encodeURIComponent(postSlug)}`);
-      if (!res.ok) throw new Error("Failed to load comments");
-      const data = await res.json();
+      if (!res.ok) throw new Error(await readErrorMessage(res));
+      const data = await res.json().catch(() => ({}));
       
       if (data.ok && data.comments) {
         if (data.comments.length === 0) {
@@ -758,7 +771,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     } catch (err) {
       console.error(err);
-      commentsListEl.innerHTML = '<div class="ql-error">Failed to load comments.</div>';
+      const msg = (err && err.message) ? err.message : "Failed to load comments.";
+      commentsListEl.innerHTML = `<div class="ql-error">${escapeHtml(msg)}</div>`;
     }
   }
 
@@ -790,8 +804,9 @@ document.addEventListener("DOMContentLoaded", () => {
         body: JSON.stringify({ postSlug, nickname, content, captchaToken: token })
       });
       
-      const data = await res.json();
-      if (!res.ok || !data.ok) throw new Error(data.error || "Submission failed");
+      if (!res.ok) throw new Error(await readErrorMessage(res));
+      const data = await res.json().catch(() => ({}));
+      if (!data.ok) throw new Error("Submission failed");
       
       commentStatusEl.textContent = "Comment submitted! It will appear after moderation.";
       commentStatusEl.className = "ql-status-msg ql-success-text";
