@@ -32,6 +32,43 @@ document.addEventListener("DOMContentLoaded", () => {
   const emailInput = document.getElementById("ql-subscribe-email");
   const statusEl = document.getElementById("ql-subscribe-status");
 
+  async function confirmFromHashIfPresent() {
+    const hash = window.location.hash || "";
+    if (!hash.includes("access_token=")) return;
+
+    const params = new URLSearchParams(hash.replace(/^#/, ""));
+    const accessToken = params.get("access_token");
+    if (!accessToken) return;
+
+    if (typeof SUPABASE_FUNCTIONS_URL === "undefined") return;
+
+    statusEl.textContent = "Confirming your subscription...";
+    statusEl.className = "ql-status-msg";
+
+    try {
+      const res = await fetch(`${SUPABASE_FUNCTIONS_URL}/subscribe-confirm`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${accessToken}`
+        }
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data.ok) throw new Error((data.error && data.error.message) || "Confirmation failed");
+
+      statusEl.textContent = "Email confirmed. You are subscribed!";
+      statusEl.className = "ql-status-msg ql-success-text";
+
+      window.history.replaceState({}, document.title, window.location.pathname + window.location.search);
+    } catch (err) {
+      console.error(err);
+      statusEl.textContent = "Email confirmation failed. Please try the link again.";
+      statusEl.className = "ql-status-msg ql-error-text";
+    }
+  }
+
+  confirmFromHashIfPresent();
+
   submitBtn.addEventListener("click", async () => {
     const email = emailInput.value.trim();
     const token = window.__ql_turnstile_token;
@@ -68,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const data = await res.json();
       if (!res.ok || !data.ok) throw new Error(data.error || "Subscription failed");
       
-      statusEl.textContent = "Successfully subscribed! Thank you.";
+      statusEl.textContent = "Check your email to confirm your subscription.";
       statusEl.className = "ql-status-msg ql-success-text";
       emailInput.value = "";
     } catch (err) {
