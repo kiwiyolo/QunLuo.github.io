@@ -3,13 +3,14 @@ project:
   #output-dir: docs
   resources:
     - sitemap.xml
+    - CNAME
 
 execute:
   freeze: auto
 
 website:
   title: "Qun Luo"
-  site-url: https://kiwiyolo.github.io/QunLuo.github.io/
+  site-url: https://qunluo-kiwi.com/
   favicon: img/kiwi.png
   navbar:
     left:

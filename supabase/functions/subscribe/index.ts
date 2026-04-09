@@ -1,5 +1,5 @@
 import { corsHeaders, errJson, okJson, readJson } from "../_shared/http.ts";
-import { getClientIp, sha256Hex } from "../_shared/crypto.ts";
+import { base64UrlEncodeText, getClientIp, hmacSha256Base64Url, sha256Hex } from "../_shared/crypto.ts";
 import { verifyTurnstile } from "../_shared/turnstile.ts";
 import { getServiceClient } from "../_shared/supabase.ts";
 import { isEmail } from "../_shared/validate.ts";
@@ -7,26 +7,54 @@ import { rateLimitOrThrow } from "../_shared/rate_limit.ts";
 
 type SubscribeRequest = { email: string; captchaToken: string };
 
-async function sendMagicLink(email: string, redirectTo: string): Promise<void> {
-  const supabaseUrl = Deno.env.get("SUPABASE_URL");
-  const anonKey = Deno.env.get("SUPABASE_ANON_KEY");
-  if (!supabaseUrl) throw new Error("Missing SUPABASE_URL");
-  if (!anonKey) throw new Error("Missing SUPABASE_ANON_KEY");
+function getSiteUrl(): string {
+  return (Deno.env.get("SITE_URL") ?? "https://qunluo-kiwi.com").replace(/\/$/, "");
+}
 
-  const res = await fetch(`${supabaseUrl}/auth/v1/otp`, {
+function getSubscribeSigningKey(): string {
+  const key = Deno.env.get("SUBSCRIBE_SIGNING_KEY") ?? Deno.env.get("ADMIN_SECRET");
+  if (!key) throw new Error("Missing SUBSCRIBE_SIGNING_KEY");
+  return key;
+}
+
+async function createConfirmToken(email: string): Promise<string> {
+  const issuedAt = Math.floor(Date.now() / 1000);
+  const emailB64 = base64UrlEncodeText(email);
+  const payload = `${emailB64}.${issuedAt}`;
+  const sig = await hmacSha256Base64Url(payload, getSubscribeSigningKey());
+  return `${payload}.${sig}`;
+}
+
+async function sendConfirmEmailWithResend(email: string, token: string): Promise<void> {
+  const apiKey = Deno.env.get("RESEND_API_KEY");
+  if (!apiKey) throw new Error("Missing RESEND_API_KEY");
+
+  const from = Deno.env.get("RESEND_FROM") ?? "noreply@qunluo-kiwi.com";
+  const siteUrl = getSiteUrl();
+  const confirmUrl = `${siteUrl}/subscribe.html#confirm=${encodeURIComponent(token)}`;
+
+  const res = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: {
       "content-type": "application/json",
-      apikey: anonKey,
+      authorization: `Bearer ${apiKey}`,
     },
     body: JSON.stringify({
-      email,
-      create_user: true,
-      options: { emailRedirectTo: redirectTo },
+      from,
+      to: email,
+      subject: "Confirm your subscription",
+      html:
+        `<p>Thanks for subscribing.</p>` +
+        `<p>Please confirm your subscription by clicking the link below:</p>` +
+        `<p><a href="${confirmUrl}">Confirm subscription</a></p>` +
+        `<p>If you did not request this, you can ignore this email.</p>`,
     }),
   });
 
-  if (!res.ok) throw new Error("auth_otp_failed");
+  if (!res.ok) {
+    const text = await res.text().catch(() => "");
+    throw new Error(text || "resend_failed");
+  }
 }
 
 Deno.serve(async (req) => {
@@ -67,13 +95,11 @@ Deno.serve(async (req) => {
   );
   if (error) return errJson(req, 500, "Database error");
 
-  const siteUrl = Deno.env.get("SITE_URL") ?? "https://kiwiyolo.github.io/QunLuo.github.io";
-  const redirectTo = `${siteUrl.replace(/\/$/, "")}/subscribe.html`;
   try {
-    await sendMagicLink(email, redirectTo);
+    const token = await createConfirmToken(email);
+    await sendConfirmEmailWithResend(email, token);
   } catch (e) {
-    if (e instanceof Error && e.message === "auth_otp_failed") return errJson(req, 502, "Email delivery failed");
-    return errJson(req, 500, "Email delivery failed");
+    return errJson(req, 502, "Email delivery failed");
   }
 
   return okJson(req, { ok: true, status: "pending_email_confirmation" });

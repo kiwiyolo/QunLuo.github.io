@@ -34,11 +34,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   async function confirmFromHashIfPresent() {
     const hash = window.location.hash || "";
-    if (!hash.includes("access_token=")) return;
+    if (!hash.includes("confirm=") && !window.location.search.includes("confirm=")) return;
 
-    const params = new URLSearchParams(hash.replace(/^#/, ""));
-    const accessToken = params.get("access_token");
-    if (!accessToken) return;
+    const hashParams = new URLSearchParams(hash.replace(/^#/, ""));
+    const searchParams = new URLSearchParams(window.location.search);
+    const confirmToken = hashParams.get("confirm") || searchParams.get("confirm");
+    if (!confirmToken) return;
 
     if (typeof SUPABASE_FUNCTIONS_URL === "undefined") return;
 
@@ -49,9 +50,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const res = await fetch(`${SUPABASE_FUNCTIONS_URL}/subscribe-confirm`, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
-          "Authorization": `Bearer ${accessToken}`
-        }
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ token: confirmToken })
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok || !data.ok) throw new Error((data.error && data.error.message) || "Confirmation failed");
