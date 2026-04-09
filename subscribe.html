@@ -44,7 +44,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-1521da6fadcd3c31bf6bde33a3baee60.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-c888e60532438e3c90c55cf7e931c36a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
@@ -236,11 +236,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   async function confirmFromHashIfPresent() {
     const hash = window.location.hash || "";
-    if (!hash.includes("access_token=")) return;
+    if (!hash.includes("confirm=") && !window.location.search.includes("confirm=")) return;
 
-    const params = new URLSearchParams(hash.replace(/^#/, ""));
-    const accessToken = params.get("access_token");
-    if (!accessToken) return;
+    const hashParams = new URLSearchParams(hash.replace(/^#/, ""));
+    const searchParams = new URLSearchParams(window.location.search);
+    const confirmToken = hashParams.get("confirm") || searchParams.get("confirm");
+    if (!confirmToken) return;
 
     if (typeof SUPABASE_FUNCTIONS_URL === "undefined") return;
 
@@ -251,9 +252,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const res = await fetch(`${SUPABASE_FUNCTIONS_URL}/subscribe-confirm`, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
-          "Authorization": `Bearer ${accessToken}`
-        }
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ token: confirmToken })
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok || !data.ok) throw new Error((data.error && data.error.message) || "Confirmation failed");
@@ -398,7 +399,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/kiwiyolo\.github\.io\/QunLuo\.github\.io\/");
+        var filterRegex = new RegExp("https:\/\/qunluo-kiwi\.com\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
