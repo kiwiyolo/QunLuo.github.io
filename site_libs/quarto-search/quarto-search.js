@@ -724,7 +724,7 @@ async function readSearchData() {
     const fuse = new window.Fuse([], kFuseIndexOptions);
 
     // fetch the main search.json
-    const response = await fetch(offsetURL("search.json"));
+    const response = await fetch(offsetURL(document.documentElement.lang.startsWith("zh") ? "search-zh.json" : "search-en.json"));
     if (response.status == 200) {
       return response.json().then(function (searchDocs) {
         searchDocs.forEach(function (searchDoc) {

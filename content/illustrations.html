@@ -78,6 +78,13 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
+
+<!-- ql-language-links -->
+<link rel="canonical" href="https://qunluo-kiwi.com/content/illustrations.html">
+<link rel="alternate" hreflang="en" href="https://qunluo-kiwi.com/content/illustrations.html">
+<link rel="alternate" hreflang="zh-CN" href="https://qunluo-kiwi.com/zh/content/illustrations.html">
+<link rel="alternate" hreflang="x-default" href="https://qunluo-kiwi.com/content/illustrations.html">
+<!-- /ql-language-links -->
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -142,6 +149,21 @@ ul.task-list li input[type="checkbox"] {
 </i> 
 <span class="menu-text"></span></a>
   </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-english--中文" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">English / 中文</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-english--中文">    
+        <li>
+    <a href="/content/illustrations.html" data-language="en" hreflang="en" lang="en" aria-current="page" class="dropdown-item active">
+ <span class="dropdown-text">English</span></a>
+  </li>  
+        <li>
+    <a href="/zh/content/illustrations.html" data-language="zh-CN" hreflang="zh-CN" lang="zh-CN" class="dropdown-item">
+ <span class="dropdown-text">简体中文</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -699,4 +721,31 @@ Have a question about a research figure?<br> <a href="contact.html">Contact me h
 
 
 
+<!-- ql-language-switch -->
+<script id="ql-language-anchors" type="application/json">{"research-visuals": "研究图示", "water-quality-transfer-learning": "水质与迁移学习", "precipitation-nowcasting": "降水临近预报", "around-the-community": "漫步社区", "quarto-bootstrap": "quarto-bootstrap", "cookie-banner-placeholder": "cookie-banner-placeholder", "quarto-search-results": "quarto-search-results", "quarto-content": "quarto-content", "navbarCollapse": "navbarCollapse", "quarto-search-options": "quarto-search-options", "quarto-document-content": "quarto-document-content", "quarto-search": "quarto-search", "img-popup": "img-popup", "quarto-html-after-body": "quarto-html-after-body", "quarto-text-highlighting-styles": "quarto-text-highlighting-styles", "title-block-header": "title-block-header", "quarto-header": "quarto-header", "nav-menu-english--中文": "nav-menu-english--中文"}</script>
+<script>(() => {
+  const metadata = document.getElementById('ql-language-anchors');
+  const anchors = metadata ? JSON.parse(metadata.textContent) : {};
+  const currentLanguage = document.documentElement.lang.startsWith('zh') ? 'zh-CN' : 'en';
+
+  function updateLinks() {
+    let fragment;
+    try { fragment = decodeURIComponent(window.location.hash.slice(1)); }
+    catch { fragment = ''; }
+    document.querySelectorAll('a[data-language]').forEach((link) => {
+      const target = new URL(link.getAttribute('href'), window.location.href);
+      target.search = window.location.search;
+      const sameLanguage = link.getAttribute('data-language') === currentLanguage;
+      const translatedAnchor = sameLanguage ? fragment : anchors[fragment];
+      // Subscription confirmation fragments are route-independent within this site.
+      target.hash = translatedAnchor || (fragment.startsWith('confirm=') ? fragment : '');
+      link.href = target.pathname + target.search + target.hash;
+    });
+  }
+
+  updateLinks();
+  window.addEventListener('hashchange', updateLinks);
+})();
+</script>
+<!-- /ql-language-switch -->
 </body></html>
