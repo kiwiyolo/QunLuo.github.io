@@ -14,165 +14,144 @@
     "text": "Questions I keep returning to\n\nCan automated research workflows change how we choose questions, not just how we answer them?\nWhat should we do (practically, ethically, career-wise) during this transition period?\nWhere do we position ourselves in the AI era: tool builders, tool users, reviewers, field scientists, theorists, or translators between them?\nWhat is still meaningful work in the 21st century when “output” becomes cheap?\n\n\n\n\nAn example of a fully automated research workflow: AI-Scientist-v2 by Sakana AI.\n\n\n\nThe meaning of research is not to make research meaningless.\nOur mission is to locate ourselves honestly within each stage of a field’s development.\n\nThe essence of scientific research is turning the unknown into reliable knowledge. In practice, it is a human process of generating new, reasonable, and useful claims on top of what we already know.\nMost fields still share a similar loop:\n\nStudy the literature and context\nFind a question worth asking\nForm a hypothesis (or a model of what might be true)\nDesign experiments/observations and collect evidence\nAnalyze, interpret, and draw conclusions\nWrite (paper, code, lab notes) and publish/review\nCommunicate, reflect, and iterate\n\nNow ask yourself: which parts can you do better than AI today, and which parts could you do better after learning to work with AI well?\nMy current answer is: taste and judgment still matter most. Not only “scientific taste”, but also the ability to sense what different audiences need and value, and to translate between them.\nOne framing I like is:\n\nTo P (peers): rigorous contributions that hold up under scrutiny\nTo B (business): reliable systems that create measurable value\nTo C (clients/users): solutions that reduce friction and fit real workflows\nTo H (humans): meaning, trust, and a sense of direction\n\nAutomation may replace many research processes, but “what counts as excellent research” is not fixed. It changes over time, and it also becomes a moving target for AI training. That is exactly where we should learn to stand: defining goals, updating standards, and staying honest about trade-offs.\nTo make work meaningful, we still need to do the basics well at each stage and in each role. Here is a simple metaphor:\n\nAs an advisor: keep strategic control.\nAI can optimize processes toward a goal, but it cannot decide the ultimate goal over the long term.\nAs a general: turn strategy into workable tactics.\nAI can help refine steps, but humans still need to translate high-level aims into operational plans.\nAs a soldier: execute with discipline.\nAs a researcher, building a reliable workflow for your own field is urgent and personal: no one understands your constraints better than you."
   },
   {
-    "objectID": "content/talks.html",
-    "href": "content/talks.html",
-    "title": "Conference contributions",
-    "section": "",
-    "text": "Water quality prediction for Beijing’s sub-center based on deep learning model\nA conference abstract on deep learning approaches to water quality prediction.\nView the abstract\nRelated journal article · All publications"
-  },
-  {
-    "objectID": "content/talks.html#iugg-general-assembly-2023",
-    "href": "content/talks.html#iugg-general-assembly-2023",
-    "title": "Conference contributions",
-    "section": "",
-    "text": "Water quality prediction for Beijing’s sub-center based on deep learning model\nA conference abstract on deep learning approaches to water quality prediction.\nView the abstract\nRelated journal article · All publications"
-  },
-  {
-    "objectID": "content/project.html",
-    "href": "content/project.html",
-    "title": "Research",
-    "section": "",
-    "text": "My research explores how data and physical understanding can work together in Earth system prediction."
+    "objectID": "content/talks.html#talks-workshops",
+    "href": "content/talks.html#talks-workshops",
+    "title": "LUO Qun · 罗群",
+    "section": "Talks & Conferences",
+    "text": "Talks & Conferences\nConference contributions and research discussions about Earth system science, hydrology, and artificial intelligence.\n\nScientific Conferences and Seminars\n\n2023\n\nQun Luo, Dingzhi Peng, Yu Gu, Xiaoyu Luo  IUGG General Assembly  Water quality prediction for Beijing’s sub-center based on deep learning model  Conference abstract · Related journal article\n\n\n\n\nResearch discussions\nI welcome discussions of water quality prediction, precipitation nowcasting, seasonal ocean forecasting, and physically interpretable AI.\nBook a time to chat · Research projects"
   },
   {
     "objectID": "content/project.html#current-research",
     "href": "content/project.html#current-research",
-    "title": "Research",
-    "section": "Seasonal sea surface temperature forecasting",
-    "text": "Seasonal sea surface temperature forecasting\nResearch since 2025 · Earth system science & deep learning\nAt the Southern University of Science and Technology, my research has focused on deep learning for global seasonal sea surface temperature prediction. Related interests include the environmental drivers and forecasting of algal blooms."
+    "title": "LUO Qun · 罗群",
+    "section": "Projects",
+    "text": "Projects\n\n\n\n  \n    \n    Earth System & AI\n    Water quality, precipitation nowcasting, runoff change, and seasonal ocean forecasting.\n  \n\n\n\n  \n    \n    Talks & Conferences\n    Conference contributions and conversations about hydrology, Earth systems, and AI.\n  \n\n\n\n  \n    \n    Open Science\n    Public research code, reproducibility, and resources associated with my work.\n  \n\n\n\n  \n    \n    Datasets\n    Data sources and access information for the studies in my publications.\n  \n\n\n\n  \n    \n    Research Visuals\n    Figures from my research on water quality and precipitation forecasting.\n  \n\n\n\n  \n    \n    Publications\n    My journal articles and conference contributions, with links to the original publications."
   },
   {
-    "objectID": "content/project.html#precipitation-nowcasting",
-    "href": "content/project.html#precipitation-nowcasting",
-    "title": "Research",
+    "objectID": "content/open-science.html#open-science",
+    "href": "content/open-science.html#open-science",
+    "title": "LUO Qun · 罗群",
+    "section": "Open Science",
+    "text": "Open Science\nOpen science connects research questions, methods, and evidence through accessible publications and code.\nMy public work includes code for precipitation nowcasting and publications on hydrology and water quality. \n\nWhat I share\n\nGitHub: my profile and public repositories.\nSuitable-coupling-for-PN: code accompanying Coupling strategies for precipitation nowcasting in China.  → Read the paper.\nPublications: journal articles and a conference abstract, with DOI links.\n\n\n\nReproducibility and collaboration\nFollow each repository’s documentation and licence when using the code. Data sources and access conditions are described in the associated publications.\n\nResearch resources: find the relevant data availability statements.\nTalks and conferences: conference contributions.\nContact me with questions about methods or possible collaborations."
+  },
+  {
+    "objectID": "content/earth-system.html",
+    "href": "content/earth-system.html",
+    "title": "LUO Qun · 罗群",
+    "section": "",
+    "text": "I work at the intersection of Earth system science, hydrology, and artificial intelligence.\n\n\n\n\nMy research spans river water quality, precipitation nowcasting, runoff change, and seasonal sea surface temperature forecasting.\n\n\n\n\nAcross these topics, I am interested in how models can produce useful forecasts while helping us understand the processes behind them."
+  },
+  {
+    "objectID": "content/earth-system.html#earth-system",
+    "href": "content/earth-system.html#earth-system",
+    "title": "LUO Qun · 罗群",
+    "section": "",
+    "text": "I work at the intersection of Earth system science, hydrology, and artificial intelligence.\n\n\n\n\nMy research spans river water quality, precipitation nowcasting, runoff change, and seasonal sea surface temperature forecasting.\n\n\n\n\nAcross these topics, I am interested in how models can produce useful forecasts while helping us understand the processes behind them."
+  },
+  {
+    "objectID": "content/earth-system.html#precipitation-nowcasting",
+    "href": "content/earth-system.html#precipitation-nowcasting",
+    "title": "LUO Qun · 罗群",
     "section": "Precipitation nowcasting",
-    "text": "Precipitation nowcasting\nResearch in 2023–2024 · Journal publication in 2026\nI investigated strategies for coupling deep learning and optical flow in satellite-based precipitation nowcasting over China. The work compares how different combinations of these approaches can improve short-term precipitation prediction.\nRead the paper · Explore the code on GitHub"
+    "text": "Precipitation nowcasting\n\n\n\n\nHow can different forecasting approaches work together?\n\n\n\n\nI investigated strategies for coupling deep learning and optical flow in satellite-based precipitation nowcasting over China.\n\n\n\n\nThe study compares the performance of different coupling strategies across regions and forecast lead times.\n\n\n\n\nThis work was published in Hydrological Sciences Journal in 2026, following online publication in 2025. Read the paper · Explore the code."
   },
   {
-    "objectID": "content/project.html#water-quality",
-    "href": "content/project.html#water-quality",
-    "title": "Research",
-    "section": "Water quality prediction",
-    "text": "Water quality prediction\nResearch in 2022–2023 · Journal publication in 2023\nI studied water quality prediction in Beijing’s sub-center using LSTM and back-propagation neural networks. The work uses transfer learning informed by upstream–downstream river relationships.\nRead the paper"
+    "objectID": "content/earth-system.html#water-quality",
+    "href": "content/earth-system.html#water-quality",
+    "title": "LUO Qun · 罗群",
+    "section": "Learning across a river network",
+    "text": "Learning across a river network\n\n\n\n\nCan information from one part of a river help predict another?\n\n\n\n\nI studied water quality prediction in Beijing’s sub-center using LSTM and back-propagation neural networks.\n\n\n\n\nThe transfer-learning approach uses the upstream–downstream relationships between river gauges.\n\n\n\n\nThe work was published in Environmental Science and Pollution Research in 2023. Read the paper."
   },
   {
-    "objectID": "content/project.html#runoff-change",
-    "href": "content/project.html#runoff-change",
-    "title": "Research",
-    "section": "Runoff change under human influence",
-    "text": "Runoff change under human influence\nResearch in 2024–2025 · Hydrology\nI have explored the effects of human activities and climate change on runoff, including the challenge of separating their contributions to hydrological change."
+    "objectID": "content/earth-system.html#current-research",
+    "href": "content/earth-system.html#current-research",
+    "title": "LUO Qun · 罗群",
+    "section": "From hydrology to ocean forecasting",
+    "text": "From hydrology to ocean forecasting\n\n\n\n\nMy research in 2024–2025 explored the effects of human activities and climate change on runoff.\n\n\n\n\nAt the Southern University of Science and Technology, I have worked on deep learning for seasonal sea surface temperature forecasting, with related interests in algal bloom drivers and prediction.\n\n\n\n\nThese directions connect to my broader interest in physically interpretable AI for Earth system processes.\n\n\n\n\n\n\n\n\n\n\n\n\nProject Collaborators\nMy water quality and precipitation research was conducted with Prof. Dingzhi Peng and collaborators at Beijing Normal University. The complete author lists are available on the publications page.\nAt Southern University of Science and Technology, my research experience is with Dr. Zhenzhong Zeng and the Earth System & Global Change Lab.\nMy PhD programme in Computing at The Hong Kong Polytechnic University, starting September 2026, is jointly supervised with EIT, with Prof. Jiannong Cao and Dr. Yuntian Chen.\nContact me · Research visuals"
   },
   {
-    "objectID": "content/project.html#related-work",
-    "href": "content/project.html#related-work",
-    "title": "Research",
-    "section": "Related work",
-    "text": "Related work\nMy collaborative publications cover the evaluation of satellite precipitation products, anthropogenic nitrogen and phosphorus inputs, and ecological base flow.\nView publications →"
-  },
-  {
-    "objectID": "content/open-science.html",
-    "href": "content/open-science.html",
-    "title": "Code & reproducibility",
-    "section": "",
-    "text": "The code accompanying Coupling strategies for precipitation nowcasting in China is available on GitHub.\nSuitable-coupling-for-PN\nFor the scientific context, see the paper. Follow the repository’s documentation and licence when using the code."
-  },
-  {
-    "objectID": "content/open-science.html#precipitation-nowcasting-code",
-    "href": "content/open-science.html#precipitation-nowcasting-code",
-    "title": "Code & reproducibility",
-    "section": "",
-    "text": "The code accompanying Coupling strategies for precipitation nowcasting in China is available on GitHub.\nSuitable-coupling-for-PN\nFor the scientific context, see the paper. Follow the repository’s documentation and licence when using the code."
-  },
-  {
-    "objectID": "content/open-science.html#more-work",
-    "href": "content/open-science.html#more-work",
-    "title": "Code & reproducibility",
-    "section": "More work",
-    "text": "More work\nMy GitHub profile · Research · Publications"
-  },
-  {
-    "objectID": "content/contact.html",
-    "href": "content/contact.html",
-    "title": "Contact",
-    "section": "",
-    "text": "I welcome conversations about Earth system science, hydrological forecasting, ocean prediction, and interpretable AI."
-  },
-  {
-    "objectID": "content/contact.html#email",
-    "href": "content/contact.html#email",
-    "title": "Contact",
-    "section": "Email",
-    "text": "Email\nqunluo.kiwi@gmail.com"
-  },
-  {
-    "objectID": "content/contact.html#elsewhere",
-    "href": "content/contact.html#elsewhere",
-    "title": "Contact",
-    "section": "Elsewhere",
-    "text": "Elsewhere\n\nGitHub · kiwiyolo\nORCID · 0009-0008-4545-2349\nLinkedIn · Qun Luo\nInstagram · qunluo.kiwi\n\n如希望交流研究想法或开展合作，欢迎通过邮件联系我。中文和英文均可。"
+    "objectID": "content/contact.html#get-in-touch",
+    "href": "content/contact.html#get-in-touch",
+    "title": "LUO Qun · 罗群",
+    "section": "Get in Touch",
+    "text": "Get in Touch\nI would love to connect!\nI welcome conversations about Earth system science, hydrological forecasting, ocean prediction, and interpretable AI.\n\nEmail\n\n📧 qunluo.kiwi@gmail.com\n\n\n\nConnect with me on Social Media!\n\n   \n\n\n\nBook a time to chat!\n📅 Email me to arrange a conversation.\n\nShare the topic you would like to discuss.\nInclude your time zone and a few suitable times.\n中文和英文均可，欢迎交流研究想法或合作机会。"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "LUO Qun 罗群",
+    "title": "LUO Qun · 罗群",
     "section": "",
-    "text": "EARTH SYSTEM SCIENCE · ARTIFICIAL INTELLIGENCE\n    \n    Understanding Earth systems.Building interpretable forecasts.\n    PhD programme · Department of Computing, The Hong Kong Polytechnic UniversityJoint supervision with EIT · September 2026\n    I work at the intersection of hydrology, Earth system science, and artificial intelligence. My research spans water quality prediction, precipitation nowcasting, runoff change, and seasonal sea surface temperature forecasting.\n    我关注人工智能如何帮助我们理解地球系统，并构建具有物理可解释性的预测方法。\n    \n      Explore my research ↗\n      About me\n      Get in touch\n    \n  \n  \n    \n    LUO Qun · Earth System & AI"
+    "text": "Earth System × AI × Interpretability. I work on water quality prediction, precipitation nowcasting, runoff change, and seasonal sea surface temperature forecasting. My PhD programme is in Computing at The Hong Kong Polytechnic University, with joint supervision at EIT, starting September 2026.\n\n  Water engineering · Beijing Normal University\n  Groundwater science · China University of Geosciences (Beijing)\n  Research experience · Southern University of Science and Technology\n  Physically interpretable AI for Earth systems\n\nDive into the interactive city below to explore my research, publications, research visuals, and writing. \n\n\n\n  \n    \n\n    \n      \n      Get in Touch!\n    \n\n    \n      \n      About Me\n    \n\n    \n      \n      Research Visuals\n    \n\n    \n      \n      Open Science\n    \n\n    \n      \n      Projects\n    \n\n    \n      \n      Talks & Conferences\n    \n\n    \n      \n      Blog\n    \n\n    \n      \n      Book a Time to Chat!"
   },
   {
-    "objectID": "index.html#research-interests",
-    "href": "index.html#research-interests",
-    "title": "LUO Qun 罗群",
-    "section": "Research interests",
-    "text": "Research interests\n\n\nHydrology & water quality\nData-driven forecasting of river water quality and runoff, with attention to how human activities reshape the water cycle.\n\n\nWeather & ocean forecasting\nPrecipitation nowcasting and seasonal sea surface temperature prediction, connecting observations with deep learning.\n\n\nPhysically interpretable AI\nUnderstanding what models learn, how physical knowledge can guide predictions, and where forecasts remain uncertain."
-  },
-  {
-    "objectID": "index.html#writing",
-    "href": "index.html#writing",
-    "title": "LUO Qun 罗群",
-    "section": "Writing",
-    "text": "Writing\nWhat To Do in the Era of Automated Research · April 2026\nA reflection on scientific judgment, meaningful questions, and working with AI.\nAll writing →"
-  },
-  {
-    "objectID": "content/about.html",
-    "href": "content/about.html",
-    "title": "About",
+    "objectID": "index.html#explore-the-city",
+    "href": "index.html#explore-the-city",
+    "title": "LUO Qun · 罗群",
     "section": "",
-    "text": "I am LUO Qun (罗群). My work connects Earth system science with artificial intelligence, with a particular interest in physically interpretable prediction.\nMy background is in groundwater science and water engineering. I have worked on river water quality, precipitation nowcasting, human influences on runoff, and seasonal ocean forecasting. Across these topics, I am interested in how models can make useful predictions while helping us understand the processes behind them."
+    "text": "Get in Touch!\n    \n\n    \n      \n      About Me\n    \n\n    \n      \n      Research Visuals\n    \n\n    \n      \n      Open Science\n    \n\n    \n      \n      Projects\n    \n\n    \n      \n      Talks & Conferences\n    \n\n    \n      \n      Blog\n    \n\n    \n      \n      Book a Time to Chat!"
+  },
+  {
+    "objectID": "content/about.html#about-me",
+    "href": "content/about.html#about-me",
+    "title": "LUO Qun · 罗群",
+    "section": "About me",
+    "text": "About me\n\n  \n  \n    \n      Earth system science and artificial intelligence\n      PhD programme at PolyU, jointly supervised with EIT\n      Background in water engineering and groundwater science\n      Research on weather, water, and ocean forecasting\n      Interested in physically interpretable AI\n    \n  \n\n\nI am LUO Qun (罗群). My work connects Earth system science with artificial intelligence, with a particular interest in physically interpretable prediction.\nMy background is in groundwater science and water engineering. I have worked on river water quality, precipitation nowcasting, human influences on runoff, and seasonal ocean forecasting. Across these topics, I am interested in how models can make useful predictions while helping us understand the processes behind them."
   },
   {
     "objectID": "content/about.html#education",
     "href": "content/about.html#education",
-    "title": "About",
+    "title": "LUO Qun · 罗群",
     "section": "Education",
     "text": "Education\n\nThe Hong Kong Polytechnic University · from September 2026\nFull-time PhD programme, Department of Computing\nJoint supervision with EIT Institute for Advanced Study.\nSupervisors: Prof. Jiannong Cao (PolyU) and Dr. Yuntian Chen (EIT).\n\n\nBeijing Normal University · September 2022 – June 2025\nMaster’s degree in Water Engineering, College of Water Sciences.\nSupervisor: Prof. Dingzhi Peng.\n\n\nChina University of Geosciences (Beijing) · September 2018 – June 2022\nBachelor of Engineering in Groundwater Science and Engineering."
   },
   {
     "objectID": "content/about.html#research-experience",
     "href": "content/about.html#research-experience",
-    "title": "About",
+    "title": "LUO Qun · 罗群",
     "section": "Research experience",
     "text": "Research experience\n\nSouthern University of Science and Technology\nResearch Assistant, Earth System & Global Change Lab; joined July 2025.\nSupervisor: Dr. Zhenzhong Zeng.\nResearch on deep learning for seasonal sea surface temperature forecasting and the drivers and prediction of algal blooms."
   },
   {
     "objectID": "content/about.html#research-interests",
     "href": "content/about.html#research-interests",
-    "title": "About",
+    "title": "LUO Qun · 罗群",
     "section": "Research interests",
     "text": "Research interests\n\nPhysically interpretable AI for Earth system processes\nSeasonal sea surface temperature forecasting\nPrecipitation nowcasting and satellite precipitation\nWater quality prediction and hydrological modelling\nHuman activity, climate variability, and runoff change"
   },
   {
     "objectID": "content/about.html#中文简介",
     "href": "content/about.html#中文简介",
-    "title": "About",
+    "title": "LUO Qun · 罗群",
     "section": "中文简介",
     "text": "中文简介\n我是罗群，研究兴趣是地球系统科学与人工智能，尤其关注预测方法的物理可解释性。本科就读于中国地质大学（北京）地下水科学与工程专业，硕士就读于北京师范大学水科学研究院水利工程专业。2025 年 7 月加入南方科技大学地球系统与全球变化相关研究团队任科研助理，研究海表温度季节预测等问题。博士项目为香港理工大学计算学系与 EIT 联合培养项目，起始时间为 2026 年 9 月。\nResearch projects · Publications · Contact"
   },
   {
     "objectID": "content/datasets.html",
     "href": "content/datasets.html",
-    "title": "Research resources",
+    "title": "LUO Qun · 罗群",
     "section": "",
-    "text": "Data sources and access conditions are described in the associated publications. Please consult the original providers and the data availability statement for each study.\n\nPrecipitation nowcasting paper and analysis code\nWater quality prediction paper\n\nContact me for questions about the research."
+    "text": "Data sources and access conditions for my research are described in the associated publications.\n\nPrecipitation nowcasting paper · Analysis code\nWater quality prediction paper\n\nPlease consult the original providers and the data availability statement for each study. Contact me for questions about the research."
+  },
+  {
+    "objectID": "content/datasets.html#datasets",
+    "href": "content/datasets.html#datasets",
+    "title": "LUO Qun · 罗群",
+    "section": "",
+    "text": "Data sources and access conditions for my research are described in the associated publications.\n\nPrecipitation nowcasting paper · Analysis code\nWater quality prediction paper\n\nPlease consult the original providers and the data availability statement for each study. Contact me for questions about the research."
+  },
+  {
+    "objectID": "content/illustrations.html",
+    "href": "content/illustrations.html",
+    "title": "LUO Qun · 罗群",
+    "section": "",
+    "text": "A selection of figures from my research presentations on water quality and precipitation forecasting.  The associated publications provide the methods, results, and full author credits.  Get in touch about the research.\n\n\n\n\n  \n\nFrom my presentation of the water quality study. Luo et al. (2023), Environmental Science and Pollution Research.\n\n\n\n\n  \n\nFrom my presentation of the precipitation nowcasting study. Luo et al. (2026), Hydrological Sciences Journal · Code.\n\n\n\nThe buildings below are navigation elements of this website’s illustrated community.\n\n  \n  \n  \n  \n\n\nFor the scientific context and reuse information, consult each original publication and its licence.\n\n\nHave a question about a research figure? Contact me here!\n\n×"
+  },
+  {
+    "objectID": "content/illustrations.html#research-visuals",
+    "href": "content/illustrations.html#research-visuals",
+    "title": "LUO Qun · 罗群",
+    "section": "",
+    "text": "A selection of figures from my research presentations on water quality and precipitation forecasting.  The associated publications provide the methods, results, and full author credits.  Get in touch about the research.\n\n\n\n\n  \n\nFrom my presentation of the water quality study. Luo et al. (2023), Environmental Science and Pollution Research.\n\n\n\n\n  \n\nFrom my presentation of the precipitation nowcasting study. Luo et al. (2026), Hydrological Sciences Journal · Code.\n\n\n\nThe buildings below are navigation elements of this website’s illustrated community.\n\n  \n  \n  \n  \n\n\nFor the scientific context and reuse information, consult each original publication and its licence.\n\n\nHave a question about a research figure? Contact me here!\n\n×"
   },
   {
     "objectID": "content/privacy.html",
@@ -205,21 +184,21 @@
   {
     "objectID": "content/publications.html",
     "href": "content/publications.html",
-    "title": "Publications",
+    "title": "LUO Qun · 罗群",
     "section": "",
-    "text": "Coupling strategies for precipitation nowcasting in China\nQun Luo, Dingzhi Peng, Yu Gu, Yuwei Gong, Zhenglong Fan, Tao Wang, and Bo Pang.\nHydrological Sciences Journal, 71(1), 139–151. Published online in 2025.\nDOI: 10.1080/02626667.2025.2587687 · Code\n\n\n\nComprehensive evaluation of satellite-based precipitation products at hourly scale in Beijing\nYu Gu, Dingzhi Peng, Qun Luo, Yuwei Gong, Zhenglong Fan, Bo Pang, and Zhongfan Zhu.\nUrban Climate, 57, 102109.\nDOI: 10.1016/j.uclim.2024.102109\nDynamic changes of net anthropogenic nitrogen/phosphorus input and its riverine export in the Beijing’s subcenter\nXiaoyu Luo, Dingzhi Peng, Wenjian Shang, Yu Gu, Qun Luo, Zhongfan Zhu, and Bo Pang.\nCLEAN – Soil, Air, Water, 52(3), 2300165.\nDOI: 10.1002/clen.202300165\n北京市通州区主要河流生态基流研究\n罗霄雨、彭定志、尚文健、庞博、黄榆清、罗群、郑自琪、陈浩铭。\n水资源研究 / Journal of Water Resources Research, 13(4), 372–380.\nDOI: 10.12677/jwrr.2024.134043\n\n\n\nWater quality analysis based on LSTM and BP optimization with a transfer learning model\nQun Luo, Dingzhi Peng, Wenjian Shang, Yu Gu, Xiaoyu Luo, Zhongfan Zhu, and Bo Pang.\nEnvironmental Science and Pollution Research, 30(59), 124341–124352.\nDOI: 10.1007/s11356-023-31068-5"
+    "text": "Coupling strategies for precipitation nowcasting in China (2026)\n    Qun Luo, Dingzhi Peng, Yu Gu, Yuwei Gong, Zhenglong Fan, Tao Wang, and Bo Pang.\n    Hydrological Sciences Journal, 71(1), 139–151. Published online in 2025.\n    Read the publication · Code\n  \n\n\n\n  \n    \n  \n  \n    Comprehensive evaluation of satellite-based precipitation products at hourly scale in Beijing (2024)\n    Yu Gu, Dingzhi Peng, Qun Luo, Yuwei Gong, Zhenglong Fan, Bo Pang, and Zhongfan Zhu.\n    Urban Climate, 57, 102109.\n    Read the publication\n  \n\n\n\n  \n    \n  \n  \n    Dynamic changes of net anthropogenic nitrogen/phosphorus input and its riverine export in the Beijing's subcenter (2024)\n    Xiaoyu Luo, Dingzhi Peng, Wenjian Shang, Yu Gu, Qun Luo, Zhongfan Zhu, and Bo Pang.\n    CLEAN – Soil, Air, Water, 52(3), 2300165.\n    Read the publication\n  \n\n\n\n  \n    \n  \n  \n    北京市通州区主要河流生态基流研究 (2024)\n    罗霄雨、彭定志、尚文健、庞博、黄榆清、罗群、郑自琪、陈浩铭。\n    水资源研究 / Journal of Water Resources Research, 13(4), 372–380.\n    Read the publication\n  \n\n\n\n  \n    \n  \n  \n    Water quality analysis based on LSTM and BP optimization with a transfer learning model (2023)\n    Qun Luo, Dingzhi Peng, Wenjian Shang, Yu Gu, Xiaoyu Luo, Zhongfan Zhu, and Bo Pang.\n    Environmental Science and Pollution Research, 30(59), 124341–124352.\n    Read the publication"
   },
   {
-    "objectID": "content/publications.html#journal-articles",
-    "href": "content/publications.html#journal-articles",
-    "title": "Publications",
+    "objectID": "content/publications.html#selected-publications",
+    "href": "content/publications.html#selected-publications",
+    "title": "LUO Qun · 罗群",
     "section": "",
-    "text": "Coupling strategies for precipitation nowcasting in China\nQun Luo, Dingzhi Peng, Yu Gu, Yuwei Gong, Zhenglong Fan, Tao Wang, and Bo Pang.\nHydrological Sciences Journal, 71(1), 139–151. Published online in 2025.\nDOI: 10.1080/02626667.2025.2587687 · Code\n\n\n\nComprehensive evaluation of satellite-based precipitation products at hourly scale in Beijing\nYu Gu, Dingzhi Peng, Qun Luo, Yuwei Gong, Zhenglong Fan, Bo Pang, and Zhongfan Zhu.\nUrban Climate, 57, 102109.\nDOI: 10.1016/j.uclim.2024.102109\nDynamic changes of net anthropogenic nitrogen/phosphorus input and its riverine export in the Beijing’s subcenter\nXiaoyu Luo, Dingzhi Peng, Wenjian Shang, Yu Gu, Qun Luo, Zhongfan Zhu, and Bo Pang.\nCLEAN – Soil, Air, Water, 52(3), 2300165.\nDOI: 10.1002/clen.202300165\n北京市通州区主要河流生态基流研究\n罗霄雨、彭定志、尚文健、庞博、黄榆清、罗群、郑自琪、陈浩铭。\n水资源研究 / Journal of Water Resources Research, 13(4), 372–380.\nDOI: 10.12677/jwrr.2024.134043\n\n\n\nWater quality analysis based on LSTM and BP optimization with a transfer learning model\nQun Luo, Dingzhi Peng, Wenjian Shang, Yu Gu, Xiaoyu Luo, Zhongfan Zhu, and Bo Pang.\nEnvironmental Science and Pollution Research, 30(59), 124341–124352.\nDOI: 10.1007/s11356-023-31068-5"
+    "text": "Coupling strategies for precipitation nowcasting in China (2026)\n    Qun Luo, Dingzhi Peng, Yu Gu, Yuwei Gong, Zhenglong Fan, Tao Wang, and Bo Pang.\n    Hydrological Sciences Journal, 71(1), 139–151. Published online in 2025.\n    Read the publication · Code\n  \n\n\n\n  \n    \n  \n  \n    Comprehensive evaluation of satellite-based precipitation products at hourly scale in Beijing (2024)\n    Yu Gu, Dingzhi Peng, Qun Luo, Yuwei Gong, Zhenglong Fan, Bo Pang, and Zhongfan Zhu.\n    Urban Climate, 57, 102109.\n    Read the publication\n  \n\n\n\n  \n    \n  \n  \n    Dynamic changes of net anthropogenic nitrogen/phosphorus input and its riverine export in the Beijing's subcenter (2024)\n    Xiaoyu Luo, Dingzhi Peng, Wenjian Shang, Yu Gu, Qun Luo, Zhongfan Zhu, and Bo Pang.\n    CLEAN – Soil, Air, Water, 52(3), 2300165.\n    Read the publication\n  \n\n\n\n  \n    \n  \n  \n    北京市通州区主要河流生态基流研究 (2024)\n    罗霄雨、彭定志、尚文健、庞博、黄榆清、罗群、郑自琪、陈浩铭。\n    水资源研究 / Journal of Water Resources Research, 13(4), 372–380.\n    Read the publication\n  \n\n\n\n  \n    \n  \n  \n    Water quality analysis based on LSTM and BP optimization with a transfer learning model (2023)\n    Qun Luo, Dingzhi Peng, Wenjian Shang, Yu Gu, Xiaoyu Luo, Zhongfan Zhu, and Bo Pang.\n    Environmental Science and Pollution Research, 30(59), 124341–124352.\n    Read the publication"
   },
   {
     "objectID": "content/publications.html#conference-contributions",
     "href": "content/publications.html#conference-contributions",
-    "title": "Publications",
+    "title": "LUO Qun · 罗群",
     "section": "Conference contributions",
     "text": "Conference contributions\nWater quality prediction for Beijing’s sub-center based on deep learning model\nIUGG General Assembly, 2023. Conference abstract.\nDOI: 10.57757/IUGG23-2988\n\nORCID · 0009-0008-4545-2349"
   },
@@ -235,13 +214,13 @@
     "href": "subscribe.html",
     "title": "Subscribe",
     "section": "",
-    "text": "Subscribe to updates from LUO Qun (罗群) about new articles, research notes, and projects. Confirm your email using the link sent after you subscribe. For subscription changes, contact qunluo.kiwi@gmail.com.\n\n  Email address\n  \n  \n  \n  \n    \n    \n  \n\n  Subscribe"
+    "text": "Get notified when LUO Qun (罗群) publishes new articles, research notes, or projects. Confirm your email using the link sent after you subscribe. For subscription changes, contact qunluo.kiwi@gmail.com.\n\n  Enter your email below to subscribe:\n  \n  \n  \n  \n    \n    \n  \n\n  Subscribe"
   },
   {
     "objectID": "subscribe.html#stay-updated",
     "href": "subscribe.html#stay-updated",
     "title": "Subscribe",
     "section": "",
-    "text": "Subscribe to updates from LUO Qun (罗群) about new articles, research notes, and projects. Confirm your email using the link sent after you subscribe. For subscription changes, contact qunluo.kiwi@gmail.com.\n\n  Email address\n  \n  \n  \n  \n    \n    \n  \n\n  Subscribe"
+    "text": "Get notified when LUO Qun (罗群) publishes new articles, research notes, or projects. Confirm your email using the link sent after you subscribe. For subscription changes, contact qunluo.kiwi@gmail.com.\n\n  Enter your email below to subscribe:\n  \n  \n  \n  \n    \n    \n  \n\n  Subscribe"
   }
 ]

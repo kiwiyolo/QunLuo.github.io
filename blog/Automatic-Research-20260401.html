@@ -49,7 +49,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-3ecca29ccc6d9a16d56d324dca41e929.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-cf347d7cc3329a36b9b4572176781d5f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -77,7 +78,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<style>html{ scroll-behavior: smooth; }</style>
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async="" defer=""></script>
 <script>
   // ==========================================
@@ -109,12 +109,6 @@ ul.task-list li input[type="checkbox"] {
 </script>
 
 
-<meta property="og:title" content="What To Do in the Era of Automated Research – LUO Qun · 罗群">
-<meta property="og:description" content="A short reflection on how automated research workflows may reshape scientific practice, and what we can do to stay grounded, useful, and honest.">
-<meta property="og:image" content="https://qunluo-kiwi.com/blog/img/AI-Scientist-v2.png">
-<meta property="og:site_name" content="LUO Qun · 罗群">
-<meta property="og:image:height" content="273">
-<meta property="og:image:width" content="287">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -140,11 +134,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../content/project.html"> 
-<span class="menu-text">Research</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../content/publications.html"> 
-<span class="menu-text">Publications</span></a>
+<span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../blog/index.html"> 
@@ -154,20 +144,34 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="../content/contact.html"> 
 <span class="menu-text">Contact</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://planner.qunluo-kiwi.com/"> 
+<span class="menu-text">Private Plan 🔒</span></a>
+  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
     <a class="nav-link" href="../subscribe.html"> 
 <span class="menu-text">Subscribe</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://orcid.org/0009-0008-4545-2349"> 
+<span class="menu-text"><iconify-icon role="img" inline="" icon="fa6-brands:orcid" aria-label="Icon orcid from fa6-brands Iconify.design set." title="Icon orcid from fa6-brands Iconify.design set."></iconify-icon></span></a>
+  </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/kiwiyolo/"> <i class="bi bi-github" role="img" aria-label="LUO Qun on GitHub">
+    <a class="nav-link" href="https://www.instagram.com/qunluo.kiwi/"> <i class="bi bi-instagram" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="https://planner.qunluo-kiwi.com/"> 
-<span class="menu-text">Private Plan ↗</span></a>
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/kiwiyolo/"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/qun-luo-87b52b328/"> <i class="bi bi-linkedin" role="img">
+</i> 
+<span class="menu-text"></span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -184,7 +188,7 @@ ul.task-list li input[type="checkbox"] {
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
-  <ul class="collapse">
+  <ul>
   <li><a href="#questions-i-keep-returning-to" id="toc-questions-i-keep-returning-to" class="nav-link active" data-scroll-target="#questions-i-keep-returning-to">Questions I keep returning to</a></li>
   </ul>
 </nav>
@@ -306,10 +310,8 @@ As a researcher, building a reliable workflow for your own field is urgent and p
 
     <div class="ql-comment-form">
       <h4>Leave a reply</h4>
-      <label for="ql-comment-name">Name (optional)</label>
-      <input type="text" id="ql-comment-name" placeholder="Anonymous" maxlength="50">
-      <label for="ql-comment-content">Comment</label>
-      <textarea id="ql-comment-content" placeholder="What are your thoughts?" rows="3" required=""></textarea>
+      <input type="text" id="ql-comment-name" aria-label="Name (optional)" placeholder="Name (optional, default: Anonymous)" maxlength="50">
+      <textarea id="ql-comment-content" aria-label="Comment" placeholder="What are your thoughts?" rows="3" required=""></textarea>
       
       <div class="ql-turnstile-box">
         <p class="ql-turnstile-desc">To protect anonymous submissions from spam, this site uses Cloudflare Turnstile.</p>
@@ -319,7 +321,7 @@ As a researcher, building a reliable workflow for your own field is urgent and p
 
       <div class="ql-form-actions">
         <button id="ql-comment-submit" class="ql-btn-primary">Post Comment</button>
-        <span id="ql-comment-status" class="ql-status-msg" role="status" aria-live="polite"></span>
+        <span id="ql-comment-status" role="status" aria-live="polite" class="ql-status-msg"></span>
       </div>
     </div>
   </div>
@@ -579,11 +581,6 @@ document.addEventListener("DOMContentLoaded", () => {
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
-            // target, if specified
-            link.setAttribute("target", "_blank");
-            if (link.getAttribute("rel") === null) {
-              link.setAttribute("rel", "noopener");
-            }
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
@@ -901,30 +898,56 @@ document.addEventListener("DOMContentLoaded", () => {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>© 2026 LUO Qun · 罗群</p>
+<div>
+© Copyright 2026, LUO Qun · 罗群
+</div>
+<div id="cookie-banner-placeholder">
+
+</div>
+<style>
+  #cookie-banner {
+    position: fixed; bottom: 0; left: 0; width: 100%;
+    background-color: #6F4E37; color: #F3EDE2; padding: 15px 25px;
+    z-index: 1000; text-align: center; font-size: 0.9em;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+  }
+  #cookie-banner p { margin: 0; }
+  #cookie-banner a { color: #aed6ff; text-decoration: underline; margin-left: 10px; }
+  #cookie-banner button {
+    margin: 0 15px; padding: 5px 15px; border: none;
+    background-color: #F3EDE2; color: #A25B43; cursor: pointer; border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    if (localStorage.getItem("cookieAccepted") === "true") return;
+    const bannerHTML = `
+      <div id="cookie-banner">
+        <p>
+          Optional blog interactions use browser storage and anti-spam checks.
+          <button id="accept-cookies">OK</button>
+          <a href="/content/privacy.html" class="cookie-link">(learn more)</a>
+        </p>
+      </div>`;
+    document.getElementById("cookie-banner-placeholder").innerHTML = bannerHTML;
+    document.getElementById("accept-cookies").addEventListener("click", function () {
+      localStorage.setItem("cookieAccepted", "true");
+      document.getElementById("cookie-banner").remove();
+    });
+  });
+</script>
 </div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
     <div class="nav-footer-right">
-      <ul class="footer-items list-unstyled">
-    <li class="nav-item">
-    <a class="nav-link" href="../content/privacy.html">
-<p>Privacy</p>
-</a>
-  </li>  
-    <li class="nav-item">
-    <a class="nav-link" href="https://quarto.org/">
-<p>Built with Quarto</p>
-</a>
-  </li>  
-</ul>
-    </div>
+<p>Built with <a href="https://quarto.org/">Quarto</a></p>
+</div>
   </div>
 </footer>
 
 
 
 
-<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
