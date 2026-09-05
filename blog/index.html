@@ -2,20 +2,25 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.36">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="LUO Qun">
+<meta name="description" content="Research notes and reflections by LUO Qun.">
 
-<title>Blog – Qun Luo</title>
+<title>Blog – LUO Qun · 罗群</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -42,11 +47,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-c888e60532438e3c90c55cf7e931c36a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-3ecca29ccc6d9a16d56d324dca41e929.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -103,6 +107,7 @@ ul.task-list li input[type="checkbox"] {
     }
   })
   </script>
+<style>html{ scroll-behavior: smooth; }</style>
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async="" defer=""></script>
 <script>
   // ==========================================
@@ -134,7 +139,7 @@ ul.task-list li input[type="checkbox"] {
 </script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -163,6 +168,12 @@ window.Quarto = {
 };
 </script>
 
+<meta property="og:title" content="Blog – LUO Qun · 罗群">
+<meta property="og:description" content="Research notes and reflections by LUO Qun.">
+<meta property="og:image" content="https://qunluo-kiwi.com/blog/img/AI-Scientist-v2.png">
+<meta property="og:site_name" content="LUO Qun · 罗群">
+<meta property="og:image:height" content="273">
+<meta property="og:image:width" content="287">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -173,7 +184,7 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">Qun Luo</span>
+    <span class="navbar-title">LUO Qun · 罗群</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -188,7 +199,11 @@ window.Quarto = {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../content/project.html"> 
-<span class="menu-text">Projects</span></a>
+<span class="menu-text">Research</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../content/publications.html"> 
+<span class="menu-text">Publications</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="../blog/index.html" aria-current="page"> 
@@ -204,24 +219,14 @@ window.Quarto = {
     <a class="nav-link" href="../subscribe.html"> 
 <span class="menu-text">Subscribe</span></a>
   </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/kiwiyolo/"> <i class="bi bi-github" role="img" aria-label="LUO Qun on GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://scholar.google.com/citations?hl=en&amp;user=OVagKRoAAAAJ"> 
-<span class="menu-text"><iconify-icon role="img" inline="" icon="fa6-brands:google-scholar" aria-label="Icon google-scholar from fa6-brands Iconify.design set." title="Icon google-scholar from fa6-brands Iconify.design set."></iconify-icon></span></a>
-  </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://www.instagram.com/qunluo.kiwi/?hl=en"> <i class="bi bi-instagram" role="img">
-</i> 
-<span class="menu-text"></span></a>
-  </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/kiwiyolo/"> <i class="bi bi-github" role="img">
-</i> 
-<span class="menu-text"></span></a>
-  </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://www.linkedin.com/in/qun-luo-87b52b328/"> <i class="bi bi-LinkedIn" role="img">
-</i> 
-<span class="menu-text"></span></a>
+    <a class="nav-link" href="https://planner.qunluo-kiwi.com/"> 
+<span class="menu-text">Private Plan ↗</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -235,8 +240,7 @@ window.Quarto = {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(13)</span></div><div class="category" data-category="QUk=">AI <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Y2xvc2VyZWFk">closeread <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZGlzc2VydGF0aW9u">dissertation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="aW5mb2dyYXBoaWM=">infographic <span class="quarto-category-count">(2)</span></div><div class="category" data-category="bWljcm9ibG9nZ2luZw==">microblogging <span class="quarto-category-count">(2)</span></div><div class="category" data-category="bm90ZS10YWtpbmc=">note-taking <span class="quarto-category-count">(7)</span></div><div class="category" data-category="b3BlbiUyMHJlc291cmNlcw==">open resources <span class="quarto-category-count">(2)</span></div><div class="category" data-category="b3BlbiUyMHNjaWVuY2U=">open science <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UGhE">PhD <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UEtN">PKM <span class="quarto-category-count">(4)</span></div><div class="category" data-category="cHJvamVjdCUyMG1hbmFnZW1lbnQ=">project management <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cXVhcnRv">quarto <span class="quarto-category-count">(2)</span></div><div class="category" data-category="cXVhcnRvc2U=">quartose <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cmVhZGluZw==">reading <span class="quarto-category-count">(1)</span></div><div class="category" data-category="c2tldGNobm90aW5n">sketchnoting <span class="quarto-category-count">(1)</span></div><div class="category" data-category="VGlkeVR1ZXNkYXk=">TidyTuesday <span class="quarto-category-count">(1)</span></div><div class="category" data-category="V29ya2Zsb3c=">Workflow <span class="quarto-category-count">(1)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div><div class="category" data-category="QUk=">AI <span class="quarto-category-count">(1)</span></div><div class="category" data-category="V29ya2Zsb3c=">Workflow <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -245,10 +249,21 @@ window.Quarto = {
 <h1 class="title">Blog</h1>
 </div>
 
+<div>
+  <div class="description">
+    Research notes and reflections by LUO Qun.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>LUO Qun </p>
+          </div>
+  </div>
     
   
     
@@ -259,9 +274,7 @@ window.Quarto = {
 </header>
 
 
-<div class="page-icon">
-<p><img src="../img/icons/van.svg" alt="" aria-hidden="true"></p>
-</div>
+<p>Notes on Earth system science, AI, and the practice of research.</p>
 
 
 
@@ -274,7 +287,7 @@ window.Quarto = {
     </div>
 </div>
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="QUklMkNXb3JrZmxvdw==" data-listing-date-sort="1775001600000" data-listing-file-modified-sort="1775705420814" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="458">
+<div class="quarto-post image-right" data-index="0" data-categories="QUklMkNXb3JrZmxvdw==" data-listing-date-sort="1775001600000" data-listing-file-modified-sort="1788604593764" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="457">
 <div class="thumbnail"><a href="../blog/Automatic-Research-20260401.html" class="no-external">
 
 <img loading="lazy" src="../blog/img/AI-Scientist-v2.png" class="thumbnail-image">
@@ -300,361 +313,8 @@ window.Quarto = {
 <div class="listing-date">
 2026-04-01
 </div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="bm90ZS10YWtpbmclMkNQS00lMkNwcm9qZWN0JTIwbWFuYWdlbWVudA==" data-listing-date-sort="1774310400000" data-listing-file-modified-sort="1775705420928" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1569">
-<div class="thumbnail"><a href="../blog/project-management.html" class="no-external">
-
-<img loading="lazy" src="../blog/img/moria.png" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blog/project-management.html" class="no-external">How to keep up when you’re gorging yourself with tasks</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('bm90ZS10YWtpbmc='); return false;">note-taking</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('UEtN'); return false;">PKM</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('cHJvamVjdCUyMG1hbmFnZW1lbnQ='); return false;">project management</div>
-
-</div>
-<div class="delink listing-description"><a href="../blog/project-management.html" class="no-external">
-<p>This post is about project management. No, it does not offer solutions because solutions don’t exist.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../blog/project-management.html" class="no-external">
-<div class="listing-date">
-2026-03-24
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="cmVhZGluZw==" data-listing-date-sort="1767139200000" data-listing-file-modified-sort="1775705420814" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2037">
-<div class="thumbnail"><a href="../blog/half-a-year-of-reading.html" class="no-external">
-
-<p class="card-img-top"><img loading='lazy' src="img/book-covers/waxler1.jpeg"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blog/half-a-year-of-reading.html" class="no-external">Half a year of reading</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('cmVhZGluZw=='); return false;">reading</div>
-
-</div>
-<div class="delink listing-description"><a href="../blog/half-a-year-of-reading.html" class="no-external">
-<p>My “end-of-the-year” reading summary. But mostly is about how I climbed up from a bookless pit.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../blog/half-a-year-of-reading.html" class="no-external">
-<div class="listing-date">
-2025-12-31
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="bWljcm9ibG9nZ2luZyUyQ25vdGUtdGFraW5n" data-listing-date-sort="1765756800000" data-listing-file-modified-sort="1775705420814" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="328">
-<div class="thumbnail"><a href="../blog/consequences-notetaking.html" class="no-external">
-
-<img loading="lazy" src="../blog/img/sherlockholmes.gif" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blog/consequences-notetaking.html" class="no-external">The unintended consequence of note-taking</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('bWljcm9ibG9nZ2luZw=='); return false;">microblogging</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('bm90ZS10YWtpbmc='); return false;">note-taking</div>
-
-</div>
-<div class="delink listing-description"><a href="../blog/consequences-notetaking.html" class="no-external">
-<p>Spoiler alert: it’s about self-soothing</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../blog/consequences-notetaking.html" class="no-external">
-<div class="listing-date">
-2025-12-15
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="bm90ZS10YWtpbmclMkNQaEQlMkNkaXNzZXJ0YXRpb24=" data-listing-date-sort="1762214400000" data-listing-file-modified-sort="1775705420814" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="25" data-listing-word-count-sort="4940">
-<div class="thumbnail"><a href="../blog/dissertation-journal.html" class="no-external">
-
-<img loading="lazy" src="../blog/img/generaldisc.png" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blog/dissertation-journal.html" class="no-external">The Dissertation Journal that saved my sanity</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('bm90ZS10YWtpbmc='); return false;">note-taking</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('UGhE'); return false;">PhD</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZGlzc2VydGF0aW9u'); return false;">dissertation</div>
-
-</div>
-<div class="delink listing-description"><a href="../blog/dissertation-journal.html" class="no-external">
-<p>Doing a PhD means trying 100 systems and stick to 3. If you have to try something this year, let it be a dissertation journal</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../blog/dissertation-journal.html" class="no-external">
-<div class="listing-date">
-2025-11-04
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="bWljcm9ibG9nZ2luZw==" data-listing-date-sort="1759449600000" data-listing-file-modified-sort="1775705420927" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="417">
-<div class="thumbnail"><a href="../blog/microblogging.html" class="no-external">
-
-<img loading="lazy" src="../blog/img/otto-blanket.jpeg" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blog/microblogging.html" class="no-external">An experiment in microblogging</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('bWljcm9ibG9nZ2luZw=='); return false;">microblogging</div>
-
-</div>
-<div class="delink listing-description"><a href="../blog/microblogging.html" class="no-external">
-<p>Being home sick has its pros: more writing time for experiments</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../blog/microblogging.html" class="no-external">
-<div class="listing-date">
-2025-10-03
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="6" data-categories="bm90ZS10YWtpbmclMkNza2V0Y2hub3Rpbmc=" data-listing-date-sort="1758153600000" data-listing-file-modified-sort="1775705420928" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="13" data-listing-word-count-sort="2489">
-<div class="thumbnail"><a href="../blog/sketchnoting-beginners.html" class="no-external">
-
-<img loading="lazy" src="../blog/img/sketchnotes.png" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blog/sketchnoting-beginners.html" class="no-external">So, you want to start Sketchnoting (but don’t know how)</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('bm90ZS10YWtpbmc='); return false;">note-taking</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('c2tldGNobm90aW5n'); return false;">sketchnoting</div>
-
-</div>
-<div class="delink listing-description"><a href="../blog/sketchnoting-beginners.html" class="no-external">
-<p>This post is for you if you’ve ever looked at a sketchnote and thought: “That’s cool, but I could never do that.”</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../blog/sketchnoting-beginners.html" class="no-external">
-<div class="listing-date">
-2025-09-18
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="7" data-categories="UEtNJTJDbm90ZS10YWtpbmc=" data-listing-date-sort="1755561600000" data-listing-file-modified-sort="1775705420927" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="20" data-listing-word-count-sort="3980">
-<div class="thumbnail"><a href="../blog/notetaking-part2.html" class="no-external">
-
-<img loading="lazy" src="../blog/img/grampasimpson.gif" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blog/notetaking-part2.html" class="no-external">Is Note-Taking as powerful as I think? (2/2)</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('UEtN'); return false;">PKM</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('bm90ZS10YWtpbmc='); return false;">note-taking</div>
-
-</div>
-<div class="delink listing-description"><a href="../blog/notetaking-part2.html" class="no-external">
-<p>Part 2 of 2 - This post shows how I dived into my digital journal to extract information about my writing style, my weekly mood, and yes, make more plots.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../blog/notetaking-part2.html" class="no-external">
-<div class="listing-date">
-2025-08-19
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="8" data-categories="UEtNJTJDbm90ZS10YWtpbmc=" data-listing-date-sort="1754179200000" data-listing-file-modified-sort="1775705420927" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="19" data-listing-word-count-sort="3695">
-<div class="thumbnail"><a href="../blog/notetaking-part1.html" class="no-external">
-
-<p class="card-img-top"><img loading='lazy' src="img/homer-simpson-brain.gif"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blog/notetaking-part1.html" class="no-external">Note-Taking is more powerful than you think (1/2)</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('UEtN'); return false;">PKM</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('bm90ZS10YWtpbmc='); return false;">note-taking</div>
-
-</div>
-<div class="delink listing-description"><a href="../blog/notetaking-part1.html" class="no-external">
-<p>Part 1 of 2 - This post shows how I transformed simple daily work logs in Logseq into a powerful data visualization in R to better understand my own strengths and interests.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../blog/notetaking-part1.html" class="no-external">
-<div class="listing-date">
-2025-08-03
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="9" data-categories="VGlkeVR1ZXNkYXklMkNxdWFydG8lMkNxdWFydG9zZQ==" data-listing-date-sort="1752105600000" data-listing-file-modified-sort="1775705420928" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1827">
-<div class="thumbnail"><a href="../blog/quartose.html" class="no-external">
-
-<img loading="lazy" src="https://i0.wp.com/imgs.xkcd.com/blag/doghouse_color_wheel_altered.png" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blog/quartose.html" class="no-external">TidyTuesday and Quartose</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('VGlkeVR1ZXNkYXk='); return false;">TidyTuesday</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('cXVhcnRv'); return false;">quarto</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('cXVhcnRvc2U='); return false;">quartose</div>
-
-</div>
-<div class="delink listing-description"><a href="../blog/quartose.html" class="no-external">
-<p>An experiment in structuring a TidyTuesday exploration using interactive elements from <code>quartose</code></p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../blog/quartose.html" class="no-external">
-<div class="listing-date">
-2025-07-10
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="10" data-categories="UEtNJTJDbm90ZS10YWtpbmclMkNvcGVuJTIwcmVzb3VyY2Vz" data-listing-date-sort="1750464000000" data-listing-file-modified-sort="1775705420814" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="809">
-<div class="thumbnail"><a href="../blog/awesome-pkm.html" class="no-external">
-
-<img loading="lazy" src="../blog/img/PKM-thumbnail.png" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blog/awesome-pkm.html" class="no-external">From “Not Sure How It Works” to “Maybe This Will Help Someone”</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('UEtN'); return false;">PKM</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('bm90ZS10YWtpbmc='); return false;">note-taking</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('b3BlbiUyMHJlc291cmNlcw=='); return false;">open resources</div>
-
-</div>
-<div class="delink listing-description"><a href="../blog/awesome-pkm.html" class="no-external">
-<p>This is the story on how I went from Confused Logseq User to Accidental Curator of an awesome academic PKM repository</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../blog/awesome-pkm.html" class="no-external">
-<div class="listing-date">
-2025-06-21
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="11" data-categories="cXVhcnRvJTJDY2xvc2VyZWFkJTJDaW5mb2dyYXBoaWMlMkNvcGVuJTIwcmVzb3VyY2Vz" data-listing-date-sort="1748649600000" data-listing-file-modified-sort="1775705420814" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="405">
-<div class="thumbnail"><a href="../blog/closeread-cheatsheet.html" class="no-external">
-
-<img loading="lazy" src="../blog/img/cheatsheet-closeread-thumbnail.png" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blog/closeread-cheatsheet.html" class="no-external">A Cheatsheet for Closeread (or the one where I gave a talk and brought more than slides)</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('cXVhcnRv'); return false;">quarto</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Y2xvc2VyZWFk'); return false;">closeread</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('aW5mb2dyYXBoaWM='); return false;">infographic</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('b3BlbiUyMHJlc291cmNlcw=='); return false;">open resources</div>
-
-</div>
-<div class="delink listing-description"><a href="../blog/closeread-cheatsheet.html" class="no-external">
-<p>This post started with a talk invitation about Closeread and scrollytelling. It ended with a full demo and a printable cheatsheet, all thanks to aesthetic joy and the refusal to keep checking the same three lines of syntax.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../blog/closeread-cheatsheet.html" class="no-external">
-<div class="listing-date">
-2025-05-31
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="12" data-categories="b3BlbiUyMHNjaWVuY2UlMkNpbmZvZ3JhcGhpYw==" data-listing-date-sort="1746662400000" data-listing-file-modified-sort="1775705420814" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1276">
-<div class="thumbnail"><a href="../blog/4rs.html" class="no-external">
-
-<img loading="lazy" src="../blog/img/4rs-thumbnail.png" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blog/4rs.html" class="no-external">The 4 Rs, and why they’re so confusing</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('b3BlbiUyMHNjaWVuY2U='); return false;">open science</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('aW5mb2dyYXBoaWM='); return false;">infographic</div>
-
-</div>
-<div class="delink listing-description"><a href="../blog/4rs.html" class="no-external">
-<p>This post started with a diagram I made for a talk, and ended with a discussion that showed me just how slippery scientific terms can be.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../blog/4rs.html" class="no-external">
-<div class="listing-date">
-2025-05-08
+<div class="listing-author">
+LUO Qun
 </div>
 </a>
 </div>
@@ -682,7 +342,9 @@ window.Quarto = {
 
     <div class="ql-comment-form">
       <h4>Leave a reply</h4>
-      <input type="text" id="ql-comment-name" placeholder="Name (optional, default: Anonymous)" maxlength="50">
+      <label for="ql-comment-name">Name (optional)</label>
+      <input type="text" id="ql-comment-name" placeholder="Anonymous" maxlength="50">
+      <label for="ql-comment-content">Comment</label>
       <textarea id="ql-comment-content" placeholder="What are your thoughts?" rows="3" required=""></textarea>
       
       <div class="ql-turnstile-box">
@@ -693,7 +355,7 @@ window.Quarto = {
 
       <div class="ql-form-actions">
         <button id="ql-comment-submit" class="ql-btn-primary">Post Comment</button>
-        <span id="ql-comment-status" class="ql-status-msg"></span>
+        <span id="ql-comment-status" class="ql-status-msg" role="status" aria-live="polite"></span>
       </div>
     </div>
   </div>
@@ -953,6 +615,11 @@ document.addEventListener("DOMContentLoaded", () => {
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
@@ -1270,72 +937,30 @@ document.addEventListener("DOMContentLoaded", () => {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<div>
-© Copyright 2026, Qun Luo
-</div>
-<div id="cookie-banner-placeholder">
-
-</div>
-<style>
-  #cookie-banner {
-    position: fixed; bottom: 0; left: 0; width: 100%;
-    background-color: #6F4E37; color: #F3EDE2; padding: 15px 25px;
-    z-index: 1000; text-align: center; font-size: 0.9em;
-    box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
-  }
-  #cookie-banner p { margin: 0; }
-  #cookie-banner a { color: #aed6ff; text-decoration: underline; margin-left: 10px; }
-  #cookie-banner button {
-    margin: 0 15px; padding: 5px 15px; border: none;
-    background-color: #F3EDE2; color: #A25B43; cursor: pointer; border-radius: 4px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-</style>
-<script>
-  function loadGoogleAnalytics() {
-    const gascript = document.createElement("script");
-    gascript.async = true;
-    gascript.src = "https://www.googletagmanager.com/gtag/js?id=G-DV6K7C0XDV";
-    document.head.appendChild(gascript);
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-DV6K7C0XDV');
-  }
-
-  document.addEventListener("DOMContentLoaded", function () {
-    if (localStorage.getItem("cookieAccepted") === "true") {
-      loadGoogleAnalytics();
-      return;
-    }
-    const bannerHTML = `
-      <div id="cookie-banner">
-        <p>
-          This website uses cookies for analytics. By clicking "OK", you agree to its use.
-          <button id="accept-cookies">OK</button>
-          <a href="privacy.html" class="cookie-link">(learn more)</a>
-        </p>
-      </div>`;
-    document.getElementById("cookie-banner-placeholder").innerHTML = bannerHTML;
-    
-    document.getElementById("accept-cookies").addEventListener("click", function () {
-      localStorage.setItem("cookieAccepted", "true");
-      document.getElementById("cookie-banner").remove();
-      loadGoogleAnalytics();
-    });
-  });
-</script>
+<p>© 2026 LUO Qun · 罗群</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
     <div class="nav-footer-right">
-<p>Built with <a href="https://quarto.org/">Quarto</a></p>
-</div>
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="../content/privacy.html">
+<p>Privacy</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://quarto.org/">
+<p>Built with Quarto</p>
+</a>
+  </li>  
+</ul>
+    </div>
   </div>
 </footer>
 
 
 
 
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

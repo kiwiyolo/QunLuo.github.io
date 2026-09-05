@@ -1,1 +1,3 @@
+User-agent: *
+Allow: /
 Sitemap: https://qunluo-kiwi.com/sitemap.xml
