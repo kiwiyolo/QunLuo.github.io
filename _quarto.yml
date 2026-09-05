@@ -21,46 +21,82 @@ author: "LUO Qun"
 
 website:
   title: "LUO Qun · 罗群"
-  description: "The personal website of LUO Qun (罗群). Earth system science, hydrology, and physically interpretable AI."
+  description: "Personal website of LUO Qun: Earth system science, hydrology, and interpretable AI."
   site-url: https://qunluo-kiwi.com/
   favicon: img/kiwi.png
-  search: true
-  open-graph: true
   navbar:
     left:
       - text: "About"
         href: content/about.qmd
-      - text: "Research"
+      - text: "Projects"
         href: content/project.qmd
-      - text: "Publications"
-        href: content/publications.qmd
       - text: "Blog"
         href: blog/index.qmd
       - text: "Contact"
         href: content/contact.qmd
+      - text: "Private Plan 🔒"
+        href: https://planner.qunluo-kiwi.com/
     right:
       - text: "Subscribe"
         href: subscribe.qmd
+      - text: "{{< iconify fa6-brands:orcid >}}"
+        href: https://orcid.org/0009-0008-4545-2349
+      - icon: instagram
+        href: https://www.instagram.com/qunluo.kiwi/
       - icon: github
-        aria-label: "LUO Qun on GitHub"
         href: https://github.com/kiwiyolo/
-      - text: "Private Plan ↗"
-        href: https://planner.qunluo-kiwi.com/
+      - icon: linkedin
+        href: https://www.linkedin.com/in/qun-luo-87b52b328/
+
   page-footer:
-    left: "© 2026 LUO Qun · 罗群"
-    right:
-      - text: "Privacy"
-        href: content/privacy.qmd
-      - text: "Built with Quarto"
-        href: https://quarto.org/
+    right: "Built with [Quarto](https://quarto.org/)"
+    left: |
+      <div>&copy; Copyright 2026, LUO Qun · 罗群</div>
+      <div id="cookie-banner-placeholder"></div>
+      <style>
+        #cookie-banner {
+          position: fixed; bottom: 0; left: 0; width: 100%;
+          background-color: #6F4E37; color: #F3EDE2; padding: 15px 25px;
+          z-index: 1000; text-align: center; font-size: 0.9em;
+          box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+        }
+        #cookie-banner p { margin: 0; }
+        #cookie-banner a { color: #aed6ff; text-decoration: underline; margin-left: 10px; }
+        #cookie-banner button {
+          margin: 0 15px; padding: 5px 15px; border: none;
+          background-color: #F3EDE2; color: #A25B43; cursor: pointer; border-radius: 4px;
+          transition: background-color 0.3s ease, color 0.3s ease;
+        }
+      </style>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          if (localStorage.getItem("cookieAccepted") === "true") return;
+          const bannerHTML = `
+            <div id="cookie-banner">
+              <p>
+                Optional blog interactions use browser storage and anti-spam checks.
+                <button id="accept-cookies">OK</button>
+                <a href="/content/privacy.html" class="cookie-link">(learn more)</a>
+              </p>
+            </div>`;
+          document.getElementById("cookie-banner-placeholder").innerHTML = bannerHTML;
+          document.getElementById("accept-cookies").addEventListener("click", function () {
+            localStorage.setItem("cookieAccepted", "true");
+            document.getElementById("cookie-banner").remove();
+          });
+        });
+      </script>
 
 format:
   html:
     theme: custom.scss
     toc: true
-    toc-depth: 2
-    anchor-sections: true
-    smooth-scroll: true
-    link-external-newwindow: true
+    toc-depth: 3
+    navigation:
+      sidebar: false
+    meta:
+      description: "Personal website of LUO Qun"
+      author: "LUO Qun"
+      keywords: ["LUO Qun", "罗群", "AI", "Hydrology", "Earth System", "Forecast", "Interpretability"]
 
 editor: source

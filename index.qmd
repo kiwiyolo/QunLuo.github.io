@@ -1,54 +1,82 @@
 ---
 title: ""
-pagetitle: "LUO Qun · 罗群 | Earth System & AI"
-description: "LUO Qun (罗群): Earth system science, hydrological forecasting, and physically interpretable artificial intelligence."
-toc: false
-page-layout: full
+pagetitle: "LUO Qun · 罗群"
+description: "Personal website of LUO Qun (罗群): Earth system science, hydrology, and interpretable AI."
+title-block-banner: false
+include-after-body:
+  text: |
+    <style>
+      #quarto-margin-sidebar {
+        visibility: hidden;
+      }
+    </style>
 ---
 
+# LUO Qun · 罗群
+
+<br>
+
+<img src="img/running.jpg" alt="Running along the shoreline" style="width: 40%; float: left; margin-right: 40px;"/>
+
 ```{=html}
-<section class="profile-hero" aria-labelledby="profile-name">
-  <div class="profile-intro">
-    <p class="eyebrow">EARTH SYSTEM SCIENCE · ARTIFICIAL INTELLIGENCE</p>
-    <h1 id="profile-name">LUO Qun <span lang="zh-CN">罗群</span></h1>
-    <p class="hero-lead">Understanding Earth systems.<br>Building interpretable forecasts.</p>
-    <p class="affiliation">PhD programme · Department of Computing, The Hong Kong Polytechnic University<br>Joint supervision with EIT · September 2026</p>
-    <p>I work at the intersection of hydrology, Earth system science, and artificial intelligence. My research spans water quality prediction, precipitation nowcasting, runoff change, and seasonal sea surface temperature forecasting.</p>
-    <p lang="zh-CN" class="chinese-intro">我关注人工智能如何帮助我们理解地球系统，并构建具有物理可解释性的预测方法。</p>
-    <div class="profile-links">
-      <a class="profile-button" href="content/project.html">Explore my research <span aria-hidden="true">↗</span></a>
-      <a href="content/about.html">About me</a>
-      <a href="mailto:qunluo.kiwi@gmail.com">Get in touch</a>
-    </div>
-  </div>
-  <figure class="profile-photo">
-    <img src="img/running.jpg" alt="Running along the shoreline" width="1080" height="1081" fetchpriority="high">
-    <figcaption>LUO Qun · Earth System & AI</figcaption>
-  </figure>
-</section>
+<p><strong>Earth System × AI × Interpretability.</strong> I work on water quality prediction, precipitation nowcasting, runoff change, and seasonal sea surface temperature forecasting. My PhD programme is in Computing at The Hong Kong Polytechnic University, with joint supervision at EIT, starting September 2026.</p>
+<ul class="ql-highlight-metrics">
+  <li>Water engineering · Beijing Normal University</li>
+  <li>Groundwater science · China University of Geosciences (Beijing)</li>
+  <li>Research experience · Southern University of Science and Technology</li>
+  <li>Physically interpretable AI for Earth systems</li>
+</ul>
 ```
 
-## Research interests
+**Dive into the interactive city below to explore my research, publications, research visuals, and writing**.<br><br>
+<br>
 
-::: {.research-grid}
-::: {.research-topic}
-### Hydrology & water quality
-Data-driven forecasting of river water quality and runoff, with attention to how human activities reshape the water cycle.
-:::
-::: {.research-topic}
-### Weather & ocean forecasting
-Precipitation nowcasting and seasonal sea surface temperature prediction, connecting observations with deep learning.
-:::
-::: {.research-topic}
-### Physically interpretable AI
-Understanding what models learn, how physical knowledge can guide predictions, and where forecasts remain uncertain.
-:::
-:::
+## Explore the City
 
-## Writing
+```{=html}
+<div class="city-wrapper">
+  <div class="city-layer">
+    <img src="img/city.svg" alt="An illustrated community with buildings for each section of LUO Qun's website" class="city-background">
 
-[What To Do in the Era of Automated Research](blog/Automatic-Research-20260401.qmd) · April 2026
+    <a href="content/contact.html" class="city-icon icon-contact">
+      <img src="img/icons/contact.svg" alt="Contact">
+      <span class="city-label">Get in Touch!</span>
+    </a>
 
-A reflection on scientific judgment, meaningful questions, and working with AI.
+    <a href="content/about.html" class="city-icon icon-home">
+      <img src="img/icons/home.svg" alt="Home">
+      <span class="city-label">About Me</span>
+    </a>
 
-[All writing →](blog/index.qmd)
+    <a href="content/illustrations.html" class="city-icon icon-illustration">
+      <img src="img/icons/illustrations.svg" alt="Research visuals">
+      <span class="city-label">Research Visuals</span>
+    </a>
+
+    <a href="content/open-science.html" class="city-icon icon-open-science">
+      <img src="img/icons/open-science.svg" alt="Open Science">
+      <span class="city-label">Open Science</span>
+    </a>
+
+    <a href="content/project.html#current-research" class="city-icon icon-research">
+      <img src="img/icons/research.svg" alt="Projects">
+      <span class="city-label">Projects</span>
+    </a>
+
+    <a href="content/talks.html" class="city-icon icon-talks-workshops">
+      <img src="img/icons/talks-workshops.svg" alt="Talks and conferences">
+      <span class="city-label">Talks & Conferences</span>
+    </a>
+
+    <a href="blog/index.html" class="city-icon icon-blog">
+      <img src="img/icons/van.svg" alt="Blog">
+      <span class="city-label">Blog</span>
+    </a>
+
+    <a href="content/contact.html#book-a-time-to-chat" class="city-icon icon-coffee">
+      <img src="img/icons/coffee-kiosk.svg" alt="Book a Time to Chat!">
+      <span class="city-label">Book a Time to Chat!</span>
+    </a>
+  </div>
+</div>
+```

@@ -1,12 +1,13 @@
 ---
-title: "Research resources"
-description: "Resources for LUO Qun's published research."
-toc: false
+title: ""
+pagetitle: "Datasets · LUO Qun"
 ---
 
-Data sources and access conditions are described in the associated publications. Please consult the original providers and the data availability statement for each study.
+## Datasets
 
-- [Precipitation nowcasting paper](https://doi.org/10.1080/02626667.2025.2587687) and [analysis code](https://github.com/kiwiyolo/Suitable-coupling-for-PN)
+Data sources and access conditions for my research are described in the associated publications.
+
+- [Precipitation nowcasting paper](https://doi.org/10.1080/02626667.2025.2587687) · [Analysis code](https://github.com/kiwiyolo/Suitable-coupling-for-PN)
 - [Water quality prediction paper](https://doi.org/10.1007/s11356-023-31068-5)
 
-[Contact me](contact.qmd) for questions about the research.
+Please consult the original providers and the data availability statement for each study. [Contact me](contact.qmd) for questions about the research.

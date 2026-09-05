@@ -1,7 +1,33 @@
 ---
-title: "About"
-description: "Education, research experience, and interests of LUO Qun (罗群)."
+title: ""
+pagetitle: "About · LUO Qun"
+class: page-research
+format:
+  html:
+    toc: false
 ---
+
+::: {.page-icon}
+<img src="../img/icons/home.svg" alt="" aria-hidden="true">
+:::
+
+## About me
+
+```{=html}
+<div class="about-me" style="display:flex; align-items:center; gap:2rem;">
+  <img src="../img/running.jpg" alt="Running along the shoreline" class="about-me-img" style="border-radius:50%; max-width:200px;">
+  <div class="about-me-text">
+    <ul>
+      <li><strong>Earth system science</strong> and artificial intelligence</li>
+      <li><strong>PhD programme</strong> at PolyU, jointly supervised with EIT</li>
+      <li>Background in <strong>water engineering</strong> and groundwater science</li>
+      <li>Research on <strong>weather, water, and ocean forecasting</strong></li>
+      <li>Interested in <strong>physically interpretable AI</strong></li>
+    </ul>
+  </div>
+</div>
+```
+<br>
 
 I am **LUO Qun (罗群)**. My work connects Earth system science with artificial intelligence, with a particular interest in physically interpretable prediction.
 

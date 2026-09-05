@@ -1,20 +1,43 @@
 ---
-title: "Contact"
+title: ""
+pagetitle: "Contact · LUO Qun"
 description: "Contact LUO Qun (罗群) for research discussions and collaboration."
-toc: false
+format:
+  html:
+    toc: false
+class: page-contact
+filters:
+  - fontawesome
+  - iconify
 ---
+
+::: {.page-icon}
+<img src="../img/icons/contact.svg" alt="" aria-hidden="true">
+:::
+
+## Get in Touch
+
+**I would love to connect!**
 
 I welcome conversations about Earth system science, hydrological forecasting, ocean prediction, and interpretable AI.
 
-## Email
+### Email
 
-[qunluo.kiwi@gmail.com](mailto:qunluo.kiwi@gmail.com)
+- 📧 [qunluo.kiwi@gmail.com](mailto:qunluo.kiwi@gmail.com)
 
-## Elsewhere
+### Connect with me on Social Media!
 
-- [GitHub · kiwiyolo](https://github.com/kiwiyolo/)
-- [ORCID · 0009-0008-4545-2349](https://orcid.org/0009-0008-4545-2349)
-- [LinkedIn · Qun Luo](https://www.linkedin.com/in/qun-luo-87b52b328/)
-- [Instagram · qunluo.kiwi](https://www.instagram.com/qunluo.kiwi/)
+<div class="social-icons">
+  <a href="https://github.com/kiwiyolo" aria-label="LUO Qun on GitHub">{{< fa brands github >}}</a>
+  <a href="https://www.linkedin.com/in/qun-luo-87b52b328/" aria-label="Qun Luo on LinkedIn">{{< fa brands linkedin >}}</a>
+  <a href="https://orcid.org/0009-0008-4545-2349" aria-label="LUO Qun on ORCID">{{< fa brands orcid >}}</a>
+  <a href="https://www.instagram.com/qunluo.kiwi/" aria-label="Qun Luo on Instagram">{{< fa brands instagram >}}</a>
+</div>
 
-如希望交流研究想法或开展合作，欢迎通过邮件联系我。中文和英文均可。
+### Book a time to chat! {#book-a-time-to-chat}
+
+📅 [Email me to arrange a conversation](mailto:qunluo.kiwi@gmail.com?subject=Research%20conversation).
+
+- Share the topic you would like to discuss.
+- Include your time zone and a few suitable times.
+- 中文和英文均可，欢迎交流研究想法或合作机会。

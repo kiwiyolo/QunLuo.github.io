@@ -9,13 +9,13 @@ format:
 
 ## Stay Updated
 
-Subscribe to updates from **LUO Qun (罗群)** about new articles, research notes, and projects. Confirm your email using the link sent after you subscribe. For subscription changes, contact [qunluo.kiwi@gmail.com](mailto:qunluo.kiwi@gmail.com).
+Get notified when **LUO Qun (罗群)** publishes new articles, research notes, or projects. Confirm your email using the link sent after you subscribe. For subscription changes, contact [qunluo.kiwi@gmail.com](mailto:qunluo.kiwi@gmail.com).
 
 ```{=html}
 <div class="ql-subscribe-container" style="max-width: 500px; margin: 2rem 0; padding: 2rem; background: rgba(0,0,0,0.03); border-radius: 12px; border: 1px solid rgba(0,0,0,0.1);">
-  <label for="ql-subscribe-email" style="display: block; margin-bottom: 1rem;">Email address</label>
+  <p style="margin-bottom: 1.5rem;">Enter your email below to subscribe:</p>
   
-  <input type="email" id="ql-subscribe-email" placeholder="your.email@example.com" style="width: 100%; padding: 0.75rem; margin-bottom: 1rem; border: 1px solid rgba(0,0,0,0.3); border-radius: 6px; box-sizing: border-box;" required>
+  <input type="email" id="ql-subscribe-email" aria-label="Email address" placeholder="your.email@example.com" style="width: 100%; padding: 0.75rem; margin-bottom: 1rem; border: 1px solid rgba(0,0,0,0.3); border-radius: 6px; box-sizing: border-box;" required>
   
   <div class="ql-turnstile-box" style="margin-bottom: 1rem;">
     <div class="cf-turnstile" data-sitekey="0x4AAAAAACzZJprJ4npD9l7W" data-callback="qlOnTurnstileSuccess"></div>
@@ -23,7 +23,7 @@ Subscribe to updates from **LUO Qun (罗群)** about new articles, research note
   </div>
 
   <button id="ql-subscribe-submit" class="ql-btn-primary" style="width: 100%;">Subscribe</button>
-  <p id="ql-subscribe-status" class="ql-status-msg" role="status" aria-live="polite" style="margin-top: 1rem; text-align: center;"></p>
+  <p id="ql-subscribe-status" role="status" aria-live="polite" class="ql-status-msg" style="margin-top: 1rem; text-align: center;"></p>
 </div>
 
 <script>

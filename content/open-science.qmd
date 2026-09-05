@@ -1,17 +1,29 @@
 ---
-title: "Code & reproducibility"
-description: "Public research code associated with LUO Qun's work."
-toc: false
+title: ""
+pagetitle: "Open Science · LUO Qun"
 ---
 
-## Precipitation nowcasting code
+::: {.page-icon}
+<img src="../img/icons/open-science.svg" alt="" aria-hidden="true">
+:::
 
-The code accompanying *Coupling strategies for precipitation nowcasting in China* is available on GitHub.
+## Open Science {#open-science}
 
-[Suitable-coupling-for-PN](https://github.com/kiwiyolo/Suitable-coupling-for-PN)
+Open science connects research questions, methods, and evidence through accessible publications and code.
 
-For the scientific context, see the [paper](https://doi.org/10.1080/02626667.2025.2587687). Follow the repository's documentation and licence when using the code.
+My public work includes code for precipitation nowcasting and publications on hydrology and water quality. <br><br>
 
-## More work
+### What I share
 
-[My GitHub profile](https://github.com/kiwiyolo/) · [Research](project.qmd) · [Publications](publications.qmd)
+- [GitHub](https://github.com/kiwiyolo?tab=repositories): my profile and public repositories.
+- [Suitable-coupling-for-PN](https://github.com/kiwiyolo/Suitable-coupling-for-PN): code accompanying *Coupling strategies for precipitation nowcasting in China*. <br>
+  → [Read the paper](https://doi.org/10.1080/02626667.2025.2587687).
+- [Publications](publications.qmd): journal articles and a conference abstract, with DOI links.
+
+### Reproducibility and collaboration
+
+Follow each repository's documentation and licence when using the code. Data sources and access conditions are described in the associated publications.
+
+- [Research resources](datasets.qmd): find the relevant data availability statements.
+- [Talks and conferences](talks.qmd#talks-workshops): conference contributions.
+- [Contact me](contact.qmd) with questions about methods or possible collaborations.

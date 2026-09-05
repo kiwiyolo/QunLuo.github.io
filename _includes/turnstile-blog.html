@@ -18,10 +18,8 @@
 
     <div class="ql-comment-form">
       <h4>Leave a reply</h4>
-      <label for="ql-comment-name">Name (optional)</label>
-      <input type="text" id="ql-comment-name" placeholder="Anonymous" maxlength="50">
-      <label for="ql-comment-content">Comment</label>
-      <textarea id="ql-comment-content" placeholder="What are your thoughts?" rows="3" required></textarea>
+      <input type="text" id="ql-comment-name" aria-label="Name (optional)" placeholder="Name (optional, default: Anonymous)" maxlength="50">
+      <textarea id="ql-comment-content" aria-label="Comment" placeholder="What are your thoughts?" rows="3" required></textarea>
       
       <div class="ql-turnstile-box">
         <p class="ql-turnstile-desc">To protect anonymous submissions from spam, this site uses Cloudflare Turnstile.</p>
@@ -31,7 +29,7 @@
 
       <div class="ql-form-actions">
         <button id="ql-comment-submit" class="ql-btn-primary">Post Comment</button>
-        <span id="ql-comment-status" class="ql-status-msg" role="status" aria-live="polite"></span>
+        <span id="ql-comment-status" role="status" aria-live="polite" class="ql-status-msg"></span>
       </div>
     </div>
   </div>

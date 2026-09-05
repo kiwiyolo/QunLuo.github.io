@@ -12,9 +12,12 @@ class Page(HTMLParser):
         super().__init__()
         self.links = []
         self.ids = set()
+        self.class_counts = {}
 
     def handle_starttag(self, tag, attrs):
         attributes = dict(attrs)
+        for name in (attributes.get("class") or "").split():
+            self.class_counts[name] = self.class_counts.get(name, 0) + 1
         if "id" in attributes:
             self.ids.add(attributes["id"])
         for attribute in ("href", "src", "poster"):
@@ -28,6 +31,7 @@ required = [
     "index.html", "404.html", "content/about.html", "content/contact.html",
     "content/project.html", "content/publications.html", "content/privacy.html",
     "blog/index.html", "blog/Automatic-Research-20260401.html", "subscribe.html",
+    "content/illustrations.html", "content/earth-system.html",
     "CNAME", ".nojekyll", "robots.txt", "sitemap.xml", "search.json",
 ]
 for name in required:
@@ -73,7 +77,7 @@ for name in ("search.json", "sitemap.xml", "listings.json"):
     if path.exists() and former_owner.search(path.read_text(encoding="utf-8")):
         errors.append(f"Former-owner metadata: {name}")
 
-for name in ("content/shrews.html", "content/illustrations.html", "manual.html",
+for name in ("content/shrews.html", "manual.html",
              "blog/20260501_Earth-system-forecast.html", "supabase", "scripts"):
     if (root / name).exists():
         errors.append(f"Unpublished content included: {name}")
@@ -81,7 +85,23 @@ for name in ("content/shrews.html", "content/illustrations.html", "manual.html",
 if (root / "CNAME").exists() and (root / "CNAME").read_text().strip() != "qunluo-kiwi.com":
     errors.append("Unexpected custom domain")
 
+components = {
+    "index.html": {"city-wrapper": 1, "city-layer": 1, "city-background": 1, "city-icon": 8},
+    "content/about.html": {"about-me": 1, "about-me-img": 1, "about-me-text": 1},
+    "content/project.html": {"research-gallery": 1, "project-card": 6},
+    "content/publications.html": {"listing-item": 5, "thumbnail": 5, "thumbnail-image": 5},
+    "content/illustrations.html": {"modular-gallery": 2, "micro-gallery": 1, "img-popup": 1},
+    "content/contact.html": {"social-icons": 1},
+    "content/earth-system.html": {"cr-section": 4},
+}
+for filename, expected in components.items():
+    page = pages.get(root / filename)
+    if page:
+        for component, count in expected.items():
+            if page.class_counts.get(component, 0) != count:
+                errors.append(f"Original component missing or changed: {filename} / {component}")
+
 if errors:
     print("\n".join(errors))
     raise SystemExit(1)
-print(f"Verified {len(pages)} pages: local links, anchors, owner identity, metadata, and publish scope.")
+print(f"Verified {len(pages)} pages: original components, local links, anchors, owner identity, and publish scope.")

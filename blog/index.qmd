@@ -12,4 +12,8 @@ listing:
   filter-ui: true
 ---
 
+::: {.page-icon}
+<img src="../img/icons/van.svg" alt="" aria-hidden="true">
+:::
+
 Notes on Earth system science, AI, and the practice of research.

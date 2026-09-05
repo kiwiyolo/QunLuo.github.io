@@ -1,15 +1,27 @@
 ---
-title: "Conference contributions"
-description: "Conference contributions by LUO Qun."
-toc: false
+title: ""
+pagetitle: "Talks & Conferences · LUO Qun"
 ---
 
-## IUGG General Assembly · 2023
+::: {.page-icon}
+<img src="../img/icons/talks-workshops.svg" alt="" aria-hidden="true">
+:::
 
-**Water quality prediction for Beijing's sub-center based on deep learning model**
+## Talks & Conferences {#talks-workshops}
 
-A conference abstract on deep learning approaches to water quality prediction.
+Conference contributions and research discussions about Earth system science, hydrology, and artificial intelligence.
 
-[View the abstract](https://doi.org/10.57757/IUGG23-2988)
+### Scientific Conferences and Seminars
 
-[Related journal article](https://doi.org/10.1007/s11356-023-31068-5) · [All publications](publications.qmd)
+#### 2023
+
+- **Qun Luo**, Dingzhi Peng, Yu Gu, Xiaoyu Luo <br>
+  *IUGG General Assembly* <br>
+  ***Water quality prediction for Beijing's sub-center based on deep learning model*** <br>
+  [Conference abstract](https://doi.org/10.57757/IUGG23-2988) · [Related journal article](https://doi.org/10.1007/s11356-023-31068-5)
+
+### Research discussions
+
+I welcome discussions of water quality prediction, precipitation nowcasting, seasonal ocean forecasting, and physically interpretable AI.
+
+[Book a time to chat](contact.qmd#book-a-time-to-chat) · [Research projects](project.qmd)

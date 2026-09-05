@@ -1,40 +1,68 @@
 ---
-title: "Research"
-description: "LUO Qun's research in water quality, precipitation nowcasting, runoff change, and seasonal ocean forecasting."
+title: ""
+pagetitle: "Projects · LUO Qun"
+class: page-research
+format:
+  html:
+    toc: false
 ---
 
-My research explores how data and physical understanding can work together in Earth system prediction.
+::: {.page-icon}
+<img src="../img/icons/research.svg" alt="" aria-hidden="true">
+:::
 
-## Seasonal sea surface temperature forecasting {#current-research}
+## Projects {#current-research}
 
-**Research since 2025 · Earth system science & deep learning**
+```{=html}
+<div class="research-gallery">
 
-At the Southern University of Science and Technology, my research has focused on deep learning for global seasonal sea surface temperature prediction. Related interests include the environmental drivers and forecasting of algal blooms.
+<div class="project-card">
+  <a href="earth-system.html">
+    <img src="../img/research/precipitation-nowcasting-regional-performance.png" alt="Precipitation nowcasting research across China">
+    <h3>Earth System & AI</h3>
+    <p>Water quality, precipitation nowcasting, runoff change, and seasonal ocean forecasting.</p>
+  </a>
+</div>
 
-## Precipitation nowcasting {#precipitation-nowcasting}
+<div class="project-card">
+  <a href="talks.html">
+    <img src="../img/icons/talks-workshops.svg" alt="Talks and conferences building">
+    <h3>Talks & Conferences</h3>
+    <p>Conference contributions and conversations about hydrology, Earth systems, and AI.</p>
+  </a>
+</div>
 
-**Research in 2023–2024 · Journal publication in 2026**
+<div class="project-card">
+  <a href="open-science.html">
+    <img src="../img/icons/open-science.svg" alt="Open Science">
+    <h3>Open Science</h3>
+    <p>Public research code, reproducibility, and resources associated with my work.</p>
+  </a>
+</div>
 
-I investigated strategies for coupling deep learning and optical flow in satellite-based precipitation nowcasting over China. The work compares how different combinations of these approaches can improve short-term precipitation prediction.
+<div class="project-card">
+  <a href="datasets.html">
+    <img src="../img/research/water-quality-transfer-learning.png" alt="River network and transfer-learning models">
+    <h3>Datasets</h3>
+    <p>Data sources and access information for the studies in my publications.</p>
+  </a>
+</div>
 
-[Read the paper](https://doi.org/10.1080/02626667.2025.2587687) · [Explore the code on GitHub](https://github.com/kiwiyolo/Suitable-coupling-for-PN)
+<div class="project-card">
+  <a href="illustrations.html">
+    <img src="../img/research/precipitation-nowcasting-regional-performance.png" alt="Research visual of regional forecasting performance">
+    <h3>Research Visuals</h3>
+    <p>Figures from my research on water quality and precipitation forecasting.</p>
+  </a>
+</div>
 
-## Water quality prediction {#water-quality}
+<div class="project-card">
+  <a href="publications.html">
+    <img src="../img/research/water-quality-transfer-learning.png" alt="Water quality modelling publication">
+    <h3>Publications</h3>
+    <p>My journal articles and conference contributions, with links to the original publications.</p>
+  </a>
+</div>
 
-**Research in 2022–2023 · Journal publication in 2023**
-
-I studied water quality prediction in Beijing's sub-center using LSTM and back-propagation neural networks. The work uses transfer learning informed by upstream–downstream river relationships.
-
-[Read the paper](https://doi.org/10.1007/s11356-023-31068-5)
-
-## Runoff change under human influence {#runoff-change}
-
-**Research in 2024–2025 · Hydrology**
-
-I have explored the effects of human activities and climate change on runoff, including the challenge of separating their contributions to hydrological change.
-
-## Related work
-
-My collaborative publications cover the evaluation of satellite precipitation products, anthropogenic nitrogen and phosphorus inputs, and ecological base flow.
-
-[View publications →](publications.qmd)
+</div>
+```

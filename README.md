@@ -4,11 +4,18 @@ Source for [qunluo-kiwi.com](https://qunluo-kiwi.com/), the personal website of 
 
 ## Content
 
-- Home and biography: Earth system science, hydrology, and interpretable AI.
+- Home: the original illustrated community with eight clickable buildings and vehicles.
+- Biography: the original photo-and-profile component with verified personal information.
 - Research: water quality, precipitation nowcasting, runoff change, and seasonal sea surface temperature forecasting.
 - Publications: verified journal articles and a conference abstract, with DOI links.
 - Blog: the author's research reflections.
 - Contact, subscription, and research resources.
+
+## Preserve the original design
+
+Keep the illustrated city, its eight navigation targets and hover behaviour, the original theme, page icons, six project cards, publication thumbnails, research gallery, and Closeread research story. Update personal text, verified research figures, and destination links within those components; do not replace the layout with a different homepage design.
+
+The city artwork and building assets are retained from the existing site framework. The research gallery shows figures from the author's research presentations, with links to the corresponding publications; these figures are distinct from the site's decorative navigation artwork.
 
 ## Build and publish
 

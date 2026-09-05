@@ -1,40 +1,71 @@
 ---
-title: "Publications"
-description: "Journal articles and conference contributions by LUO Qun (罗群)."
+title: ""
+pagetitle: "Publications · LUO Qun"
 ---
 
-## Journal articles
+## Selected Publications
 
-### 2026
+```{=html}
+<div class="listing-item">
+  <div class="thumbnail">
+    <img src="../img/research/precipitation-nowcasting-regional-performance.png" alt="Regional precipitation nowcasting" class="thumbnail-image">
+  </div>
+  <div>
+    <p><strong><a href="https://doi.org/10.1080/02626667.2025.2587687">Coupling strategies for precipitation nowcasting in China (2026)</a></strong></p>
+    <p><strong>Qun Luo</strong>, Dingzhi Peng, Yu Gu, Yuwei Gong, Zhenglong Fan, Tao Wang, and Bo Pang.</p>
+    <p><em>Hydrological Sciences Journal</em>, <strong>71</strong>(1), 139–151. Published online in 2025.</p>
+    <p><a href="https://doi.org/10.1080/02626667.2025.2587687">Read the publication</a> · <a href="https://github.com/kiwiyolo/Suitable-coupling-for-PN">Code</a></p>
+  </div>
+</div>
 
-**Coupling strategies for precipitation nowcasting in China**\
-**Qun Luo**, Dingzhi Peng, Yu Gu, Yuwei Gong, Zhenglong Fan, Tao Wang, and Bo Pang.\
-*Hydrological Sciences Journal*, **71**(1), 139–151. Published online in 2025.\
-[DOI: 10.1080/02626667.2025.2587687](https://doi.org/10.1080/02626667.2025.2587687) · [Code](https://github.com/kiwiyolo/Suitable-coupling-for-PN)
+<div class="listing-item">
+  <div class="thumbnail">
+    <img src="../img/icons/research.svg" alt="Satellite precipitation publication" class="thumbnail-image">
+  </div>
+  <div>
+    <p><strong><a href="https://doi.org/10.1016/j.uclim.2024.102109">Comprehensive evaluation of satellite-based precipitation products at hourly scale in Beijing (2024)</a></strong></p>
+    <p>Yu Gu, Dingzhi Peng, <strong>Qun Luo</strong>, Yuwei Gong, Zhenglong Fan, Bo Pang, and Zhongfan Zhu.</p>
+    <p><em>Urban Climate</em>, <strong>57</strong>, 102109.</p>
+    <p><a href="https://doi.org/10.1016/j.uclim.2024.102109">Read the publication</a></p>
+  </div>
+</div>
 
-### 2024
+<div class="listing-item">
+  <div class="thumbnail">
+    <img src="../img/icons/open-science.svg" alt="Nitrogen and phosphorus research publication" class="thumbnail-image">
+  </div>
+  <div>
+    <p><strong><a href="https://doi.org/10.1002/clen.202300165">Dynamic changes of net anthropogenic nitrogen/phosphorus input and its riverine export in the Beijing's subcenter (2024)</a></strong></p>
+    <p>Xiaoyu Luo, Dingzhi Peng, Wenjian Shang, Yu Gu, <strong>Qun Luo</strong>, Zhongfan Zhu, and Bo Pang.</p>
+    <p><em>CLEAN – Soil, Air, Water</em>, <strong>52</strong>(3), 2300165.</p>
+    <p><a href="https://doi.org/10.1002/clen.202300165">Read the publication</a></p>
+  </div>
+</div>
 
-**Comprehensive evaluation of satellite-based precipitation products at hourly scale in Beijing**\
-Yu Gu, Dingzhi Peng, **Qun Luo**, Yuwei Gong, Zhenglong Fan, Bo Pang, and Zhongfan Zhu.\
-*Urban Climate*, **57**, 102109.\
-[DOI: 10.1016/j.uclim.2024.102109](https://doi.org/10.1016/j.uclim.2024.102109)
+<div class="listing-item">
+  <div class="thumbnail">
+    <img src="../img/icons/research.svg" alt="Ecological base flow publication" class="thumbnail-image">
+  </div>
+  <div>
+    <p><strong><a href="https://doi.org/10.12677/jwrr.2024.134043">北京市通州区主要河流生态基流研究 (2024)</a></strong></p>
+    <p>罗霄雨、彭定志、尚文健、庞博、黄榆清、<strong>罗群</strong>、郑自琪、陈浩铭。</p>
+    <p><em>水资源研究 / Journal of Water Resources Research</em>, <strong>13</strong>(4), 372–380.</p>
+    <p><a href="https://doi.org/10.12677/jwrr.2024.134043">Read the publication</a></p>
+  </div>
+</div>
 
-**Dynamic changes of net anthropogenic nitrogen/phosphorus input and its riverine export in the Beijing's subcenter**\
-Xiaoyu Luo, Dingzhi Peng, Wenjian Shang, Yu Gu, **Qun Luo**, Zhongfan Zhu, and Bo Pang.\
-*CLEAN – Soil, Air, Water*, **52**(3), 2300165.\
-[DOI: 10.1002/clen.202300165](https://doi.org/10.1002/clen.202300165)
-
-**北京市通州区主要河流生态基流研究**\
-罗霄雨、彭定志、尚文健、庞博、黄榆清、**罗群**、郑自琪、陈浩铭。\
-*水资源研究 / Journal of Water Resources Research*, **13**(4), 372–380.\
-[DOI: 10.12677/jwrr.2024.134043](https://doi.org/10.12677/jwrr.2024.134043)
-
-### 2023
-
-**Water quality analysis based on LSTM and BP optimization with a transfer learning model**\
-**Qun Luo**, Dingzhi Peng, Wenjian Shang, Yu Gu, Xiaoyu Luo, Zhongfan Zhu, and Bo Pang.\
-*Environmental Science and Pollution Research*, **30**(59), 124341–124352.\
-[DOI: 10.1007/s11356-023-31068-5](https://doi.org/10.1007/s11356-023-31068-5)
+<div class="listing-item">
+  <div class="thumbnail">
+    <img src="../img/research/water-quality-transfer-learning.png" alt="Water quality transfer learning" class="thumbnail-image">
+  </div>
+  <div>
+    <p><strong><a href="https://doi.org/10.1007/s11356-023-31068-5">Water quality analysis based on LSTM and BP optimization with a transfer learning model (2023)</a></strong></p>
+    <p><strong>Qun Luo</strong>, Dingzhi Peng, Wenjian Shang, Yu Gu, Xiaoyu Luo, Zhongfan Zhu, and Bo Pang.</p>
+    <p><em>Environmental Science and Pollution Research</em>, <strong>30</strong>(59), 124341–124352.</p>
+    <p><a href="https://doi.org/10.1007/s11356-023-31068-5">Read the publication</a></p>
+  </div>
+</div>
+```
 
 ## Conference contributions
 

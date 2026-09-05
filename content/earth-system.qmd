@@ -1,0 +1,89 @@
+---
+title: ""
+pagetitle: "Earth System & AI · LUO Qun"
+description: "LUO Qun's research in water quality, precipitation nowcasting, runoff change, and seasonal ocean forecasting."
+css: "../closeread.css"
+format:
+  closeread-html:
+    embed-resources: true
+    remove-header-space: true
+class: page-projects
+---
+
+## Understanding Earth systems {#earth-system}
+
+:::{.cr-section layout="overlay-center"}
+
+I work at the intersection of **Earth system science, hydrology, and artificial intelligence**. @cr-earth-system
+
+My research spans river water quality, precipitation nowcasting, runoff change, and seasonal sea surface temperature forecasting. @cr-earth-system
+
+Across these topics, I am interested in how models can produce useful forecasts while helping us understand the processes behind them. @cr-earth-system
+
+:::{#cr-earth-system}
+![](../img/running.jpg){alt="Running beside the ocean"}
+:::
+
+:::
+
+## Precipitation nowcasting {#precipitation-nowcasting}
+
+:::{.cr-section layout="sidebar-right"}
+
+**How can different forecasting approaches work together?** @cr-precipitation
+
+I investigated strategies for coupling deep learning and optical flow in satellite-based precipitation nowcasting over China. @cr-precipitation
+
+The study compares the performance of different coupling strategies across regions and forecast lead times. [@cr-precipitation]{scale-by="1.15"}
+
+This work was published in *Hydrological Sciences Journal* in 2026, following online publication in 2025. [Read the paper](https://doi.org/10.1080/02626667.2025.2587687) · [Explore the code](https://github.com/kiwiyolo/Suitable-coupling-for-PN). @cr-precipitation
+
+:::{#cr-precipitation}
+![](../img/research/precipitation-nowcasting-regional-performance.png){alt="Regional precipitation nowcasting performance in China"}
+:::
+
+:::
+
+## Learning across a river network {#water-quality}
+
+:::{.cr-section layout="sidebar-right"}
+
+**Can information from one part of a river help predict another?** @cr-water-quality
+
+I studied water quality prediction in Beijing's sub-center using LSTM and back-propagation neural networks. @cr-water-quality
+
+The transfer-learning approach uses the upstream–downstream relationships between river gauges. [@cr-water-quality]{scale-by="1.15"}
+
+The work was published in *Environmental Science and Pollution Research* in 2023. [Read the paper](https://doi.org/10.1007/s11356-023-31068-5). @cr-water-quality
+
+:::{#cr-water-quality}
+![](../img/research/water-quality-transfer-learning.png){alt="River gauges and neural-network transfer-learning architecture"}
+:::
+
+:::
+
+## From hydrology to ocean forecasting {#current-research}
+
+:::{.cr-section layout="sidebar-right"}
+
+My research in 2024–2025 explored the effects of human activities and climate change on runoff. @cr-ocean
+
+At the Southern University of Science and Technology, I have worked on deep learning for **seasonal sea surface temperature forecasting**, with related interests in algal bloom drivers and prediction. @cr-ocean
+
+These directions connect to my broader interest in **physically interpretable AI for Earth system processes**. @cr-ocean
+
+:::{#cr-ocean}
+![](../img/running.jpg){alt="Ocean shoreline"}
+:::
+
+:::
+
+### Project Collaborators {#collaborators}
+
+My water quality and precipitation research was conducted with **Prof. Dingzhi Peng** and collaborators at **Beijing Normal University**. The complete author lists are available on the [publications page](publications.qmd).
+
+At **Southern University of Science and Technology**, my research experience is with **Dr. Zhenzhong Zeng** and the Earth System & Global Change Lab.
+
+My PhD programme in Computing at **The Hong Kong Polytechnic University**, starting September 2026, is jointly supervised with **EIT**, with **Prof. Jiannong Cao** and **Dr. Yuntian Chen**.
+
+[Contact me](contact.qmd) · [Research visuals](illustrations.qmd)
