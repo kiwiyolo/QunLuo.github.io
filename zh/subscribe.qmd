@@ -1,0 +1,122 @@
+---
+title: "订阅"
+description: "订阅以获取我的博客新文章、项目和研究动态。"
+format:
+  html:
+    include-in-header:
+      - ../_includes/turnstile-head-zh.html
+---
+
+## 获取最新动态
+
+当**罗群**发布新文章、研究笔记或项目时，获取更新通知。 订阅后，请通过收到的邮件链接确认邮箱。 如需变更订阅，请联系 [qunluo.kiwi@gmail.com](mailto:qunluo.kiwi@gmail.com)。
+
+```{=html}
+<div class="ql-subscribe-container" style="max-width: 500px; margin: 2rem 0; padding: 2rem; background: rgba(0,0,0,0.03); border-radius: 12px; border: 1px solid rgba(0,0,0,0.1);">
+  <p style="margin-bottom: 1.5rem;">请在下方输入邮箱以订阅：</p>
+  
+  <input type="email" id="ql-subscribe-email" aria-label="电子邮箱" placeholder="请输入电子邮箱" style="width: 100%; padding: 0.75rem; margin-bottom: 1rem; border: 1px solid rgba(0,0,0,0.3); border-radius: 6px; box-sizing: border-box;" required>
+  
+  <div class="ql-turnstile-box" style="margin-bottom: 1rem;">
+    <div class="cf-turnstile" data-language="zh-cn" data-sitekey="0x4AAAAAACzZJprJ4npD9l7W" data-callback="qlOnTurnstileSuccess"></div>
+    <input class="ql-turnstile-token" type="hidden" name="captchaToken" value="">
+  </div>
+
+  <button id="ql-subscribe-submit" class="ql-btn-primary" style="width: 100%;">订阅</button>
+  <p id="ql-subscribe-status" role="status" aria-live="polite" class="ql-status-msg" style="margin-top: 1rem; text-align: center;"></p>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const submitBtn = document.getElementById("ql-subscribe-submit");
+  const emailInput = document.getElementById("ql-subscribe-email");
+  const statusEl = document.getElementById("ql-subscribe-status");
+
+  async function confirmFromHashIfPresent() {
+    const hash = window.location.hash || "";
+    if (!hash.includes("confirm=") && !window.location.search.includes("confirm=")) return;
+
+    const hashParams = new URLSearchParams(hash.replace(/^#/, ""));
+    const searchParams = new URLSearchParams(window.location.search);
+    const confirmToken = hashParams.get("confirm") || searchParams.get("confirm");
+    if (!confirmToken) return;
+
+    if (typeof SUPABASE_FUNCTIONS_URL === "undefined") return;
+
+    statusEl.textContent = "正在确认您的订阅……";
+    statusEl.className = "ql-status-msg";
+
+    try {
+      const res = await fetch(`${SUPABASE_FUNCTIONS_URL}/subscribe-confirm`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ token: confirmToken })
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data.ok) throw new Error((data.error && data.error.message) || "确认失败");
+
+      statusEl.textContent = "邮箱已确认，订阅成功！";
+      statusEl.className = "ql-status-msg ql-success-text";
+
+      window.history.replaceState({}, document.title, window.location.pathname + window.location.search);
+    } catch (err) {
+      console.error(err);
+      statusEl.textContent = "邮箱确认失败，请重新打开确认链接。";
+      statusEl.className = "ql-status-msg ql-error-text";
+    }
+  }
+
+  confirmFromHashIfPresent();
+
+  submitBtn.addEventListener("click", async () => {
+    const email = emailInput.value.trim();
+    const token = window.__ql_turnstile_token;
+
+    if (typeof SUPABASE_FUNCTIONS_URL === "undefined") {
+      statusEl.textContent = "订阅服务尚未配置。";
+      statusEl.className = "ql-status-msg ql-error-text";
+      return;
+    }
+
+    if (!email || !email.includes("@")) {
+      statusEl.textContent = "请输入有效的电子邮箱地址。";
+      statusEl.className = "ql-status-msg ql-error-text";
+      return;
+    }
+    if (!token) {
+      statusEl.textContent = "请完成人机验证。";
+      statusEl.className = "ql-status-msg ql-error-text";
+      return;
+    }
+
+    submitBtn.disabled = true;
+    statusEl.textContent = "正在提交……";
+    statusEl.className = "ql-status-msg";
+
+    try {
+      const res = await fetch(`${SUPABASE_FUNCTIONS_URL}/subscribe`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, captchaToken: token })
+      });
+      
+      const text = await res.text().catch(() => "");
+      const data = text ? (() => { try { return JSON.parse(text); } catch { return {}; } })() : {};
+      if (!res.ok || !data.ok) throw new Error((data.error && data.error.message) || (data.message) || `HTTP ${res.status}`);
+      
+      statusEl.textContent = "请查收邮件以确认订阅。";
+      statusEl.className = "ql-status-msg ql-success-text";
+      emailInput.value = "";
+    } catch (err) {
+      console.error(err);
+      statusEl.textContent = "订阅失败，请重试。";
+      statusEl.className = "ql-status-msg ql-error-text";
+    } finally {
+      submitBtn.disabled = false;
+    }
+  });
+});
+</script>
+```

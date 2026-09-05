@@ -1,0 +1,89 @@
+---
+title: ""
+pagetitle: "地球系统与人工智能 · 罗群"
+description: "罗群在水质预测、降水临近预报、径流变化与海洋季节预测方面的研究。"
+css: "../../closeread.css"
+format:
+  closeread-html:
+    embed-resources: true
+    remove-header-space: true
+class: page-projects
+---
+
+## 理解地球系统 {#earth-system}
+
+:::{.cr-section layout="overlay-center"}
+
+我的工作处于**地球系统科学、水文学与人工智能**的交叉领域。 @cr-earth-system
+
+我的研究涉及河流水质、降水临近预报、径流变化和海表温度季节预测。 @cr-earth-system
+
+围绕这些问题，我关注模型如何提供有用的预测，同时帮助我们理解背后的过程。 @cr-earth-system
+
+:::{#cr-earth-system}
+![](../../img/running.jpg){alt="在海边奔跑"}
+:::
+
+:::
+
+## 降水临近预报 {#precipitation-nowcasting}
+
+:::{.cr-section layout="sidebar-right"}
+
+**不同的预测方法如何协同工作？** @cr-precipitation
+
+我研究了深度学习与光流方法在中国卫星降水临近预报中的耦合策略。 @cr-precipitation
+
+这项研究比较了不同耦合策略在各个区域及预报时效下的表现。 [@cr-precipitation]{scale-by="1.15"}
+
+这项研究于 2025 年在线发表，正式刊载于 2026 年的 *Hydrological Sciences Journal*。 [阅读论文](https://doi.org/10.1080/02626667.2025.2587687) · [查看代码](https://github.com/kiwiyolo/Suitable-coupling-for-PN). @cr-precipitation
+
+:::{#cr-precipitation}
+![](../../img/research/precipitation-nowcasting-regional-performance.png){alt="中国不同区域的降水临近预报表现"}
+:::
+
+:::
+
+## 河网中的迁移学习 {#water-quality}
+
+:::{.cr-section layout="sidebar-right"}
+
+**河流某一区段的信息能否帮助预测另一区段？** @cr-water-quality
+
+我使用 LSTM 和反向传播神经网络，研究北京市副中心的水质预测。 @cr-water-quality
+
+这一迁移学习方法利用了河流监测站点之间的上下游关系。 [@cr-water-quality]{scale-by="1.15"}
+
+这项研究于 2023 年发表在 *Environmental Science and Pollution Research*。 [阅读论文](https://doi.org/10.1007/s11356-023-31068-5). @cr-water-quality
+
+:::{#cr-water-quality}
+![](../../img/research/water-quality-transfer-learning.png){alt="河流监测站点与神经网络迁移学习结构"}
+:::
+
+:::
+
+## 从水文学到海洋预测 {#current-research}
+
+:::{.cr-section layout="sidebar-right"}
+
+我在 2024—2025 年的研究中，探索了人类活动与气候变化对径流的影响。 @cr-ocean
+
+在南方科技大学，我研究深度学习在**海表温度季节预测**中的应用，并关注藻华的驱动因素与预测。 @cr-ocean
+
+这些方向与我对**面向地球系统过程的物理可解释人工智能**的研究兴趣相联系。 @cr-ocean
+
+:::{#cr-ocean}
+![](../../img/running.jpg){alt="海岸"}
+:::
+
+:::
+
+### 研究合作者 {#collaborators}
+
+我的水质与降水研究与**北京师范大学**的**彭定志教授**及合作者共同开展。完整作者名单见[论文页面](publications.qmd)。
+
+在**南方科技大学**，我的科研经历是在 **Zhenzhong Zeng 博士**和地球系统与全球变化实验室开展的。
+
+我的博士项目为**香港理工大学**计算学系与 **EIT** 联合培养项目，起始时间为 2026 年 9 月，导师为 **Jiannong Cao 教授**与 **Yuntian Chen 博士**。
+
+[联系我](contact.qmd) · [研究图示](illustrations.qmd)

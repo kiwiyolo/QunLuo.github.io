@@ -8,6 +8,14 @@ project:
     - blog/Automatic-Research-20260401.qmd
     - subscribe.qmd
     - 404.qmd
+    - zh/index.qmd
+    - zh/content/*.qmd
+    - zh/blog/index.qmd
+    - zh/blog/Automatic-Research-20260401.qmd
+    - zh/subscribe.qmd
+    - zh/404.qmd
+  post-render:
+    - scripts/localize_site.py
   resources:
     - CNAME
     - robots.txt
@@ -47,6 +55,12 @@ website:
         href: https://github.com/kiwiyolo/
       - icon: linkedin
         href: https://www.linkedin.com/in/qun-luo-87b52b328/
+      - text: "English / 中文"
+        menu:
+          - text: "English"
+            href: index.qmd
+          - text: "简体中文"
+            href: zh/index.qmd
 
   page-footer:
     right: "Built with [Quarto](https://quarto.org/)"

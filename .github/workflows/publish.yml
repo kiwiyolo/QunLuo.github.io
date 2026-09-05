@@ -23,6 +23,9 @@ jobs:
         with:
           version: "1.10.18"
 
+      - name: Verify language switching
+        run: node --test scripts/test_language_switch.cjs
+
       - name: Render
         run: quarto render
 

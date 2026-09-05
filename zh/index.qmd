@@ -1,0 +1,82 @@
+---
+title: ""
+pagetitle: "LUO Qun · 罗群"
+description: "罗群的个人主页：地球系统科学、水文学与可解释人工智能。"
+title-block-banner: false
+include-after-body:
+  text: |
+    <style>
+      #quarto-margin-sidebar {
+        visibility: hidden;
+      }
+    </style>
+---
+
+# LUO Qun · 罗群
+
+<br>
+
+<img src="../img/running.jpg" alt="沿着海岸奔跑" style="width: 40%; float: left; margin-right: 40px;"/>
+
+```{=html}
+<p><strong>地球系统 × 人工智能 × 可解释性。</strong> 我的研究涉及水质预测、降水临近预报、径流变化和海表温度季节预测。我的博士项目为香港理工大学计算学系与 EIT 联合培养项目，起始时间为 2026 年 9 月。</p>
+<ul class="ql-highlight-metrics">
+  <li>水利工程 · 北京师范大学</li>
+  <li>地下水科学 · 中国地质大学（北京）</li>
+  <li>科研经历 · 南方科技大学</li>
+  <li>面向地球系统的物理可解释人工智能</li>
+</ul>
+```
+
+**点击下方互动社区中的建筑，了解我的研究、论文、研究图示和文章**.<br><br>
+<br>
+
+## 探索社区
+
+```{=html}
+<div class="city-wrapper">
+  <div class="city-layer">
+    <img src="../img/city.svg" alt="罗群的个人网站社区，各座建筑对应一个功能页面" class="city-background">
+
+    <a href="content/contact.html" class="city-icon icon-contact">
+      <img src="../img/icons/contact.svg" alt="联系我">
+      <span class="city-label">联系我！</span>
+    </a>
+
+    <a href="content/about.html" class="city-icon icon-home">
+      <img src="../img/icons/home.svg" alt="首页">
+      <span class="city-label">关于我</span>
+    </a>
+
+    <a href="content/illustrations.html" class="city-icon icon-illustration">
+      <img src="../img/icons/illustrations.svg" alt="研究图示">
+      <span class="city-label">研究图示</span>
+    </a>
+
+    <a href="content/open-science.html" class="city-icon icon-open-science">
+      <img src="../img/icons/open-science.svg" alt="开放科学">
+      <span class="city-label">开放科学</span>
+    </a>
+
+    <a href="content/project.html#current-research" class="city-icon icon-research">
+      <img src="../img/icons/research.svg" alt="研究项目">
+      <span class="city-label">研究项目</span>
+    </a>
+
+    <a href="content/talks.html" class="city-icon icon-talks-workshops">
+      <img src="../img/icons/talks-workshops.svg" alt="报告与会议">
+      <span class="city-label">报告与会议</span>
+    </a>
+
+    <a href="blog/index.html" class="city-icon icon-blog">
+      <img src="../img/icons/van.svg" alt="博客">
+      <span class="city-label">博客</span>
+    </a>
+
+    <a href="content/contact.html#book-a-time-to-chat" class="city-icon icon-coffee">
+      <img src="../img/icons/coffee-kiosk.svg" alt="预约交流！">
+      <span class="city-label">预约交流！</span>
+    </a>
+  </div>
+</div>
+```

@@ -1,0 +1,68 @@
+---
+title: ""
+pagetitle: "研究项目 · 罗群"
+class: page-research
+format:
+  html:
+    toc: false
+---
+
+::: {.page-icon}
+<img src="../../img/icons/research.svg" alt="" aria-hidden="true">
+:::
+
+## 研究项目 {#current-research}
+
+```{=html}
+<div class="research-gallery">
+
+<div class="project-card">
+  <a href="earth-system.html">
+    <img src="../../img/research/precipitation-nowcasting-regional-performance.png" alt="中国区域降水临近预报研究">
+    <h3>地球系统与人工智能</h3>
+    <p>水质、降水临近预报、径流变化与海洋季节预测。</p>
+  </a>
+</div>
+
+<div class="project-card">
+  <a href="talks.html">
+    <img src="../../img/icons/talks-workshops.svg" alt="报告与会议建筑">
+    <h3>报告与会议</h3>
+    <p>围绕水文学、地球系统与人工智能的会议成果及学术交流。</p>
+  </a>
+</div>
+
+<div class="project-card">
+  <a href="open-science.html">
+    <img src="../../img/icons/open-science.svg" alt="开放科学">
+    <h3>开放科学</h3>
+    <p>与我的研究相关的公开代码、研究复现和资源。</p>
+  </a>
+</div>
+
+<div class="project-card">
+  <a href="datasets.html">
+    <img src="../../img/research/water-quality-transfer-learning.png" alt="河网与迁移学习模型">
+    <h3>数据集</h3>
+    <p>已发表研究的数据来源及获取方式。</p>
+  </a>
+</div>
+
+<div class="project-card">
+  <a href="illustrations.html">
+    <img src="../../img/research/precipitation-nowcasting-regional-performance.png" alt="区域预报表现研究图示">
+    <h3>研究图示</h3>
+    <p>水质与降水预报研究中的图表。</p>
+  </a>
+</div>
+
+<div class="project-card">
+  <a href="publications.html">
+    <img src="../../img/research/water-quality-transfer-learning.png" alt="水质建模研究论文">
+    <h3>论文发表</h3>
+    <p>我的期刊论文与会议成果，并附原文链接。</p>
+  </a>
+</div>
+
+</div>
+```

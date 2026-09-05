@@ -1,0 +1,23 @@
+---
+title: "隐私说明"
+description: "本个人网站如何处理订阅与评论信息。"
+toc: false
+---
+
+这是 **罗群** 的个人网站。
+
+## 访问网站
+
+本网站托管于 GitHub Pages。托管服务提供方可能会处理访问请求信息，以提供网页并维护服务。此版本的网站不加载 Google Analytics。
+
+## 订阅与评论
+
+可选的订阅表单会将您的电子邮箱地址发送至本网站的订阅服务，并通过确认邮件验证订阅。评论表单会将您填写的名称与评论内容发送至本网站的评论服务。经审核的评论可能公开展示，请勿在评论中包含私人信息。
+
+这些功能使用 Supabase 和 Cloudflare Turnstile。Turnstile 验证有助于防止垃圾信息提交。博客页面会在浏览器本地存储一个标识符，用于互动功能。
+
+您可以查阅以下服务提供方的相关说明：[GitHub](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement)、[Supabase](https://supabase.com/privacy) 和 [Cloudflare](https://www.cloudflare.com/privacypolicy/)。
+
+## 联系我
+
+如对订阅、评论或数据有疑问，请发送邮件至 [qunluo.kiwi@gmail.com](mailto:qunluo.kiwi@gmail.com).

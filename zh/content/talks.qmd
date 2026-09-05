@@ -1,0 +1,27 @@
+---
+title: ""
+pagetitle: "报告与会议 · 罗群"
+---
+
+::: {.page-icon}
+<img src="../../img/icons/talks-workshops.svg" alt="" aria-hidden="true">
+:::
+
+## 报告与会议 {#talks-workshops}
+
+围绕地球系统科学、水文学与人工智能的会议成果和研究交流。
+
+### 学术会议与研讨会
+
+#### 2023
+
+- **Qun Luo**, Dingzhi Peng, Yu Gu, Xiaoyu Luo <br>
+  *IUGG General Assembly* <br>
+  ***Water quality prediction for Beijing's sub-center based on deep learning model*** <br>
+  [会议摘要](https://doi.org/10.57757/IUGG23-2988) · [相关期刊论文](https://doi.org/10.1007/s11356-023-31068-5)
+
+### 研究交流
+
+欢迎交流水质预测、降水临近预报、海洋季节预测，以及具有物理可解释性的人工智能。
+
+[预约交流时间](contact.qmd#book-a-time-to-chat) · [研究项目](project.qmd)

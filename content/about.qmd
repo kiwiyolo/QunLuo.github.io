@@ -67,8 +67,4 @@ Research on deep learning for seasonal sea surface temperature forecasting and t
 - Water quality prediction and hydrological modelling
 - Human activity, climate variability, and runoff change
 
-## 中文简介
-
-我是罗群，研究兴趣是地球系统科学与人工智能，尤其关注预测方法的物理可解释性。本科就读于中国地质大学（北京）地下水科学与工程专业，硕士就读于北京师范大学水科学研究院水利工程专业。2025 年 7 月加入南方科技大学地球系统与全球变化相关研究团队任科研助理，研究海表温度季节预测等问题。博士项目为香港理工大学计算学系与 EIT 联合培养项目，起始时间为 2026 年 9 月。
-
 [Research projects](project.qmd) · [Publications](publications.qmd) · [Contact](contact.qmd)

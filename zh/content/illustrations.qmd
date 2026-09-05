@@ -1,0 +1,83 @@
+---
+title: ""
+pagetitle: "研究图示 · 罗群"
+page-layout: full
+toc: false
+---
+
+## 研究图示
+
+精选自我的水质与降水预报研究报告的图表。
+<br><br>
+相关论文提供详细的方法、结果与完整作者信息。
+<br><br>
+[联系我，交流研究](contact.qmd).
+
+---
+
+### 水质与迁移学习
+
+```{=html}
+<div class="modular-gallery">
+  <img src="../../img/research/water-quality-transfer-learning.png" class="tile rectangle" alt="基于河流上下游监测站的水质迁移学习">
+</div>
+```
+
+选自我的水质研究报告。 [Luo et al. (2023), Environmental Science and Pollution Research](https://doi.org/10.1007/s11356-023-31068-5).
+
+### 降水临近预报
+
+```{=html}
+<div class="modular-gallery">
+  <img src="../../img/research/precipitation-nowcasting-regional-performance.png" class="tile big" alt="中国不同区域的降水临近预报表现">
+</div>
+```
+
+选自我的降水临近预报研究报告。 [Luo et al. (2026), Hydrological Sciences Journal](https://doi.org/10.1080/02626667.2025.2587687) · [代码](https://github.com/kiwiyolo/Suitable-coupling-for-PN).
+
+### 漫步社区
+
+下方建筑是本网站插画社区的导航入口。
+
+```{=html}
+<div class="micro-gallery">
+  <a href="about.html"><img src="../../img/icons/home.svg" class="tile micro" alt="关于我"></a>
+  <a href="earth-system.html"><img src="../../img/icons/research.svg" class="tile micro" alt="研究"></a>
+  <a href="open-science.html"><img src="../../img/icons/open-science.svg" class="tile micro" alt="开放科学"></a>
+  <a href="contact.html"><img src="../../img/icons/contact.svg" class="tile micro" alt="联系我"></a>
+</div>
+```
+
+<br><br>
+
+有关研究背景与再利用说明，请查阅各篇原始论文及其许可证。
+
+<div id="img-popup" class="img-popup hidden">
+  <p>
+    对研究图表有疑问？<br>
+    <a href="contact.html">点此联系我！</a>
+  </p>
+  <span class="close-popup">×</span>
+</div>
+
+<script>
+  const popup = document.getElementById("img-popup");
+  const closeBtn = document.querySelector(".close-popup");
+
+  document.addEventListener("contextmenu", function(e) {
+    if (e.target.tagName === "IMG") {
+      e.preventDefault();
+      popup.classList.remove("hidden");
+    }
+  });
+
+  closeBtn.addEventListener("click", function() {
+    popup.classList.add("hidden");
+  });
+
+  document.addEventListener("click", function(e) {
+    if (!popup.contains(e.target)) {
+      popup.classList.add("hidden");
+    }
+  });
+</script>

@@ -1,0 +1,29 @@
+---
+title: ""
+pagetitle: "开放科学 · 罗群"
+---
+
+::: {.page-icon}
+<img src="../../img/icons/open-science.svg" alt="" aria-hidden="true">
+:::
+
+## 开放科学 {#open-science}
+
+开放科学通过可获取的论文与代码，连接研究问题、方法和证据。
+
+我的公开研究成果包括降水临近预报代码，以及水文学和水质研究论文。 <br><br>
+
+### 我分享的内容
+
+- [GitHub](https://github.com/kiwiyolo?tab=repositories)：我的个人主页与公开代码仓库。
+- [Suitable-coupling-for-PN](https://github.com/kiwiyolo/Suitable-coupling-for-PN)：论文 *Coupling strategies for precipitation nowcasting in China* 的配套代码。 <br>
+  → [阅读论文](https://doi.org/10.1080/02626667.2025.2587687).
+- [论文发表](publications.qmd)：期刊论文与会议摘要，附 DOI 链接。
+
+### 研究复现与合作
+
+使用代码时，请遵循各代码仓库的文档和许可证。数据来源及获取条件见对应论文。
+
+- [研究资源](datasets.qmd)：查阅相关数据可用性声明。
+- [报告与会议](talks.qmd#talks-workshops)：会议成果。
+- [联系我](contact.qmd) ，交流研究方法或潜在合作。

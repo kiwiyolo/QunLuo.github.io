@@ -1,0 +1,204 @@
+<section class="ql-interactions" aria-label="文章互动">
+  <div class="ql-actions-bar">
+    <button id="ql-like-btn" class="ql-action-btn" title="为本文点赞">
+      <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="ql-icon-heart"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+      <span id="ql-like-count">0</span>
+    </button>
+    <button id="ql-share-btn" class="ql-action-btn" title="复制链接">
+      <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+      <span>分享</span>
+    </button>
+  </div>
+
+  <div class="ql-comments-section">
+    <h3>评论</h3>
+    <div id="ql-comments-list" class="ql-comments-list">
+      <div class="ql-loading">正在加载评论……</div>
+    </div>
+
+    <div class="ql-comment-form">
+      <h4>发表评论</h4>
+      <input type="text" id="ql-comment-name" aria-label="昵称（选填）" placeholder="昵称（选填，默认为匿名）" maxlength="50">
+      <textarea id="ql-comment-content" aria-label="评论内容" placeholder="分享您的想法……" rows="3" required></textarea>
+      
+      <div class="ql-turnstile-box">
+        <p class="ql-turnstile-desc">本站使用 Cloudflare Turnstile，以防止匿名提交中的垃圾信息。</p>
+        <div class="cf-turnstile" data-language="zh-cn" data-sitekey="0x4AAAAAACzZJprJ4npD9l7W" data-callback="qlOnTurnstileSuccess"></div>
+        <input class="ql-turnstile-token" type="hidden" name="captchaToken" value="">
+      </div>
+
+      <div class="ql-form-actions">
+        <button id="ql-comment-submit" class="ql-btn-primary">提交评论</button>
+        <span id="ql-comment-status" role="status" aria-live="polite" class="ql-status-msg"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const postSlug = getPostSlug();
+  const deviceId = getDeviceId();
+  
+  const likeBtn = document.getElementById("ql-like-btn");
+  const likeCountEl = document.getElementById("ql-like-count");
+  const shareBtn = document.getElementById("ql-share-btn");
+  
+  const commentsListEl = document.getElementById("ql-comments-list");
+  const commentSubmitBtn = document.getElementById("ql-comment-submit");
+  const commentNameEl = document.getElementById("ql-comment-name");
+  const commentContentEl = document.getElementById("ql-comment-content");
+  const commentStatusEl = document.getElementById("ql-comment-status");
+
+  async function readErrorMessage(res) {
+    const text = await res.text().catch(() => "");
+    if (!text) return `HTTP ${res.status}`;
+    try {
+      const data = JSON.parse(text);
+      if (data && data.error && typeof data.error.message === "string") return data.error.message;
+      if (data && typeof data.message === "string") return data.message;
+      return text;
+    } catch {
+      return text;
+    }
+  }
+
+  // 1. Share Button
+  shareBtn.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      const originalText = shareBtn.querySelector("span").textContent;
+      shareBtn.querySelector("span").textContent = "已复制！";
+      setTimeout(() => shareBtn.querySelector("span").textContent = originalText, 2000);
+    } catch (e) {
+      console.error("复制失败", e);
+    }
+  });
+
+  // 2. Load Likes (Optional: If you want to fetch initial like count without toggling, 
+  // you might need a separate GET endpoint. For now, we rely on user interaction to toggle).
+  // A proper implementation would fetch the initial count here.
+
+  // 3. Toggle Like
+  likeBtn.addEventListener("click", async () => {
+    const token = window.__ql_turnstile_token;
+    if (!token) {
+      alert("请先完成人机验证，再为本文点赞。");
+      return;
+    }
+    likeBtn.disabled = true;
+    try {
+      const res = await fetch(`${SUPABASE_FUNCTIONS_URL}/like-toggle`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ postSlug, deviceId, captchaToken: token })
+      });
+      if (!res.ok) throw new Error(await readErrorMessage(res));
+      const data = await res.json().catch(() => ({}));
+      if (data.ok) {
+        likeCountEl.textContent = data.count;
+        if (data.liked) {
+          likeBtn.classList.add("ql-liked");
+          likeBtn.querySelector("svg").setAttribute("fill", "currentColor");
+        } else {
+          likeBtn.classList.remove("ql-liked");
+          likeBtn.querySelector("svg").setAttribute("fill", "none");
+        }
+      }
+    } catch (err) {
+      console.error(err);
+      alert("点赞状态更新失败，请稍后重试。");
+    } finally {
+      likeBtn.disabled = false;
+    }
+  });
+
+  // 4. Load Comments
+  async function loadComments() {
+    try {
+      const res = await fetch(`${SUPABASE_FUNCTIONS_URL}/comments-list?postSlug=${encodeURIComponent(postSlug)}`);
+      if (!res.ok) throw new Error(await readErrorMessage(res));
+      const data = await res.json().catch(() => ({}));
+      
+      if (data.ok && data.comments) {
+        if (data.comments.length === 0) {
+          commentsListEl.innerHTML = '<div class="ql-empty">暂无评论，欢迎第一个分享您的想法！</div>';
+        } else {
+          commentsListEl.innerHTML = data.comments.map(c => `
+            <div class="ql-comment-item">
+              <div class="ql-comment-meta">
+                <strong>${escapeHtml(c.nickname || "匿名")}</strong>
+                <span>${new Date(c.created_at).toLocaleDateString()}</span>
+              </div>
+              <div class="ql-comment-text">${escapeHtml(c.content).replace(/\n/g, '<br>')}</div>
+            </div>
+          `).join("");
+        }
+      }
+    } catch (err) {
+      console.error(err);
+      const msg = "评论加载失败。";
+      commentsListEl.innerHTML = `<div class="ql-error">${escapeHtml(msg)}</div>`;
+    }
+  }
+
+  // 5. Submit Comment
+  commentSubmitBtn.addEventListener("click", async () => {
+    const content = commentContentEl.value.trim();
+    const nickname = commentNameEl.value.trim() || "匿名";
+    const token = window.__ql_turnstile_token;
+
+    if (!content) {
+      commentStatusEl.textContent = "请输入评论内容。";
+      commentStatusEl.className = "ql-status-msg ql-error-text";
+      return;
+    }
+    if (!token) {
+      commentStatusEl.textContent = "请完成人机验证。";
+      commentStatusEl.className = "ql-status-msg ql-error-text";
+      return;
+    }
+
+    commentSubmitBtn.disabled = true;
+    commentStatusEl.textContent = "正在提交……";
+    commentStatusEl.className = "ql-status-msg";
+
+    try {
+      const res = await fetch(`${SUPABASE_FUNCTIONS_URL}/comments-create`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ postSlug, nickname, content, captchaToken: token })
+      });
+      
+      if (!res.ok) throw new Error(await readErrorMessage(res));
+      const data = await res.json().catch(() => ({}));
+      if (!data.ok) throw new Error("提交失败");
+      
+      commentStatusEl.textContent = "评论已提交！审核通过后将显示。";
+      commentStatusEl.className = "ql-status-msg ql-success-text";
+      commentContentEl.value = "";
+      
+      // Optionally reload comments, though new one won't show until approved
+    } catch (err) {
+      console.error(err);
+      commentStatusEl.textContent = "评论提交失败，请重试。";
+      commentStatusEl.className = "ql-status-msg ql-error-text";
+    } finally {
+      commentSubmitBtn.disabled = false;
+    }
+  });
+
+  // Utility to escape HTML
+  function escapeHtml(unsafe) {
+    return unsafe
+         .replace(/&/g, "&amp;")
+         .replace(/</g, "&lt;")
+         .replace(/>/g, "&gt;")
+         .replace(/"/g, "&quot;")
+         .replace(/'/g, "&#039;");
+  }
+
+  // Initial load
+  loadComments();
+});
+</script>
