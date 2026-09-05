@@ -18,7 +18,9 @@
 
     <div class="ql-comment-form">
       <h4>Leave a reply</h4>
-      <input type="text" id="ql-comment-name" placeholder="Name (optional, default: Anonymous)" maxlength="50">
+      <label for="ql-comment-name">Name (optional)</label>
+      <input type="text" id="ql-comment-name" placeholder="Anonymous" maxlength="50">
+      <label for="ql-comment-content">Comment</label>
       <textarea id="ql-comment-content" placeholder="What are your thoughts?" rows="3" required></textarea>
       
       <div class="ql-turnstile-box">
@@ -29,7 +31,7 @@
 
       <div class="ql-form-actions">
         <button id="ql-comment-submit" class="ql-btn-primary">Post Comment</button>
-        <span id="ql-comment-status" class="ql-status-msg"></span>
+        <span id="ql-comment-status" class="ql-status-msg" role="status" aria-live="polite"></span>
       </div>
     </div>
   </div>

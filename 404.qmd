@@ -1,0 +1,9 @@
+---
+title: "Page not found"
+toc: false
+search: false
+---
+
+This page is no longer available. You can find my current work through the links below.
+
+[Home](index.qmd) · [Research](content/project.qmd) · [Publications](content/publications.qmd) · [Blog](blog/index.qmd)

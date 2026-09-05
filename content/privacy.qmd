@@ -1,14 +1,23 @@
 ---
-title: "Privacy Policy"
-format: html
+title: "Privacy"
+description: "How this personal website handles subscriptions and comments."
+toc: false
 ---
 
-This website uses Google Analytics to help understand how visitors interact with the content.
+This is the personal website of **LUO Qun (罗群)**.
 
-No personal data (like names or emails) is collected directly. Google Analytics may use cookies to collect anonymous usage data such as page views, duration, and device/browser information.
+## Visiting the website
 
-By using this site, you consent to this anonymous tracking.
+The site is hosted on GitHub Pages. Hosting providers may process request information to serve pages and maintain their services. This version of the site does not load Google Analytics.
 
-You can disable cookies in your browser settings or use browser extensions to block analytics scripts.
+## Subscriptions and comments
 
-If you have questions, feel free to [contact me](mailto:cecilia.baldons@gmail.com).
+The optional subscription form sends your email address to the site's subscription service. A confirmation email is used to verify your subscription. The comment form sends your chosen name and comment text to the site's comment service. Approved comments may appear publicly, so please avoid including private information in a comment.
+
+These features use Supabase and Cloudflare Turnstile. Turnstile checks help protect submissions from spam. On blog pages, a browser-local identifier is stored for the interaction features.
+
+You can read the providers' information at [GitHub](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement), [Supabase](https://supabase.com/privacy), and [Cloudflare](https://www.cloudflare.com/privacypolicy/).
+
+## Contact
+
+For questions about your subscription, comments, or data, email [qunluo.kiwi@gmail.com](mailto:qunluo.kiwi@gmail.com).

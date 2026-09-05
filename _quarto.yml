@@ -1,23 +1,39 @@
 project:
   type: website
-  #output-dir: docs
+  output-dir: _site
+  render:
+    - index.qmd
+    - content/*.qmd
+    - blog/index.qmd
+    - blog/Automatic-Research-20260401.qmd
+    - subscribe.qmd
+    - 404.qmd
   resources:
-    - sitemap.xml
     - CNAME
+    - robots.txt
+    - .nojekyll
 
 execute:
-  freeze: auto
+  enabled: false
+
+lang: en
+author: "LUO Qun"
 
 website:
-  title: "Qun Luo"
+  title: "LUO Qun · 罗群"
+  description: "The personal website of LUO Qun (罗群). Earth system science, hydrology, and physically interpretable AI."
   site-url: https://qunluo-kiwi.com/
   favicon: img/kiwi.png
+  search: true
+  open-graph: true
   navbar:
     left:
       - text: "About"
         href: content/about.qmd
-      - text: "Projects"
+      - text: "Research"
         href: content/project.qmd
+      - text: "Publications"
+        href: content/publications.qmd
       - text: "Blog"
         href: blog/index.qmd
       - text: "Contact"
@@ -25,86 +41,26 @@ website:
     right:
       - text: "Subscribe"
         href: subscribe.qmd
-      - text: "{{< iconify fa6-brands:google-scholar >}}"
-        href: https://scholar.google.com/citations?hl=en&user=OVagKRoAAAAJ
-      # - text: "{{< iconify garden:bookmark-fill-12 >}}"
-      #   href: https://substack.com/@cecibaldoni
-      # - text: "{{< iconify meteor-icons:bluesky >}}"
-      #   href: https://bsky.app/profile/cecibaldoni.bsky.social
-      - icon: instagram
-        href: https://www.instagram.com/qunluo.kiwi/?hl=en
       - icon: github
+        aria-label: "LUO Qun on GitHub"
         href: https://github.com/kiwiyolo/
-      - icon: LinkedIn
-        href: https://www.linkedin.com/in/qun-luo-87b52b328/
-
-  page-footer: 
-    right: "Built with [Quarto](https://quarto.org/)"
-    left: |
-      <div>&copy; Copyright 2026, Qun Luo</div>
-
-      <div id="cookie-banner-placeholder"></div>
-      <style>
-        #cookie-banner {
-          position: fixed; bottom: 0; left: 0; width: 100%;
-          background-color: #6F4E37; color: #F3EDE2; padding: 15px 25px;
-          z-index: 1000; text-align: center; font-size: 0.9em;
-          box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
-        }
-        #cookie-banner p { margin: 0; }
-        #cookie-banner a { color: #aed6ff; text-decoration: underline; margin-left: 10px; }
-        #cookie-banner button {
-          margin: 0 15px; padding: 5px 15px; border: none;
-          background-color: #F3EDE2; color: #A25B43; cursor: pointer; border-radius: 4px;
-          transition: background-color 0.3s ease, color 0.3s ease;
-        }
-      </style>
-      <script>
-        function loadGoogleAnalytics() {
-          const gascript = document.createElement("script");
-          gascript.async = true;
-          gascript.src = "https://www.googletagmanager.com/gtag/js?id=G-DV6K7C0XDV";
-          document.head.appendChild(gascript);
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-DV6K7C0XDV');
-        }
-
-        document.addEventListener("DOMContentLoaded", function () {
-          if (localStorage.getItem("cookieAccepted") === "true") {
-            loadGoogleAnalytics();
-            return;
-          }
-          const bannerHTML = `
-            <div id="cookie-banner">
-              <p>
-                This website uses cookies for analytics. By clicking "OK", you agree to its use.
-                <button id="accept-cookies">OK</button>
-                <a href="privacy.html" class="cookie-link">(learn more)</a>
-              </p>
-            </div>`;
-          document.getElementById("cookie-banner-placeholder").innerHTML = bannerHTML;
-          
-          document.getElementById("accept-cookies").addEventListener("click", function () {
-            localStorage.setItem("cookieAccepted", "true");
-            document.getElementById("cookie-banner").remove();
-            loadGoogleAnalytics();
-          });
-        });
-      </script>
-    
+      - text: "Private Plan ↗"
+        href: https://planner.qunluo-kiwi.com/
+  page-footer:
+    left: "© 2026 LUO Qun · 罗群"
+    right:
+      - text: "Privacy"
+        href: content/privacy.qmd
+      - text: "Built with Quarto"
+        href: https://quarto.org/
 
 format:
   html:
     theme: custom.scss
     toc: true
-    toc-depth: 3
-    navigation:
-      sidebar: false
-    meta:
-      description: "Personal website of Qun Luo"
-      author: "Qun Luo"
-      keywords: ["Qun Luo", "AI", "Ocean-Atmosphere", "Earth System", "Forecast", "Interpretability"]
+    toc-depth: 2
+    anchor-sections: true
+    smooth-scroll: true
+    link-external-newwindow: true
 
 editor: source

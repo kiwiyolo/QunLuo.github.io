@@ -14,3 +14,9 @@ docs/blog/drafts/
 **/*.quarto_ipynb
 
 /_site
+
+# Keep unpublished local drafts and local environment files out of publication.
+blog/20260501_Earth-system-forecast.qmd
+.env
+.env.*
+!.env.example

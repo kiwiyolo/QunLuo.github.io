@@ -1,9 +1,10 @@
 ---
-title: Blog
+title: "Blog"
+description: "Research notes and reflections by LUO Qun."
+toc: false
 listing:
-  contents: 
-    - "*.qmd"
-    - "!index.qmd"
+  contents:
+    - Automatic-Research-20260401.qmd
   type: default
   sort: "date desc"
   date-format: "YYYY-MM-DD"
@@ -11,6 +12,4 @@ listing:
   filter-ui: true
 ---
 
-::: {.page-icon}
-<img src="../img/icons/van.svg" alt="" aria-hidden="true">
-:::
+Notes on Earth system science, AI, and the practice of research.

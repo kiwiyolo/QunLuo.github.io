@@ -1,3 +1,7 @@
+# Website maintenance · LUO Qun
+
+Current domain: https://qunluo-kiwi.com/. Build with Quarto 1.10.18; the source of truth is README.md and _quarto.yml.
+
 # Manual (Source vs. Deployed Site)
 
 Current -->  gh-pa
@@ -95,19 +99,13 @@ QunLuo.github.io/
 │  ├─ about.qmd
 │  ├─ contact.qmd
 │  ├─ datasets.qmd
-│  ├─ illustrations.qmd
 │  ├─ open-science.qmd
 │  ├─ privacy.qmd
 │  ├─ project.qmd
 │  ├─ publications.qmd
-│  ├─ shrews.qmd
 │  └─ talks.qmd
 ├─ data/
-│  ├─ al_data.rds
-│  └─ al_fitted.rds
 ├─ img/
-│  ├─ icons/...
-│  ├─ illustrations/...
 │  └─ (site-wide images)
 ├─ README.md
 ├─ Website.Rproj
@@ -189,8 +187,8 @@ Notes:
 
 - Source: `blog/*.qmd`
   - Output: `QunLuo.github.io-gh-pages/blog/<same-slug>.html`
-    - Example: `blog/notetaking-part1.qmd` → `blog/notetaking-part1.html`
-  - Observed front matter pattern (example from `blog/notetaking-part1.qmd`):
+    - Example: `blog/Automatic-Research-20260401.qmd` → `blog/Automatic-Research-20260401.html`
+  - Observed front matter pattern (example from `blog/Automatic-Research-20260401.qmd`):
     - `title`, `description`, `date`, optional `image`, `categories: [...]`
   - Images:
     - Many posts reference images under `blog/img/...` (relative paths used in posts).
@@ -253,7 +251,6 @@ categories: [Category1, Category2]
 ### 4.2 Updating static pages
 
 - Edit the relevant file in `content/` (e.g., `content/about.qmd`).
-- Keep icon references consistent (most pages use icons under `img/icons/`).
 - Rebuild and verify the corresponding output HTML under `QunLuo.github.io-gh-pages/content/...`.
 
 ### 4.3 Dev Log convention (no extra files created)
@@ -371,5 +368,5 @@ ssh -T git@github.com
 | --------------------------- | ---------------------------- |
 | `index.qmd`                 | `index.html`                 |
 | `content/about.qmd`         | `content/about.html`         |
-| `blog/notetaking-part1.qmd` | `blog/notetaking-part1.html` |
+| `blog/Automatic-Research-20260401.qmd` | `blog/Automatic-Research-20260401.html` |
 

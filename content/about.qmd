@@ -1,51 +1,48 @@
 ---
-title: ""
-class: page-research
-format:
-  html:
-    toc: false
+title: "About"
+description: "Education, research experience, and interests of LUO Qun (罗群)."
 ---
 
-::: {.page-icon}
-<img src="../img/icons/home.svg" alt="" aria-hidden="true">
-:::
+I am **LUO Qun (罗群)**. My work connects Earth system science with artificial intelligence, with a particular interest in physically interpretable prediction.
 
-## About me
+My background is in groundwater science and water engineering. I have worked on river water quality, precipitation nowcasting, human influences on runoff, and seasonal ocean forecasting. Across these topics, I am interested in how models can make useful predictions while helping us understand the processes behind them.
 
-```{=html}
-<div class="about-me" style="display:flex; align-items:center; gap:2rem;">
-  <img src="../img/BaldoniCecilia-long.jpg" class="about-me-img" style="border-radius:50%; max-width:200px;">
-  <div class="about-me-text">
-    <ul>
-      <li><strong>Scientist</strong></li>
-      <li>Enjoy designing and leading <strong>workshops</strong></li>
-      <li>Love connecting research <strong>ideas</strong> with everyday challenges</li>
-      <li>Obsessed with <strong>note-taking apps</strong></li>
-      <li>Always curious, always <strong>learning something new</strong></li>
-</ul>
-  </div>
-</div>
-```
-<br>
+## Education
 
-> Scientific discovery is a social process: it depends as much on data as it does on the infrastructure used to share it.
+### The Hong Kong Polytechnic University · from September 2026
 
-My work exists at the intersection of research, technical infrastructure, and community leadership.
+**Full-time PhD programme, Department of Computing**\
+Joint supervision with EIT Institute for Advanced Study.\
+Supervisors: **Prof. Jiannong Cao** (PolyU) and **Dr. Yuntian Chen** (EIT).
 
-[My current work](shrews.qmd) centers on the cognitive compromises of the common shrew, a model species for studying brain size plasticity and behavior.
+### Beijing Normal University · September 2022 – June 2025
 
-I lead community initiatives that transform Open Science from a policy requirement into a practical workflow. This involves building the technical systems and professional networks necessary for digital collaboration. I love **facilitating workshops** and I focus on making **complex ideas accessible** and **connecting people** across fields. You can see examples of this in my [Talks & Workshops](talks.qmd) and [Projects](project.qmd) pages.
+**Master's degree in Water Engineering**, College of Water Sciences.\
+Supervisor: **Prof. Dingzhi Peng**.
 
-Practicing [Open Science](open-science.qmd) is both a technical choice and a cultural one. I am committed to advancing transparency and reproducibility, ensuring data is not just "available" but actually usable.
+### China University of Geosciences (Beijing) · September 2018 – June 2022
 
-Here are a few highlights of my community impact so far:
+**Bachelor of Engineering in Groundwater Science and Engineering**.
 
-- Elected **representative** during my PhD and postdoc, giving voice to peers across departments
-- Leading the **SORTEE code club** and helping run the **R-Ladies blog**, nurturing inclusive spaces for data science
-- Part of The Turing Way’s community management working group, shaping best practices for open collaboration
-- **Translator** for the Raspberry Pi Foundation and **code editor** for PCI Ecology; helping global audiences access science and coding content
-- Workshop leader for **R programming** and **personal knowledge management**, demystifying tools to help others level up
+## Research experience
 
-I’m always curious about new ways to connect people and ideas.
+### Southern University of Science and Technology
 
-If you want to collaborate, share ideas, or just have a friendly chat, feel free to [reach out](contact.qmd) or book some time to talk.
+**Research Assistant**, Earth System & Global Change Lab; joined July 2025.\
+Supervisor: **Dr. Zhenzhong Zeng**.
+
+Research on deep learning for seasonal sea surface temperature forecasting and the drivers and prediction of algal blooms.
+
+## Research interests
+
+- Physically interpretable AI for Earth system processes
+- Seasonal sea surface temperature forecasting
+- Precipitation nowcasting and satellite precipitation
+- Water quality prediction and hydrological modelling
+- Human activity, climate variability, and runoff change
+
+## 中文简介
+
+我是罗群，研究兴趣是地球系统科学与人工智能，尤其关注预测方法的物理可解释性。本科就读于中国地质大学（北京）地下水科学与工程专业，硕士就读于北京师范大学水科学研究院水利工程专业。2025 年 7 月加入南方科技大学地球系统与全球变化相关研究团队任科研助理，研究海表温度季节预测等问题。博士项目为香港理工大学计算学系与 EIT 联合培养项目，起始时间为 2026 年 9 月。
+
+[Research projects](project.qmd) · [Publications](publications.qmd) · [Contact](contact.qmd)

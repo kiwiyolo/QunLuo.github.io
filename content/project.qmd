@@ -1,67 +1,40 @@
 ---
-title: ""
-class: page-research
-format:
-  html:
-    toc: false
+title: "Research"
+description: "LUO Qun's research in water quality, precipitation nowcasting, runoff change, and seasonal ocean forecasting."
 ---
 
-::: {.page-icon}
-<img src="../img/icons/research.svg" alt="" aria-hidden="true">
-:::
+My research explores how data and physical understanding can work together in Earth system prediction.
 
-## Projects {#current-research}
+## Seasonal sea surface temperature forecasting {#current-research}
 
-```{=html}
-<div class="research-gallery">
+**Research since 2025 · Earth system science & deep learning**
 
-<div class="project-card">
-  <a href="shrews.qmd">
-    <img src="../img/shrew-original.png" alt="Shrews">
-    <h3>Shrews</h3>
-    <p>Seasonal brain plasticity, cognition, shrews... explored through data and visual storytelling.</p>
-  </a>
-</div>
+At the Southern University of Science and Technology, my research has focused on deep learning for global seasonal sea surface temperature prediction. Related interests include the environmental drivers and forecasting of algal blooms.
 
-<div class="project-card">
-  <a href="talks.qmd">
-    <img src="../img/ceci-talk.JPG" alt="Talks and Workshops">
-    <h3>Workshops & Talks</h3>
-    <p>Conferences, seminars, and hands-on workshops on open workflows and data science.</p>
-  </a>
-</div>
+## Precipitation nowcasting {#precipitation-nowcasting}
 
-<div class="project-card">
-  <a href="open-science.qmd">
-    <img src="../img/icons/open-science.svg" alt="Open Science">
-    <h3>Open Science</h3>
-    <p>Personal and community efforts to improve transparency and reproducibility in science.</p>
-  </a>
-</div>
+**Research in 2023–2024 · Journal publication in 2026**
 
-<div class="project-card">
-  <a href="datasets.qmd">
-    <img src="../img/fen-monitor.png" alt="Datasets">
-    <h3>Datasets</h3>
-    <p>Published and openly available datasets from my research.</p>
-  </a>
-</div>
+I investigated strategies for coupling deep learning and optical flow in satellite-based precipitation nowcasting over China. The work compares how different combinations of these approaches can improve short-term precipitation prediction.
 
-<div class="project-card">
-  <a href="illustrations.qmd">
-    <img src="../img/illustrations/funkyanimals.png" alt="Illustrations">
-    <h3>Illustrations</h3>
-    <p>Science-inspired art and illustrations.</p>
-  </a>
-</div>
+[Read the paper](https://doi.org/10.1080/02626667.2025.2587687) · [Explore the code on GitHub](https://github.com/kiwiyolo/Suitable-coupling-for-PN)
 
-<div class="project-card">
-  <a href="publications.qmd">
-    <img src="../img/atlas.png" alt="Publications">
-    <h3>Publications</h3>
-    <p>My academic (and not) publications.</p>
-  </a>
-</div>
+## Water quality prediction {#water-quality}
 
-</div>
-```
+**Research in 2022–2023 · Journal publication in 2023**
+
+I studied water quality prediction in Beijing's sub-center using LSTM and back-propagation neural networks. The work uses transfer learning informed by upstream–downstream river relationships.
+
+[Read the paper](https://doi.org/10.1007/s11356-023-31068-5)
+
+## Runoff change under human influence {#runoff-change}
+
+**Research in 2024–2025 · Hydrology**
+
+I have explored the effects of human activities and climate change on runoff, including the challenge of separating their contributions to hydrological change.
+
+## Related work
+
+My collaborative publications cover the evaluation of satellite precipitation products, anthropogenic nitrogen and phosphorus inputs, and ecological base flow.
+
+[View publications →](publications.qmd)

@@ -1,6 +1,7 @@
 ---
 title: "What To Do in the Era of Automated Research"
 description: "A short reflection on how automated research workflows may reshape scientific practice, and what we can do to stay grounded, useful, and honest."
+author: LUO Qun
 date: 2026-04-01
 image: img/AI-Scientist-v2.png
 categories: [AI, Workflow]
@@ -53,4 +54,4 @@ To make work meaningful, we still need to do the basics well at each stage and i
 > AI can help refine steps, but humans still need to translate high-level aims into operational plans.
 >
 > As a soldier: execute with discipline.  
-> As a PhD researcher, building a reliable workflow for your own field is urgent and personal: no one understands your constraints better than you.
+> As a researcher, building a reliable workflow for your own field is urgent and personal: no one understands your constraints better than you.
