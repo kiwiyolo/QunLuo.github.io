@@ -48,38 +48,35 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-cf347d7cc3329a36b9b4572176781d5f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-a1842572976d38f63dcbe02d1c490543.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{"location": "navbar", "copy-button": false, "collapse-after": 3, "panel-placement": "end", "type": "overlay", "limit": 50, "keyboard-shortcut": ["f", "/", "s"], "show-item-context": false, "language": {"search-no-results-text": "没有找到结果", "search-matching-documents-text": "篇相关页面", "search-copy-link-title": "复制搜索链接", "search-hide-matches-text": "隐藏其他匹配结果", "search-more-match-text": "条本页匹配结果", "search-more-matches-text": "条本页匹配结果", "search-clear-button-title": "清除", "search-text-placeholder": "搜索中文内容", "search-detached-cancel-button-title": "取消", "search-submit-button-title": "搜索", "search-label": "搜索"}}</script>
-<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async="" defer=""></script>
 <script>
-  // ==========================================
-  // CONFIGURATION: Set your Supabase Edge Function URL here
-  // Note: Only the base URL is needed, the specific endpoints will be appended
-  // ==========================================
   const SUPABASE_FUNCTIONS_URL = "https://fracycwtkurcimbwcvjz.supabase.co/functions/v1";
-  
   window.__ql_turnstile_token = null;
-  function qlOnTurnstileSuccess(token) {
-    window.__ql_turnstile_token = token;
-    document.querySelectorAll(".ql-turnstile-token").forEach((el) => {
-      el.value = token;
-    });
+  function qlOnTurnstileSuccess(token) { window.__ql_turnstile_token = token; document.dispatchEvent(new Event('ql-captcha-ready')); }
+  function qlOnTurnstileExpired() { window.__ql_turnstile_token = null; }
+  function qlOnTurnstileError() { qlOnTurnstileExpired(); document.dispatchEvent(new Event('ql-captcha-error')); }
+  function qlResetCaptcha() {
+    qlOnTurnstileExpired();
+    if (window.turnstile) { try { window.turnstile.reset(); } catch {} }
   }
-
   function getDeviceId() {
-    let id = localStorage.getItem("ql_device_id");
+    if (window.__ql_device_id) return window.__ql_device_id;
+    let id;
+    try { id = localStorage.getItem('ql_device_id'); } catch {}
     if (!id) {
-      id = "device_" + Math.random().toString(36).substring(2) + Date.now().toString(36);
-      localStorage.setItem("ql_device_id", id);
+      id = 'device_' + (window.crypto?.randomUUID?.() || Math.random().toString(36).slice(2) + Date.now().toString(36));
+      try { localStorage.setItem('ql_device_id', id); } catch {}
     }
-    return id;
+    return window.__ql_device_id = id;
   }
-
   function getPostSlug() {
     return window.location.pathname.replace(/^\/QunLuo\.github\.io\//, '').replace(/^\//, '').replace(/^zh\//, '').replace(/\.html$/, '');
   }
 </script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer=""></script>
+<script src="../../assets/interactions.js" defer=""></script>
 
 
 
@@ -109,65 +106,40 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a href="/zh/content/about.html" class="nav-link"> 
-<span class="menu-text">关于我</span></a>
+    <a href="/zh/content/about.html" aria-label="关于我" class="nav-link ql-icon-link"><svg class="ql-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M5 21v-2a7 7 0 0 1 14 0v2"/></svg><span class="ql-nav-tooltip" aria-hidden="true">关于我</span></a>
   </li>  
   <li class="nav-item">
-    <a href="/zh/content/project.html" class="nav-link"> 
-<span class="menu-text">研究项目</span></a>
+    <a href="/zh/content/project.html" aria-label="研究项目" class="nav-link ql-icon-link"><svg class="ql-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3v6L4 19a1 1 0 0 0 1 2h14a1 1 0 0 0 1-2L15 9V3M8 3h8M7 15h10"/></svg><span class="ql-nav-tooltip" aria-hidden="true">研究项目</span></a>
   </li>  
   <li class="nav-item">
-    <a href="/zh/blog/index.html" aria-current="page" class="nav-link active"> 
-<span class="menu-text">博客</span></a>
+    <a href="/zh/blog/index.html" aria-current="page" aria-label="博客" class="nav-link active ql-icon-link"><svg class="ql-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 3h13a3 3 0 0 1 3 3v15H6a2 2 0 0 1-2-2zm0 14h16M8 7h8M8 11h6"/></svg><span class="ql-nav-tooltip" aria-hidden="true">博客</span></a>
   </li>  
   <li class="nav-item">
-    <a href="/zh/content/contact.html" class="nav-link"> 
-<span class="menu-text">联系我</span></a>
+    <a href="/zh/content/contact.html" aria-label="联系我" class="nav-link ql-icon-link"><svg class="ql-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg><span class="ql-nav-tooltip" aria-hidden="true">联系我</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://planner.qunluo-kiwi.com/"> 
-<span class="menu-text">私密规划 🔒</span></a>
+    <a href="https://planner.qunluo-kiwi.com/" aria-label="私密规划" class="nav-link ql-icon-link"><svg class="ql-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3"/></svg><span class="ql-nav-tooltip" aria-hidden="true">私密规划</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a href="/zh/subscribe.html" class="nav-link"> 
-<span class="menu-text">订阅</span></a>
+    <a href="/zh/subscribe.html" aria-label="订阅" class="nav-link ql-icon-link"><svg class="ql-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4M12 1v1"/></svg><span class="ql-nav-tooltip" aria-hidden="true">订阅</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://orcid.org/0009-0008-4545-2349"> 
-<span class="menu-text"><iconify-icon role="img" inline="" icon="fa6-brands:orcid" aria-label="Icon orcid from fa6-brands Iconify.design set." title="Icon orcid from fa6-brands Iconify.design set."></iconify-icon></span></a>
+    <a href="https://orcid.org/0009-0008-4545-2349" aria-label="ORCID" class="nav-link ql-icon-link"><svg class="ql-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="7" cy="7" r=".5"/><path d="M7 10v7M11 7h3a5 5 0 0 1 0 10h-3z"/></svg><span class="ql-nav-tooltip" aria-hidden="true">ORCID</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://www.instagram.com/qunluo.kiwi/"> <i class="bi bi-instagram" role="img">
-</i> 
-<span class="menu-text"></span></a>
+    <a href="https://www.instagram.com/qunluo.kiwi/" aria-label="Instagram" class="nav-link ql-icon-link"><svg class="ql-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5"/></svg><span class="ql-nav-tooltip" aria-hidden="true">Instagram</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/kiwiyolo/"> <i class="bi bi-github" role="img">
-</i> 
-<span class="menu-text"></span></a>
+    <a href="https://github.com/kiwiyolo/" aria-label="GitHub" class="nav-link ql-icon-link"><svg class="ql-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21v-4c-4 1-4-2-6-2M15 21v-4c0-1-.4-2-1-2 4-.5 6-2 6-6 0-1-1-3-2-3 0-2 0-3-.5-3L14 5h-4L6.5 3C6 3 6 4 6 6 4 7 4 8 4 9c0 4 2 5.5 6 6-.5.5-1 1-1 2"/></svg><span class="ql-nav-tooltip" aria-hidden="true">GitHub</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://www.linkedin.com/in/qun-luo-87b52b328/"> <i class="bi bi-linkedin" role="img">
-</i> 
-<span class="menu-text"></span></a>
+    <a href="https://www.linkedin.com/in/qun-luo-87b52b328/" aria-label="LinkedIn" class="nav-link ql-icon-link"><svg class="ql-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M11 17v-7m0 3a3 3 0 0 1 6 0v4"/><circle cx="7" cy="7" r=".5"/></svg><span class="ql-nav-tooltip" aria-hidden="true">LinkedIn</span></a>
   </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-english--中文" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">English / 中文</span>
-    </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-english--中文">    
-        <li>
-    <a href="/blog/Automatic-Research-20260401.html" data-language="en" hreflang="en" lang="en" class="dropdown-item">
- <span class="dropdown-text">English</span></a>
+  <li class="nav-item">
+    <a href="/blog/Automatic-Research-20260401.html" data-language="en" hreflang="en" lang="en" class="nav-link ql-icon-link" aria-label="切换为英文"><svg class="ql-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h11M8 3v2M5 5c0 5 4 8 8 10M12 5c0 5-4 8-9 10M14 21l4-10 4 10M15.5 17h5"/></svg><span class="ql-nav-tooltip" aria-hidden="true">切换为英文</span></a>
   </li>  
-        <li>
-    <a href="/zh/blog/Automatic-Research-20260401.html" data-language="zh-CN" hreflang="zh-CN" lang="zh-CN" aria-current="page" class="dropdown-item active">
- <span class="dropdown-text">简体中文</span></a>
-  </li>  
-    </ul>
-  </li>
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -284,211 +256,37 @@ ul.task-list li input[type="checkbox"] {
 
 </section>
 
-</main> <!-- /main -->
 <section class="ql-interactions" aria-label="文章互动">
   <div class="ql-actions-bar">
-    <button id="ql-like-btn" class="ql-action-btn" title="为本文点赞">
-      <svg viewbox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="ql-icon-heart"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-      <span id="ql-like-count">0</span>
+    <button id="ql-like-btn" class="ql-action-btn" type="button" aria-pressed="false" aria-label="为本文点赞">
+      <svg viewbox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l7.78 7.78 7.78-7.78a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+      <span>点赞</span> <span id="ql-like-count">—</span>
     </button>
-    <button id="ql-share-btn" class="ql-action-btn" title="复制链接">
-      <svg viewbox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
-      <span>分享</span>
-    </button>
+    <button id="ql-share-btn" class="ql-action-btn" type="button">复制链接</button>
   </div>
-
+  <p id="ql-action-status" class="ql-status-msg" role="status" aria-live="polite"></p>
   <div class="ql-comments-section">
     <h3>评论</h3>
-    <div id="ql-comments-list" class="ql-comments-list">
-      <div class="ql-loading">正在加载评论……</div>
-    </div>
-
-    <div class="ql-comment-form">
+    <div id="ql-comments-list" class="ql-comments-list" aria-live="polite"><p>正在加载评论…</p></div>
+    <button id="ql-comments-retry" class="ql-action-btn" type="button" hidden="">重新加载</button>
+    <form id="ql-comment-form" class="ql-comment-form">
       <h4>发表评论</h4>
-      <input type="text" id="ql-comment-name" aria-label="昵称（选填）" placeholder="昵称（选填，默认为匿名）" maxlength="50">
-      <textarea id="ql-comment-content" aria-label="评论内容" placeholder="分享您的想法……" rows="3" required=""></textarea>
-      
+      <label for="ql-comment-name">昵称（选填）</label>
+      <input type="text" id="ql-comment-name" autocomplete="nickname" maxlength="50">
+      <label for="ql-comment-content">评论内容</label>
+      <textarea id="ql-comment-content" maxlength="2000" rows="4" required="" placeholder="分享您的想法…"></textarea>
       <div class="ql-turnstile-box">
-        <p class="ql-turnstile-desc">本站使用 Cloudflare Turnstile，以防止匿名提交中的垃圾信息。</p>
-        <div class="cf-turnstile" data-language="zh-cn" data-sitekey="0x4AAAAAACzZJprJ4npD9l7W" data-callback="qlOnTurnstileSuccess"></div>
-        <input class="ql-turnstile-token" type="hidden" name="captchaToken" value="">
+        <p class="ql-turnstile-desc">完成人机验证后即可点赞或评论。评论经审核后显示。</p>
+        <div class="cf-turnstile" data-language="zh-cn" data-sitekey="0x4AAAAAACzZJprJ4npD9l7W" data-callback="qlOnTurnstileSuccess" data-expired-callback="qlOnTurnstileExpired" data-error-callback="qlOnTurnstileError" data-size="flexible"></div>
       </div>
-
-      <div class="ql-form-actions">
-        <button id="ql-comment-submit" class="ql-btn-primary">提交评论</button>
-        <span id="ql-comment-status" role="status" aria-live="polite" class="ql-status-msg"></span>
-      </div>
-    </div>
+      <button id="ql-comment-submit" class="ql-btn-primary" type="submit">提交评论</button>
+      <p id="ql-comment-status" class="ql-status-msg" role="status" aria-live="polite"></p>
+    </form>
   </div>
 </section>
+</main> <!-- /main -->
+<script type="module" src="../../assets/community-character.js"></script>
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const postSlug = getPostSlug();
-  const deviceId = getDeviceId();
-  
-  const likeBtn = document.getElementById("ql-like-btn");
-  const likeCountEl = document.getElementById("ql-like-count");
-  const shareBtn = document.getElementById("ql-share-btn");
-  
-  const commentsListEl = document.getElementById("ql-comments-list");
-  const commentSubmitBtn = document.getElementById("ql-comment-submit");
-  const commentNameEl = document.getElementById("ql-comment-name");
-  const commentContentEl = document.getElementById("ql-comment-content");
-  const commentStatusEl = document.getElementById("ql-comment-status");
-
-  async function readErrorMessage(res) {
-    const text = await res.text().catch(() => "");
-    if (!text) return `HTTP ${res.status}`;
-    try {
-      const data = JSON.parse(text);
-      if (data && data.error && typeof data.error.message === "string") return data.error.message;
-      if (data && typeof data.message === "string") return data.message;
-      return text;
-    } catch {
-      return text;
-    }
-  }
-
-  // 1. Share Button
-  shareBtn.addEventListener("click", async () => {
-    try {
-      await navigator.clipboard.writeText(window.location.href);
-      const originalText = shareBtn.querySelector("span").textContent;
-      shareBtn.querySelector("span").textContent = "已复制！";
-      setTimeout(() => shareBtn.querySelector("span").textContent = originalText, 2000);
-    } catch (e) {
-      console.error("复制失败", e);
-    }
-  });
-
-  // 2. Load Likes (Optional: If you want to fetch initial like count without toggling, 
-  // you might need a separate GET endpoint. For now, we rely on user interaction to toggle).
-  // A proper implementation would fetch the initial count here.
-
-  // 3. Toggle Like
-  likeBtn.addEventListener("click", async () => {
-    const token = window.__ql_turnstile_token;
-    if (!token) {
-      alert("请先完成人机验证，再为本文点赞。");
-      return;
-    }
-    likeBtn.disabled = true;
-    try {
-      const res = await fetch(`${SUPABASE_FUNCTIONS_URL}/like-toggle`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ postSlug, deviceId, captchaToken: token })
-      });
-      if (!res.ok) throw new Error(await readErrorMessage(res));
-      const data = await res.json().catch(() => ({}));
-      if (data.ok) {
-        likeCountEl.textContent = data.count;
-        if (data.liked) {
-          likeBtn.classList.add("ql-liked");
-          likeBtn.querySelector("svg").setAttribute("fill", "currentColor");
-        } else {
-          likeBtn.classList.remove("ql-liked");
-          likeBtn.querySelector("svg").setAttribute("fill", "none");
-        }
-      }
-    } catch (err) {
-      console.error(err);
-      alert("点赞状态更新失败，请稍后重试。");
-    } finally {
-      likeBtn.disabled = false;
-    }
-  });
-
-  // 4. Load Comments
-  async function loadComments() {
-    try {
-      const res = await fetch(`${SUPABASE_FUNCTIONS_URL}/comments-list?postSlug=${encodeURIComponent(postSlug)}`);
-      if (!res.ok) throw new Error(await readErrorMessage(res));
-      const data = await res.json().catch(() => ({}));
-      
-      if (data.ok && data.comments) {
-        if (data.comments.length === 0) {
-          commentsListEl.innerHTML = '<div class="ql-empty">暂无评论，欢迎第一个分享您的想法！</div>';
-        } else {
-          commentsListEl.innerHTML = data.comments.map(c => `
-            <div class="ql-comment-item">
-              <div class="ql-comment-meta">
-                <strong>${escapeHtml(c.nickname || "匿名")}</strong>
-                <span>${new Date(c.created_at).toLocaleDateString()}</span>
-              </div>
-              <div class="ql-comment-text">${escapeHtml(c.content).replace(/\n/g, '<br>')}</div>
-            </div>
-          `).join("");
-        }
-      }
-    } catch (err) {
-      console.error(err);
-      const msg = "评论加载失败。";
-      commentsListEl.innerHTML = `<div class="ql-error">${escapeHtml(msg)}</div>`;
-    }
-  }
-
-  // 5. Submit Comment
-  commentSubmitBtn.addEventListener("click", async () => {
-    const content = commentContentEl.value.trim();
-    const nickname = commentNameEl.value.trim() || "匿名";
-    const token = window.__ql_turnstile_token;
-
-    if (!content) {
-      commentStatusEl.textContent = "请输入评论内容。";
-      commentStatusEl.className = "ql-status-msg ql-error-text";
-      return;
-    }
-    if (!token) {
-      commentStatusEl.textContent = "请完成人机验证。";
-      commentStatusEl.className = "ql-status-msg ql-error-text";
-      return;
-    }
-
-    commentSubmitBtn.disabled = true;
-    commentStatusEl.textContent = "正在提交……";
-    commentStatusEl.className = "ql-status-msg";
-
-    try {
-      const res = await fetch(`${SUPABASE_FUNCTIONS_URL}/comments-create`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ postSlug, nickname, content, captchaToken: token })
-      });
-      
-      if (!res.ok) throw new Error(await readErrorMessage(res));
-      const data = await res.json().catch(() => ({}));
-      if (!data.ok) throw new Error("提交失败");
-      
-      commentStatusEl.textContent = "评论已提交！审核通过后将显示。";
-      commentStatusEl.className = "ql-status-msg ql-success-text";
-      commentContentEl.value = "";
-      
-      // Optionally reload comments, though new one won't show until approved
-    } catch (err) {
-      console.error(err);
-      commentStatusEl.textContent = "评论提交失败，请重试。";
-      commentStatusEl.className = "ql-status-msg ql-error-text";
-    } finally {
-      commentSubmitBtn.disabled = false;
-    }
-  });
-
-  // Utility to escape HTML
-  function escapeHtml(unsafe) {
-    return unsafe
-         .replace(/&/g, "&amp;")
-         .replace(/</g, "&lt;")
-         .replace(/>/g, "&gt;")
-         .replace(/"/g, "&quot;")
-         .replace(/'/g, "&#039;");
-  }
-
-  // Initial load
-  loadComments();
-});
-</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -946,7 +744,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 <!-- ql-language-switch -->
-<script id="ql-language-anchors" type="application/json">{"toc-title": "toc-title", "我反复思考的问题": "questions-i-keep-returning-to", "ql-comments-list": "ql-comments-list", "TOC": "TOC", "quarto-search-results": "quarto-search-results", "navbarCollapse": "navbarCollapse", "ql-comment-status": "ql-comment-status", "ql-comment-content": "ql-comment-content", "title-block-header": "title-block-header", "quarto-header": "quarto-header", "quarto-bootstrap": "quarto-bootstrap", "quarto-content": "quarto-content", "quarto-document-content": "quarto-document-content", "quarto-search": "quarto-search", "ql-comment-name": "ql-comment-name", "quarto-html-after-body": "quarto-html-after-body", "quarto-text-highlighting-styles": "quarto-text-highlighting-styles", "cookie-banner-placeholder": "cookie-banner-placeholder", "quarto-margin-sidebar": "quarto-margin-sidebar", "ql-share-btn": "ql-share-btn", "ql-comment-submit": "ql-comment-submit", "ql-like-count": "ql-like-count", "nav-menu-english--中文": "nav-menu-english--中文", "quarto-search-options": "quarto-search-options", "ql-like-btn": "ql-like-btn"}</script>
+<script id="ql-language-anchors" type="application/json">{"toc-title": "toc-title", "我反复思考的问题": "questions-i-keep-returning-to", "ql-like-btn": "ql-like-btn", "ql-share-btn": "ql-share-btn", "ql-comments-list": "ql-comments-list", "navbarCollapse": "navbarCollapse", "quarto-search-options": "quarto-search-options", "ql-like-count": "ql-like-count", "quarto-header": "quarto-header", "ql-comment-submit": "ql-comment-submit", "quarto-html-after-body": "quarto-html-after-body", "ql-comment-form": "ql-comment-form", "quarto-search": "quarto-search", "ql-comments-retry": "ql-comments-retry", "ql-comment-status": "ql-comment-status", "quarto-content": "quarto-content", "TOC": "TOC", "quarto-text-highlighting-styles": "quarto-text-highlighting-styles", "cookie-banner-placeholder": "cookie-banner-placeholder", "quarto-bootstrap": "quarto-bootstrap", "quarto-search-results": "quarto-search-results", "quarto-document-content": "quarto-document-content", "ql-comment-content": "ql-comment-content", "quarto-margin-sidebar": "quarto-margin-sidebar", "ql-comment-name": "ql-comment-name", "ql-action-status": "ql-action-status", "title-block-header": "title-block-header"}</script>
 <script>(() => {
   const metadata = document.getElementById('ql-language-anchors');
   const anchors = metadata ? JSON.parse(metadata.textContent) : {};
