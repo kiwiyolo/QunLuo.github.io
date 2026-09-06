@@ -5,6 +5,12 @@ author: LUO Qun
 date: 2026-04-01
 image: ../../blog/img/AI-Scientist-v2.png
 categories: [人工智能, 工作流程]
+format:
+  html:
+    include-in-header:
+      - ../../_includes/turnstile-head-zh.html
+    include-after-body:
+      - ../../_includes/turnstile-blog-zh.html
 ---
 这是我重建个人网站后的第一篇文章。 我有意让它保持简短，想法也还未完全成形：它记录了我最近的一些思考。
 

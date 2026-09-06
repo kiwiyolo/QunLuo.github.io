@@ -5,10 +5,28 @@ import { getServiceClient } from "../_shared/supabase.ts";
 import { normalizeDeviceId, normalizePostSlug } from "../_shared/validate.ts";
 import { rateLimitOrThrow } from "../_shared/rate_limit.ts";
 
-type ToggleLikeRequest = { postSlug: string; deviceId: string; captchaToken: string };
+type ToggleLikeRequest = { postSlug: string; deviceId: string; captchaToken: string; liked?: boolean };
 
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response(null, { headers: corsHeaders(req) });
+  if (req.method === "GET") {
+    const query = new URL(req.url).searchParams;
+    let postSlug: string;
+    let deviceId: string;
+    try {
+      postSlug = normalizePostSlug(query.get("postSlug") ?? "");
+      deviceId = normalizeDeviceId(query.get("deviceId") ?? "");
+    } catch { return errJson(req, 400, "Invalid input"); }
+    try {
+      const client = getServiceClient();
+      const [total, own] = await Promise.all([
+        client.from("post_likes").select("id", { count: "exact", head: true }).eq("post_slug", postSlug).eq("liked", true),
+        client.from("post_likes").select("liked").eq("post_slug", postSlug).eq("device_id", deviceId).maybeSingle(),
+      ]);
+      if (total.error || own.error) return errJson(req, 500, "Unable to load likes");
+      return okJson(req, { ok: true, count: total.count ?? 0, liked: own.data?.liked ?? false }, { headers: { "cache-control": "no-store" } });
+    } catch { return errJson(req, 500, "Unable to load likes"); }
+  }
   if (req.method !== "POST") return errJson(req, 405, "Method not allowed");
 
   let body: ToggleLikeRequest;
@@ -54,13 +72,13 @@ Deno.serve(async (req) => {
     .maybeSingle();
   if (selErr) return errJson(req, 500, "Database error");
 
-  const nextLiked = existing ? !existing.liked : true;
+  const nextLiked = typeof body.liked === "boolean" ? body.liked : (existing ? !existing.liked : true);
 
   if (!existing) {
     const { error: insErr } = await supabase.from("post_likes").insert({
       post_slug: postSlug,
       device_id: deviceId,
-      liked: true,
+      liked: nextLiked,
     });
     if (insErr) return errJson(req, 500, "Database error");
   } else {

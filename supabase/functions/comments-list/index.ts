@@ -16,7 +16,13 @@ Deno.serve(async (req) => {
     return errJson(req, 400, e instanceof Error ? e.message : "Invalid postSlug");
   }
 
-  const supabase = getServiceClient();
+  let supabase;
+  try {
+    supabase = getServiceClient();
+  } catch (e) {
+    return errJson(req, 500, "Server configuration error");
+  }
+
   const { data, error } = await supabase
     .from("comments")
     .select("id,post_slug,nickname,content,created_at")
@@ -25,7 +31,7 @@ Deno.serve(async (req) => {
     .order("created_at", { ascending: false })
     .limit(200);
 
-  if (error) return errJson(req, 500, "Database error");
+  if (error) return errJson(req, 500, "Unable to load comments", "db_error");
   return okJson(req, { ok: true, comments: data ?? [] });
 });
 

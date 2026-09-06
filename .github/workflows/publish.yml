@@ -23,8 +23,13 @@ jobs:
         with:
           version: "1.10.18"
 
-      - name: Verify language switching
-        run: node --test scripts/test_language_switch.cjs
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Verify language, community, and blog interactions
+        run: node --test scripts/test_language_switch.cjs scripts/test_community.cjs scripts/test_interactions.cjs
 
       - name: Render
         run: quarto render

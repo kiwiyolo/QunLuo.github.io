@@ -7,6 +7,7 @@ import re
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urljoin, urlsplit
+from site_icons import ITEMS, markup
 
 SITE = "https://qunluo-kiwi.com"
 ROOT = Path(os.environ.get("QUARTO_PROJECT_OUTPUT_DIR", "_site")).resolve()
@@ -72,8 +73,8 @@ for name, path in files.items():
             opening, inner = match.group(1), match.group(2)
             attrs = attributes(opening)
             label = html.unescape(re.sub(r"<[^>]*>", "", inner)).strip()
-            if label in ("English", "简体中文"):
-                locale = "en" if label == "English" else "zh-CN"
+            if label == "Language" or attrs.get("data-language"):
+                locale = "en" if chinese else "zh-CN"
                 target = "/" + (base if locale == "en" else "zh/" + base)
                 opening = attribute(opening, "href", target)
                 opening = attribute(opening, "data-language", locale)
@@ -81,13 +82,11 @@ for name, path in files.items():
                 opening = attribute(opening, "lang", locale)
                 classes = attrs.get("class", "").split()
                 classes = [c for c in classes if c != "active"]
-                active = (locale == "zh-CN") == chinese
-                if active:
-                    classes.append("active")
-                    opening = attribute(opening, "aria-current", "page")
-                else:
-                    opening = re.sub(r'\saria-current="[^"]*"', "", opening)
-                opening = attribute(opening, "class", " ".join(classes))
+                opening = re.sub(r'\saria-current="[^"]*"', "", opening)
+                opening = attribute(opening, "class", " ".join(classes + ["ql-icon-link"]))
+                description = "切换为英文" if chinese else "Switch to Chinese"
+                opening = attribute(opening, "aria-label", description)
+                inner = markup("language", description)
             elif chinese and attrs.get("href"):
                 resolved = urlsplit(urljoin(SITE + "/" + name, html.unescape(attrs["href"])))
                 local = unquote(resolved.path).lstrip("/") or "index.html"
@@ -104,6 +103,14 @@ for name, path in files.items():
                         else:
                             opening = re.sub(r'\saria-current="[^"]*"', "", opening)
                         opening = attribute(opening, "class", " ".join(classes))
+            if not attributes(opening).get("data-language") and "nav-link" in attrs.get("class", "").split():
+                for fragment, key, english, translated in ITEMS:
+                    if fragment in html.unescape(attrs.get("href", "")):
+                        description = translated if chinese else english
+                        opening = attribute(opening, "aria-label", description)
+                        opening = attribute(opening, "class", attributes(opening).get("class", "") + " ql-icon-link")
+                        inner = markup(key, description)
+                        break
             return opening + inner + "</a>"
 
         header = re.sub(r"(<a\b[^>]*>)([\s\S]*?)</a>", anchor, header)
@@ -115,6 +122,13 @@ for name, path in files.items():
         return header
 
     source = re.sub(r'<header id="quarto-header"[\s\S]*?</header>', navigation, source, count=1)
+
+    # Quarto's after-body include is outside main. Keep article interactions
+    # below the post content, within the article's main landmark.
+    interaction = re.search(r'<section class="ql-interactions"[\s\S]*?</section>', source)
+    if interaction:
+        source = source[:interaction.start()] + source[interaction.end():]
+        source = source.replace('</main>', interaction.group(0) + '\n</main>', 1)
 
     if chinese:
         source = source.replace("Optional blog interactions use browser storage and anti-spam checks.", "可选的博客互动功能使用浏览器存储和反垃圾验证。")

@@ -1,0 +1,72 @@
+[
+  {
+    "id": "life",
+    "zh": "日常生活",
+    "en": "Life",
+    "asset": "img/community/life.png",
+    "left": 9.2744,
+    "top": 47.306,
+    "width": 4.4795,
+    "developing": true
+  },
+  {
+    "id": "interstellar",
+    "zh": "星际穿越",
+    "en": "Interstellar",
+    "asset": "img/community/interstellar.png",
+    "left": 29.5899,
+    "top": 75.6466,
+    "width": 6.2461,
+    "developing": true
+  },
+  {
+    "id": "outdoors",
+    "zh": "户外探索",
+    "en": "Outdoors",
+    "asset": "img/community/outdoors.png",
+    "left": 82.5868,
+    "top": 26.8319,
+    "width": 8.0757,
+    "developing": true
+  },
+  {
+    "id": "campfire",
+    "zh": "围炉夜话",
+    "en": "Campfire",
+    "asset": "img/community/campfire.png",
+    "left": 76.9716,
+    "top": 36.9612,
+    "width": 6.7508,
+    "developing": true
+  },
+  {
+    "id": "garden",
+    "zh": "灵感花园",
+    "en": "Inspiration Garden",
+    "asset": "img/community/garden.png",
+    "left": 49.5268,
+    "top": 67.3491,
+    "width": 15.9621,
+    "developing": true
+  },
+  {
+    "id": "toolbox",
+    "zh": "工具箱",
+    "en": "Toolbox",
+    "asset": "img/community/toolbox.png",
+    "left": 73.817,
+    "top": 50.6466,
+    "width": 10.6625,
+    "developing": true
+  },
+  {
+    "id": "journeys",
+    "zh": "旅途札记",
+    "en": "Journeys",
+    "asset": "img/community/journeys.png",
+    "left": 44.5426,
+    "top": 51.5086,
+    "width": 3.2177,
+    "developing": true
+  }
+]

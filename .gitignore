@@ -20,3 +20,6 @@ blog/20260501_Earth-system-forecast.qmd
 .env
 .env.*
 !.env.example
+
+__pycache__/
+*.pyc

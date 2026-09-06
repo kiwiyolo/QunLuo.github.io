@@ -1,29 +1,26 @@
-<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <script>
-  // ==========================================
-  // CONFIGURATION: Set your Supabase Edge Function URL here
-  // Note: Only the base URL is needed, the specific endpoints will be appended
-  // ==========================================
   const SUPABASE_FUNCTIONS_URL = "https://fracycwtkurcimbwcvjz.supabase.co/functions/v1";
-  
   window.__ql_turnstile_token = null;
-  function qlOnTurnstileSuccess(token) {
-    window.__ql_turnstile_token = token;
-    document.querySelectorAll(".ql-turnstile-token").forEach((el) => {
-      el.value = token;
-    });
+  function qlOnTurnstileSuccess(token) { window.__ql_turnstile_token = token; document.dispatchEvent(new Event('ql-captcha-ready')); }
+  function qlOnTurnstileExpired() { window.__ql_turnstile_token = null; }
+  function qlOnTurnstileError() { qlOnTurnstileExpired(); document.dispatchEvent(new Event('ql-captcha-error')); }
+  function qlResetCaptcha() {
+    qlOnTurnstileExpired();
+    if (window.turnstile) { try { window.turnstile.reset(); } catch {} }
   }
-
   function getDeviceId() {
-    let id = localStorage.getItem("ql_device_id");
+    if (window.__ql_device_id) return window.__ql_device_id;
+    let id;
+    try { id = localStorage.getItem('ql_device_id'); } catch {}
     if (!id) {
-      id = "device_" + Math.random().toString(36).substring(2) + Date.now().toString(36);
-      localStorage.setItem("ql_device_id", id);
+      id = 'device_' + (window.crypto?.randomUUID?.() || Math.random().toString(36).slice(2) + Date.now().toString(36));
+      try { localStorage.setItem('ql_device_id', id); } catch {}
     }
-    return id;
+    return window.__ql_device_id = id;
   }
-
   function getPostSlug() {
     return window.location.pathname.replace(/^\/QunLuo\.github\.io\//, '').replace(/^\//, '').replace(/^zh\//, '').replace(/\.html$/, '');
   }
 </script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
+<script src="/assets/interactions.js" defer></script>

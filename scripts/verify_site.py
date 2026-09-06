@@ -1,6 +1,7 @@
 """Check rendered pages, local links, and removal of former-owner content."""
 
 import json
+import base64
 import re
 import sys
 from html.parser import HTMLParser
@@ -44,6 +45,8 @@ required_pages = [
     "content/illustrations.html", "content/earth-system.html",
     "content/datasets.html", "content/open-science.html", "content/talks.html",
 ]
+features = json.loads((Path(__file__).parent / 'community.json').read_text(encoding='utf-8'))
+required_pages += [f"community/{feature['id']}.html" for feature in features]
 required = required_pages + ["zh/" + name for name in required_pages] + [
     "CNAME", ".nojekyll", "robots.txt", "sitemap.xml", "search.json", "search-en.json", "search-zh.json",
 ]
@@ -99,7 +102,9 @@ if (root / "CNAME").exists() and (root / "CNAME").read_text().strip() != "qunluo
     errors.append("Unexpected custom domain")
 
 components = {
-    "index.html": {"city-wrapper": 1, "city-layer": 1, "city-background": 1, "city-icon": 8},
+    "index.html": {"city-wrapper": 1, "city-layer": 1, "city-background": 1, "city-icon": 8 + len(features), "city-runner": 1},
+    "blog/index.html": {"ql-interactions": 0},
+    "blog/Automatic-Research-20260401.html": {"ql-interactions": 1},
     "content/about.html": {"about-me": 1, "about-me-img": 1, "about-me-text": 1},
     "content/project.html": {"research-gallery": 1, "project-card": 6},
     "content/publications.html": {"listing-item": 5, "thumbnail": 5, "thumbnail-image": 5},
@@ -122,14 +127,45 @@ for filename in required_pages:
             continue
         if page.language != language:
             errors.append(f"Incorrect document language: {prefix}{filename}")
+        other = "en" if language == "zh-CN" else "zh-CN"
+        if set(page.language_links) != {other}:
+            errors.append(f"Expected one direct language toggle: {prefix}{filename}")
         for locale, target in (("en", "/" + filename), ("zh-CN", "/zh/" + filename)):
-            link = page.language_links.get(locale, {})
-            if link.get("href") != target or link.get("hreflang") != locale:
-                errors.append(f"Incorrect paired language link: {prefix}{filename} / {locale}")
-            if (link.get("aria-current") == "page") != (locale == language):
-                errors.append(f"Incorrect current language: {prefix}{filename} / {locale}")
+            if locale == other:
+                link = page.language_links.get(locale, {})
+                if link.get("href") != target or link.get("hreflang") != locale or link.get("aria-current"):
+                    errors.append(f"Incorrect direct language link: {prefix}{filename} / {locale}")
             if page.alternates.get(locale) != "https://qunluo-kiwi.com" + target:
                 errors.append(f"Incorrect alternate language metadata: {prefix}{filename} / {locale}")
+
+for prefix in ('', 'zh/'):
+    article = (root / (prefix + 'blog/Automatic-Research-20260401.html')).read_text(encoding='utf-8')
+    main = re.search(r'<main\b[\s\S]*?</main>', article)
+    if not main or 'class="ql-interactions"' not in main.group(0):
+        errors.append(f'Interactions must be inside the article: {prefix}blog')
+    home = (root / (prefix + 'index.html')).read_text(encoding='utf-8')
+    if '/assets/community-character.js' not in home:
+        errors.append(f'Missing community character runtime: {prefix}index.html')
+
+sprite_path = root / 'assets/character/kirito-sprite.json'
+if not sprite_path.is_file():
+    errors.append('Missing Kirito sprite metadata')
+else:
+    sprite = json.loads(sprite_path.read_text(encoding='utf-8'))
+    if not (sprite_path.parent / sprite['image']).is_file():
+        errors.append('Missing Kirito sprite image')
+for extension in ('*.pmx', '*.pmd', '*.zip', '*.blend'):
+    if list(root.rglob(extension)):
+        errors.append(f'Unpublished model/source data included: {extension}')
+
+client_file = root / 'assets/supabase-public.json'
+try:
+    client = json.loads(client_file.read_text(encoding='utf-8'))
+    claims = json.loads(base64.urlsafe_b64decode(client['anonKey'].split('.')[1] + '==='))
+    if set(client) != {'anonKey'} or claims.get('role') != 'anon' or claims.get('ref') != 'fracycwtkurcimbwcvjz':
+        errors.append('Public client configuration must contain only the correct anon key')
+except (OSError, ValueError, KeyError, IndexError):
+    errors.append('Missing or invalid public client configuration')
 
 for locale, chinese in (("en", False), ("zh", True)):
     index_path = root / f"search-{locale}.json"

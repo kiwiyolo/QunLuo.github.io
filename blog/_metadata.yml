@@ -1,6 +1,1 @@
-format:
-  html:
-    include-in-header:
-      - ../_includes/turnstile-head.html
-    include-after-body:
-      - ../_includes/turnstile-blog.html
+{}

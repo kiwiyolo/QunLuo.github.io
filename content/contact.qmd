@@ -23,15 +23,15 @@ I welcome conversations about Earth system science, hydrological forecasting, oc
 
 ### Email
 
-- 📧 [qunluo.kiwi@gmail.com](mailto:qunluo.kiwi@gmail.com)
+- 📧 [qunluo.kiwi@gmail.com](mailto:qunluo.kiwi@gmail.com?subject=Hello%20LUO%20Qun)
 
 ### Connect with me on Social Media!
 
 <div class="social-icons">
-  <a href="https://github.com/kiwiyolo" aria-label="LUO Qun on GitHub">{{< fa brands github >}}</a>
-  <a href="https://www.linkedin.com/in/qun-luo-87b52b328/" aria-label="Qun Luo on LinkedIn">{{< fa brands linkedin >}}</a>
-  <a href="https://orcid.org/0009-0008-4545-2349" aria-label="LUO Qun on ORCID">{{< fa brands orcid >}}</a>
-  <a href="https://www.instagram.com/qunluo.kiwi/" aria-label="Qun Luo on Instagram">{{< fa brands instagram >}}</a>
+  <a href="https://github.com/kiwiyolo" aria-label="LUO Qun on GitHub">{{< fa brands github >}}<span class="ql-social-copy"><strong>GitHub</strong><span>@kiwiyolo</span></span></a>
+  <a href="https://www.linkedin.com/in/qun-luo-87b52b328/" aria-label="Qun Luo on LinkedIn">{{< fa brands linkedin >}}<span class="ql-social-copy"><strong>LinkedIn</strong><span>LUO Qun</span></span></a>
+  <a href="https://orcid.org/0009-0008-4545-2349" aria-label="LUO Qun on ORCID">{{< fa brands orcid >}}<span class="ql-social-copy"><strong>ORCID</strong><span>0009-0008-4545-2349</span></span></a>
+  <a href="https://www.instagram.com/qunluo.kiwi/" aria-label="Qun Luo on Instagram">{{< fa brands instagram >}}<span class="ql-social-copy"><strong>Instagram</strong><span>@qunluo.kiwi</span></span></a>
 </div>
 
 ### Book a time to chat! {#book-a-time-to-chat}

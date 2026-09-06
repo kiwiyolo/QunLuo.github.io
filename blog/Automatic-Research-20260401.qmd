@@ -5,6 +5,12 @@ author: LUO Qun
 date: 2026-04-01
 image: img/AI-Scientist-v2.png
 categories: [AI, Workflow]
+format:
+  html:
+    include-in-header:
+      - ../_includes/turnstile-head.html
+    include-after-body:
+      - ../_includes/turnstile-blog.html
 ---
 This is the first post on my rebuilt personal website. It is intentionally short and a bit raw: a snapshot of what I have been thinking about most recently.
 

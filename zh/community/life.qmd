@@ -1,0 +1,10 @@
+---
+title: "日常生活（开发中）"
+toc: false
+---
+
+<div class="community-feature-preview"><img src="../../img/community/life.png" alt="日常生活"></div>
+
+这个社区空间正在开发中，具体内容将在后续开放。
+
+[返回社区地图](../index.qmd#探索社区)

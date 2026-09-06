@@ -5,10 +5,13 @@ import { getServiceClient } from "../_shared/supabase.ts";
 import { isEmail } from "../_shared/validate.ts";
 import { rateLimitOrThrow } from "../_shared/rate_limit.ts";
 
-type SubscribeRequest = { email: string; captchaToken: string };
+type SubscribeRequest = { email: string; captchaToken: string; locale?: string };
 
 function getSiteUrl(): string {
-  return (Deno.env.get("SITE_URL") ?? "https://qunluo-kiwi.com").replace(/\/$/, "");
+  const raw = (Deno.env.get("SITE_URL") ?? "").trim();
+  const withDefault = raw || "https://qunluo-kiwi.com";
+  const normalized = /^https?:\/\//i.test(withDefault) ? withDefault : `https://${withDefault}`;
+  return normalized.replace(/\/$/, "");
 }
 
 function getSubscribeSigningKey(): string {
@@ -25,13 +28,23 @@ async function createConfirmToken(email: string): Promise<string> {
   return `${payload}.${sig}`;
 }
 
-async function sendConfirmEmailWithResend(email: string, token: string): Promise<void> {
+async function sendConfirmEmailWithResend(email: string, token: string, chinese: boolean): Promise<void> {
   const apiKey = Deno.env.get("RESEND_API_KEY");
   if (!apiKey) throw new Error("Missing RESEND_API_KEY");
 
-  const from = Deno.env.get("RESEND_FROM") ?? "noreply@qunluo-kiwi.com";
+  const from = Deno.env.get("RESEND_FROM") ?? "kiwi <noreply@qunluo-kiwi.com>";
   const siteUrl = getSiteUrl();
-  const confirmUrl = `${siteUrl}/subscribe.html#confirm=${encodeURIComponent(token)}`;
+  const confirmUrl = `${siteUrl}/${chinese ? "zh/" : ""}subscribe.html#confirm=${encodeURIComponent(token)}`;
+
+  const html = chinese
+    ? `<p>感谢订阅罗群的个人主页。</p><p>请点击以下链接确认订阅：</p><p><a href="${confirmUrl}">确认订阅</a></p><p>如未申请订阅，请忽略此邮件。链接在 24 小时内有效。</p>`
+    :
+    `<p>Thanks for subscribing.</p>` +
+    `<p>Please confirm your subscription by clicking the button below:</p>` +
+    `<p><a href="${confirmUrl}" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:12px 18px;border-radius:10px;background:#111827;color:#ffffff;text-decoration:none;font-weight:600;">Confirm subscription</a></p>` +
+    `<p style="margin-top:18px;">If the button does not work, copy and paste this URL into your browser:</p>` +
+    `<p><a href="${confirmUrl}">${confirmUrl}</a></p>` +
+    `<p>If you did not request this, you can ignore this email.</p>`;
 
   const res = await fetch("https://api.resend.com/emails", {
     method: "POST",
@@ -42,12 +55,9 @@ async function sendConfirmEmailWithResend(email: string, token: string): Promise
     body: JSON.stringify({
       from,
       to: email,
-      subject: "Confirm your subscription",
-      html:
-        `<p>Thanks for subscribing.</p>` +
-        `<p>Please confirm your subscription by clicking the link below:</p>` +
-        `<p><a href="${confirmUrl}">Confirm subscription</a></p>` +
-        `<p>If you did not request this, you can ignore this email.</p>`,
+      subject: chinese ? "确认订阅 · 罗群" : "Confirm your subscription · LUO Qun",
+      html,
+      text: chinese ? `感谢订阅。请在24小时内确认订阅：\n${confirmUrl}\n如未申请订阅，请忽略此邮件。` : `Thanks for subscribing.\n\nConfirm your subscription:\n${confirmUrl}\n\nIf you did not request this, you can ignore this email.`,
     }),
   });
 
@@ -89,17 +99,25 @@ Deno.serve(async (req) => {
   if (!v.success) return errJson(req, 400, "Captcha failed", "captcha_failed");
 
   const supabase = getServiceClient();
-  const { error } = await supabase.from("subscriptions").upsert(
-    { email, status: "pending" },
-    { onConflict: "email" },
-  );
-  if (error) return errJson(req, 500, "Database error");
+  const current = await supabase.from("subscriptions").select("status").eq("email", email).maybeSingle();
+  if (current.error) return errJson(req, 500, "Database error");
 
   try {
     const token = await createConfirmToken(email);
-    await sendConfirmEmailWithResend(email, token);
+    await sendConfirmEmailWithResend(email, token, body.locale === "zh-CN");
   } catch (e) {
     return errJson(req, 502, "Email delivery failed");
+  }
+
+  // Retrying a subscription must never deactivate an already confirmed reader.
+  if (current.data?.status !== "active") {
+    const result = current.data
+      ? await supabase.from("subscriptions").update({ status: "pending" }).eq("email", email).neq("status", "active")
+      : await supabase.from("subscriptions").upsert(
+        { email, status: "pending" }, { onConflict: "email", ignoreDuplicates: true },
+      );
+    const { error } = result;
+    if (error) return errJson(req, 500, "Database error");
   }
 
   return okJson(req, { ok: true, status: "pending_email_confirmation" });

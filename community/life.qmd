@@ -1,0 +1,10 @@
+---
+title: "Life (developing)"
+toc: false
+---
+
+<div class="community-feature-preview"><img src="../img/community/life.png" alt="Life"></div>
+
+This community space is developing. Its content will be available in a future update.
+
+[Back to the community](../index.qmd#explore-the-city)

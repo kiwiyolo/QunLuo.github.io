@@ -23,15 +23,15 @@ filters:
 
 ### 电子邮箱
 
-- 📧 [qunluo.kiwi@gmail.com](mailto:qunluo.kiwi@gmail.com)
+- 📧 [qunluo.kiwi@gmail.com](mailto:qunluo.kiwi@gmail.com?subject=Hello%20LUO%20Qun)
 
 ### 在社交平台上联系我！
 
 <div class="social-icons">
-  <a href="https://github.com/kiwiyolo" aria-label="罗群的 GitHub 主页">{{< fa brands github >}}</a>
-  <a href="https://www.linkedin.com/in/qun-luo-87b52b328/" aria-label="罗群的 LinkedIn 主页">{{< fa brands linkedin >}}</a>
-  <a href="https://orcid.org/0009-0008-4545-2349" aria-label="罗群的 ORCID 主页">{{< fa brands orcid >}}</a>
-  <a href="https://www.instagram.com/qunluo.kiwi/" aria-label="罗群的 Instagram 主页">{{< fa brands instagram >}}</a>
+  <a href="https://github.com/kiwiyolo" aria-label="罗群的 GitHub 主页">{{< fa brands github >}}<span class="ql-social-copy"><strong>GitHub</strong><span>@kiwiyolo</span></span></a>
+  <a href="https://www.linkedin.com/in/qun-luo-87b52b328/" aria-label="罗群的 LinkedIn 主页">{{< fa brands linkedin >}}<span class="ql-social-copy"><strong>LinkedIn</strong><span>LUO Qun</span></span></a>
+  <a href="https://orcid.org/0009-0008-4545-2349" aria-label="罗群的 ORCID 主页">{{< fa brands orcid >}}<span class="ql-social-copy"><strong>ORCID</strong><span>0009-0008-4545-2349</span></span></a>
+  <a href="https://www.instagram.com/qunluo.kiwi/" aria-label="罗群的 Instagram 主页">{{< fa brands instagram >}}<span class="ql-social-copy"><strong>Instagram</strong><span>@qunluo.kiwi</span></span></a>
 </div>
 
 ### 预约交流时间！ {#book-a-time-to-chat}

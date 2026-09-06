@@ -8,6 +8,7 @@ export function normalizePostSlug(slug: string): string {
   if (!s) throw new Error("postSlug is required");
   if (s.length > 200) throw new Error("postSlug too long");
   if (!/^[a-zA-Z0-9/_\-\.]+$/.test(s)) throw new Error("postSlug contains invalid characters");
+  if (!/^blog\/[a-zA-Z0-9_\-]+$/.test(s) || s === "blog/index") throw new Error("A blog article is required");
   return s;
 }
 

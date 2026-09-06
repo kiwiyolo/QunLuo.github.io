@@ -77,6 +77,36 @@ include-after-body:
       <img src="img/icons/coffee-kiosk.svg" alt="Book a Time to Chat!">
       <span class="city-label">Book a Time to Chat!</span>
     </a>
+    <a href="community/life.html" class="city-icon city-new-feature" style="left:9.2744%;top:47.306%;width:4.4795%" aria-label="Life (developing)">
+      <img src="img/community/life.png" alt="" aria-hidden="true" loading="lazy">
+      <span class="city-label">Life (developing)</span>
+    </a>
+    <a href="community/interstellar.html" class="city-icon city-new-feature" style="left:29.5899%;top:75.6466%;width:6.2461%" aria-label="Interstellar (developing)">
+      <img src="img/community/interstellar.png" alt="" aria-hidden="true" loading="lazy">
+      <span class="city-label">Interstellar (developing)</span>
+    </a>
+    <a href="community/outdoors.html" class="city-icon city-new-feature" style="left:82.5868%;top:26.8319%;width:8.0757%" aria-label="Outdoors (developing)">
+      <img src="img/community/outdoors.png" alt="" aria-hidden="true" loading="lazy">
+      <span class="city-label">Outdoors (developing)</span>
+    </a>
+    <a href="community/campfire.html" class="city-icon city-new-feature" style="left:76.9716%;top:36.9612%;width:6.7508%" aria-label="Campfire (developing)">
+      <img src="img/community/campfire.png" alt="" aria-hidden="true" loading="lazy">
+      <span class="city-label">Campfire (developing)</span>
+    </a>
+    <a href="community/garden.html" class="city-icon city-new-feature" style="left:49.5268%;top:67.3491%;width:15.9621%" aria-label="Inspiration Garden (developing)">
+      <img src="img/community/garden.png" alt="" aria-hidden="true" loading="lazy">
+      <span class="city-label">Inspiration Garden (developing)</span>
+    </a>
+    <a href="community/toolbox.html" class="city-icon city-new-feature" style="left:73.817%;top:50.6466%;width:10.6625%" aria-label="Toolbox (developing)">
+      <img src="img/community/toolbox.png" alt="" aria-hidden="true" loading="lazy">
+      <span class="city-label">Toolbox (developing)</span>
+    </a>
+    <a href="community/journeys.html" class="city-icon city-new-feature" style="left:44.5426%;top:51.5086%;width:3.2177%" aria-label="Journeys (developing)">
+      <img src="img/community/journeys.png" alt="" aria-hidden="true" loading="lazy">
+      <span class="city-label">Journeys (developing)</span>
+    </a>
+    <div class="city-runner" aria-hidden="true"><canvas class="city-character-canvas"></canvas></div>
   </div>
 </div>
+<p class="community-credit">Kirito model: <a href="https://bowlroll.net/file/96677" target="_blank" rel="noopener noreferrer">すがき（すがきれもん）</a> · Sword Art Online · Animation rendered for this community.</p>
 ```
