@@ -8,6 +8,7 @@ format:
     embed-resources: true
     remove-header-space: true
 class: page-projects
+body-classes: earth-system-page
 ---
 
 ## 理解地球系统 {#earth-system}

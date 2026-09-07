@@ -8,6 +8,7 @@ format:
     embed-resources: true
     remove-header-space: true
 class: page-projects
+body-classes: earth-system-page
 ---
 
 ## Understanding Earth systems {#earth-system}

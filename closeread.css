@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100..800&family=Space+Grotesk:wght@300..700&display=swap');
+
 /* 1. Define Variables using CSS syntax */
 :root {
   --linen: #fff7ef;
@@ -18,8 +20,6 @@
 }
 
 /* 2. Base Styles */
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100..800&family=Space+Grotesk:wght@300..700&display=swap');
-
 body {
   font-family: "Space Grotesk", sans-serif;
   font-weight: 400;
@@ -103,4 +103,146 @@ p a:hover::before {
   opacity: 1 !important;
   visibility: visible !important;
   transition: 0.5s ease-in;
+}
+
+/* Keep Closeread's own grid inside the page. Its runtime adds Quarto's
+   full-screen grid to every ancestor, which otherwise shifts the panels. */
+body.earth-system-page #quarto-content,
+body.earth-system-page #quarto-document-content,
+body.earth-system-page #quarto-document-content > section {
+  display: block;
+  min-width: 0;
+}
+
+body.earth-system-page main.content {
+  box-sizing: border-box;
+  width: 100% !important;
+  max-width: 1440px;
+  margin: 0 auto !important;
+  padding: 2rem clamp(1rem, 4vw, 3rem) 3rem;
+  text-align: start;
+  overflow-wrap: anywhere;
+}
+
+body.earth-system-page #title-block-header {
+  display: none;
+}
+
+body.earth-system-page main.content > section > h2 {
+  margin-block: 2.5rem 1.5rem;
+  line-height: 1.35;
+  scroll-margin-top: 6rem;
+}
+
+body.earth-system-page .cr-section.cr-column-screen {
+  grid-column: auto !important;
+  min-width: 0;
+  z-index: auto;
+  opacity: 1;
+  margin-bottom: 2rem;
+}
+
+body.earth-system-page .cr-section.sidebar-right {
+  grid-template-columns: minmax(0, 1.65fr) minmax(18rem, 1fr);
+  gap: clamp(1rem, 3vw, 2.5rem);
+}
+
+body.earth-system-page .cr-section .narrative-col,
+body.earth-system-page .cr-section .sticky-col {
+  min-width: 0;
+}
+
+body.earth-system-page .cr-section .narrative-col .trigger {
+  padding: 26svh 0;
+}
+
+body.earth-system-page .cr-section .narrative-col .trigger:first-child,
+body.earth-system-page .cr-section .narrative-col .trigger:last-child {
+  padding-block: 14svh;
+}
+
+body.earth-system-page .cr-section .narrative-col .trigger .narrative {
+  padding: clamp(1rem, 2vw, 1.5rem);
+  font-size: clamp(1rem, 1.3vw, 1.125rem);
+  line-height: 1.8;
+  text-align: start;
+  background-color: rgba(227, 242, 255, 0.94) !important;
+}
+
+body.earth-system-page .cr-section .sticky-col .sticky-col-stack {
+  top: 5rem;
+  height: calc(100svh - 6rem);
+}
+
+/* Reserve space for the existing 1.15x zoom without clipping the figures. */
+body.earth-system-page .cr-section .sticky-col .sticky-col-stack .sticky {
+  width: 86%;
+  min-width: 0;
+}
+
+body.earth-system-page .sticky > p {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+body.earth-system-page .sticky img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: calc(78svh - 5rem);
+  object-fit: contain;
+  border-radius: 0.75rem;
+}
+
+body.earth-system-page #collaborators {
+  max-width: 75ch;
+  margin: 2rem auto 0;
+  line-height: 1.8;
+}
+
+/* Narrow screens use the same components in normal reading order. */
+@media (max-width: 991.98px), (prefers-reduced-motion: reduce), print {
+  body.earth-system-page .cr-section.cr-column-screen {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    gap: 1rem;
+  }
+
+  body.earth-system-page .cr-section .sticky-col {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  body.earth-system-page .cr-section .narrative-col {
+    grid-column: 1;
+    grid-row: 2;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+  }
+
+  body.earth-system-page .cr-section .sticky-col .sticky-col-stack {
+    position: static;
+    height: auto;
+    overflow: visible;
+  }
+
+  body.earth-system-page .cr-section .sticky-col .sticky-col-stack .sticky {
+    width: 100%;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none;
+  }
+
+  body.earth-system-page .sticky img {
+    max-height: 65svh;
+  }
+
+  body.earth-system-page .cr-section .narrative-col .trigger,
+  body.earth-system-page .cr-section .narrative-col .trigger:first-child,
+  body.earth-system-page .cr-section .narrative-col .trigger:last-child {
+    padding: 0.5rem 0;
+  }
 }
