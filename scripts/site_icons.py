@@ -29,7 +29,7 @@ ITEMS = [
 ]
 
 def markup(key, label):
-    return ('<svg class="ql-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
+    return ('<svg class="ql-nav-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
             'stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
             + PATHS[key] + '</svg><span class="ql-nav-tooltip" aria-hidden="true">'
             + html.escape(label) + '</span>')

@@ -250,43 +250,7 @@ pre.sourceCode > code {
   height: 100%;
 }
 
-/* Navigation retains its original destinations, with icon labels on demand. */
-.navbar .ql-icon-link {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.75rem;
-  min-height: 2.75rem;
-  border-radius: 50%;
-  &:hover, &:focus-visible { background: rgba($secondary, .12); }
-  &:focus-visible { outline: 2px solid $pop; outline-offset: 2px; }
-}
-.ql-nav-icon { width: 1.35rem; height: 1.35rem; flex: none; }
-.ql-nav-tooltip {
-  position: absolute;
-  top: calc(100% + .45rem);
-  left: 50%;
-  transform: translateX(-50%);
-  padding: .45rem .75rem;
-  border-radius: .5rem;
-  background: $dark;
-  color: $light;
-  font-size: .875rem;
-  white-space: nowrap;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  z-index: 1200;
-}
-.ql-icon-link:hover .ql-nav-tooltip,
-.ql-icon-link:focus-visible .ql-nav-tooltip { opacity: 1; visibility: visible; }
-.navbar-nav:last-child .nav-item:last-child .ql-nav-tooltip { left: auto; right: 0; transform: none; }
-.navbar .navbar-nav { gap: .15rem; }
-@media (max-width: 991px) {
-  .navbar .navbar-collapse .navbar-nav { flex-direction: row; flex-wrap: wrap; }
-  .ql-nav-tooltip { left: 0; transform: none; }
-}
+/* Navigation styles are embedded for every format by localize_site.py. */
 .city-wrapper { aspect-ratio: 1584.6991 / 928.2483; }
 .city-icon:focus-visible {
   opacity: 1;

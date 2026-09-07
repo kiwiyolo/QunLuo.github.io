@@ -18,9 +18,13 @@ class Page(HTMLParser):
         self.language = None
         self.language_links = {}
         self.alternates = {}
+        self.unbounded_nav_icons = 0
 
     def handle_starttag(self, tag, attrs):
         attributes = dict(attrs)
+        if tag == "svg" and "ql-nav-icon" in (attributes.get("class") or "").split():
+            if attributes.get("width") != "24" or attributes.get("height") != "24":
+                self.unbounded_nav_icons += 1
         if tag == "html":
             self.language = attributes.get("lang")
         if tag == "a" and attributes.get("data-language"):
@@ -125,6 +129,10 @@ for filename in required_pages:
         page = pages.get(root / (prefix + filename))
         if not page:
             continue
+        if "ql-navigation-styles" not in page.ids:
+            errors.append(f"Missing shared navigation styles: {prefix}{filename}")
+        if page.unbounded_nav_icons:
+            errors.append(f"Navigation icons have no fallback dimensions: {prefix}{filename}")
         if page.language != language:
             errors.append(f"Incorrect document language: {prefix}{filename}")
         other = "en" if language == "zh-CN" else "zh-CN"

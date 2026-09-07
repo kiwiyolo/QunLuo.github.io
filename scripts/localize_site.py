@@ -57,6 +57,7 @@ files = {p.relative_to(ROOT).as_posix(): p for p in ROOT.rglob("*.html") if "sit
 documents = {name: path.read_text(encoding="utf-8") for name, path in files.items()}
 anchor_data = {name: Anchors(source) for name, source in documents.items()}
 switch_script = (SOURCE / "_includes/language-switch.js").read_text(encoding="utf-8")
+navigation_css = (SOURCE / "assets/navigation.css").read_text(encoding="utf-8")
 
 for name, path in files.items():
     chinese = name.startswith("zh/")
@@ -122,6 +123,13 @@ for name, path in files.items():
         return header
 
     source = re.sub(r'<header id="quarto-header"[\s\S]*?</header>', navigation, source, count=1)
+
+    # Custom formats do not inherit the html theme. Embed these small shared
+    # styles so their icons and hover labels also work in self-contained pages.
+    source = re.sub(r'<!-- ql-navigation-styles -->[\s\S]*?<!-- /ql-navigation-styles -->\s*', "", source)
+    navigation_style = ('<!-- ql-navigation-styles -->\n<style id="ql-navigation-styles">\n'
+                        + navigation_css + '\n</style>\n<!-- /ql-navigation-styles -->\n')
+    source = source.replace('</head>', navigation_style + '</head>')
 
     # Quarto's after-body include is outside main. Keep article interactions
     # below the post content, within the article's main landmark.
