@@ -1,0 +1,38 @@
+/* Shared by standard Quarto and self-contained Closeread pages. */
+.navbar .ql-icon-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  min-height: 2.75rem;
+  border-radius: 50%;
+}
+.navbar .ql-icon-link:hover,
+.navbar .ql-icon-link:focus-visible { background: rgba(39, 167, 216, .12); }
+.navbar .ql-icon-link:focus-visible { outline: 2px solid #ffcf85; outline-offset: 2px; }
+.ql-nav-icon { width: 1.35rem; height: 1.35rem; flex: none; }
+.ql-nav-tooltip {
+  position: absolute;
+  top: calc(100% + .45rem);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: .45rem .75rem;
+  border-radius: .5rem;
+  background: #084024;
+  color: #e3f2ff;
+  font-size: .875rem;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 1200;
+}
+.ql-icon-link:hover .ql-nav-tooltip,
+.ql-icon-link:focus-visible .ql-nav-tooltip { opacity: 1; visibility: visible; }
+.navbar-nav:last-child .nav-item:last-child .ql-nav-tooltip { left: auto; right: 0; transform: none; }
+.navbar .navbar-nav { gap: .15rem; }
+@media (max-width: 991px) {
+  .navbar .navbar-collapse .navbar-nav { flex-direction: row; flex-wrap: wrap; }
+  .ql-nav-tooltip { left: 0; transform: none; }
+}
